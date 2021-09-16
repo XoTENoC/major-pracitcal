@@ -36,7 +36,7 @@ int person::getContactNumber(){
     return contactNumber;
 }
 
-void person::setContactNumber(){
+void person::setContactNumber(int aContactNumber){
 
-    
+
 }

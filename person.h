@@ -30,8 +30,8 @@ class person{
     void setAge(int age);
 
     int contactNumber;
-    void setContactNumber();
-    int getContactNumber(int contactNumber);
+    void setContactNumber(int contactNumber);
+    int getContactNumber();
 
     ~person();
 
