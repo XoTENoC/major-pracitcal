@@ -6,12 +6,9 @@ using namespace std;
 
 person::person(){
 
-
-
 }
 
 person::~person(){
-
 
 }
 
@@ -37,6 +34,35 @@ int person::getContactNumber(){
 }
 
 void person::setContactNumber(int aContactNumber){
-
+    contactNumber = aContactNumber;
 
 }
+
+void person::setComputerGraphicsCapability(int aCGAbility){
+
+    computerGraphicsCapability = aCGAbility;
+}
+
+int person::getComputerGraphicsCapability(){
+    return computerGraphicsCapability;
+}
+
+void person::setLightingCapability(int aLightingAbility){
+    lightingCapability = aLightingAbility;
+}
+
+int person::getLightingCapability(){
+
+    return lightingCapability;
+}
+
+void person::setSoundCapability(int aSoundAbility){
+
+    soundCapability = aSoundAbility;
+}
+
+int person::getSoundCapability(){
+
+    return soundCapability;
+}
+
