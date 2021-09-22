@@ -1,3 +1,4 @@
+#include <iostream>
 #include<string>
 #include "person.h"
 
@@ -9,7 +10,8 @@ person::person(){
 }
 
 person::~person(){
-
+    // Comment this in for
+    // std::cout << "Destroying " << personName << std::endl;
 }
 
 void person::setAge(int aAge){
@@ -28,14 +30,8 @@ std::string person::getPersonName(){
     return personName;
 } 
 
-int person::getContactNumber(){
-
-    return contactNumber;
-}
-
-void person::setContactNumber(int aContactNumber){
-    contactNumber = aContactNumber;
-
+void person::getContactInformation(){
+    // A void type is used so that the adult class may output a single string while the child class can output multiple lines of contacts.
 }
 
 void person::setComputerGraphicsCapability(int aCGAbility){
@@ -44,10 +40,12 @@ void person::setComputerGraphicsCapability(int aCGAbility){
 }
 
 int person::getComputerGraphicsCapability(){
+
     return computerGraphicsCapability;
 }
 
 void person::setLightingCapability(int aLightingAbility){
+
     lightingCapability = aLightingAbility;
 }
 
