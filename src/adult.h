@@ -9,6 +9,7 @@ class adult: public person{
 
     public:
 
+    // Constructor derived of person class.
     adult(std::string aName, int aAge): person(){
         personName = aName;
         age = aAge;
