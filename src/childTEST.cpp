@@ -1,17 +1,20 @@
 #include "person.h"
-#include "adult.h"
+#include "child.h"
 #include <iostream>
 
 int main(){
-	adult austen("Austen", 19);
-	std::cout << austen.getPersonName() << " " <<  austen.getAge() << std::endl;
+	child tim("Tim", 14);
+	std::cout << tim.getPersonName() << " " <<  tim.getAge() << std::endl;
 
-	austen.setWorkingWithChildrenNumber(12345);
-	std::cout << austen.getWorkingWithChildrenNumber() << std::endl;
+	tim.addContactInformation("self", "email", "01234");
 
-	austen.addContactInformation("aalindsay@me.com", "0451021891");
-	austen.getContactInformation();
-	austen.removeContactInformation();
-	austen.getContactInformation();
+	tim.addContactInformation("father", "email", "1234");
+	
+
+	tim.getContactInformation();
+
+	tim.addContactInformation("mother", "email", "2345");
+
+	tim.getContactInformation();
 }
 
