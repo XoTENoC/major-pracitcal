@@ -1,3 +1,7 @@
+// This class is defined for each week of the rooster, this houses all the
+// people within the week. It holds the event name, what week of the roster it
+// is and how many people are on the roster for that week
+
 #ifndef EVENTS_H
 #define EVENTS_H
 
@@ -5,10 +9,6 @@
 #include "person.h"
 
 using namespace std;
-
-// This class is defined for each week of the rooster, this houses all the
-// people within the week. It holds the event name, what week of the roster it
-// is and how many people are on the roster for that week
 
 class events{
     public:
@@ -20,16 +20,16 @@ class events{
 
         //functions of the class
         events();
-        events(int numberOfStaffNeeded, person* rosterOfPeople, string eventName, int weekNumber);
+        events(int numberOfStaff, person* roster, string name, int number);
         
         int getNumberOfStaffNeeded();
         void setNumberOfStaffNeeded(int numberOfStaff);
 
         int getWeekNumber();
-        void setWeekNumber(int weekNumber);
+        void setWeekNumber(int number);
 
         string getEventName();
-        void setEventName();
+        void setEventName(string name);
 
         ~events();
 };
