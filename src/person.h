@@ -9,7 +9,7 @@ class person{
     person();
     person(std::string aName, int aAge);
 
-    // ledgend of array 
+    // legend of array 
     // 0 - sound
     // 1 - lighting
     // 2 - computer graphics
