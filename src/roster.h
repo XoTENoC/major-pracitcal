@@ -21,7 +21,7 @@ class roster{
     events * rosterArray;
 
     int getNumberOfEvents();
-    int setNumberOfEvents(int eventsAmmount);
+    void setNumberOfEvents(int eventsAmmount);
     
 };
 

@@ -17,11 +17,11 @@ int roster::getNumberOfEvents(){
     return numberOfEvents;
 }
 
-int roster::setNumberOfEvents(int eventsAmmount){
+void roster::setNumberOfEvents(int eventsAmmount){
     numberOfEvents = eventsAmmount;
 }
 
-roster::~roster(){
-    delete[] rosterArray;
-}
+// roster::~roster(){
+//     // delete[] rosterArray;
+// }
 

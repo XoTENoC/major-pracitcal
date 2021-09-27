@@ -1,25 +1,28 @@
-CPP = g++
+# CPP = g++
  
-# compiler flags:
-# Any additional compiler flags to add
-CPPFLAGS  = 
+# # compiler flags:
+# # Any additional compiler flags to add
+# CPPFLAGS  = 
  
-# The build target 
-TARGET = testProgram
+# # The build target 
+# TARGET = testProgram
  
-all: $(TARGET)
+# all: $(TARGET)
  
-$(TARGET): $(TARGET).cpp
-	$(CPP) $(CPPFLAGS) -o $(TARGET) $(TARGET).cpp
+# $(TARGET): $(TARGET).cpp
+# 	$(CPP) $(CPPFLAGS) -o $(TARGET) $(TARGET).cpp
  
-clean:
-	$(RM) $(TARGET)
+# clean:
+# 	$(RM) $(TARGET)
 
-test: $(TARGET)
-	echo "### Failed Test ###"
-	./$(TARGET) || echo "FAILED"
+# test: $(TARGET)
+# 	echo "### Failed Test ###"
+# 	./$(TARGET) || echo "FAILED"
 
 
-	echo "### Successful Test ###"
-	./$(TARGET) firstArgment || echo "FAILED"
+# 	echo "### Successful Test ###"
+# 	./$(TARGET) firstArgment || echo "FAILED"
 
+
+changosfuckup:
+	g++ person.cpp adult.cpp child.cpp events.cpp roster.cpp main.cpp -o main -Wall -std=c++11
