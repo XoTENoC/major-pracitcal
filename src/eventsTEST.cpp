@@ -10,13 +10,15 @@ using namespace std;
 int main(){
 
 
-    int numStaff = 2;
-    person* people = new person[2];
+    int numStaff = 3;
+    person* people = new person[3];
     adult Austen("Austen", 19);
     adult Sophie("Sophie", 19);
+    child Nathiel("Nathaniel", 10); 
 
     people[0] = Austen;
     people[1] = Sophie;
+    people[2] = Nathiel; 
 
     events event1(numStaff,people, "TestEvent", 1 );
 
