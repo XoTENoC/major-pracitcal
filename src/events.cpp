@@ -37,11 +37,11 @@ void events::setWeekNumber(int number){
     weekNumber = number;
 }
 
-string getEventName(){
+string events::getEventName(){
     return eventName;
 }
 
-void setWeekNumber(string name){
+void events::setEventName(string name){
     eventName = name;
 }
 
