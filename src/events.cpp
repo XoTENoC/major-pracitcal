@@ -26,6 +26,7 @@ int events::getNumberOfStaffNeeded(){
 
 void events::setNumberOfStaffNeeded(int numberOfStaff){
     numberOfStaffNeeded = numberOfStaff;
+    rosterOfPeople = new person[numberOfStaff];
 }
 
 int events::getWeekNumber(){
@@ -42,4 +43,8 @@ string getEventName(){
 
 void setWeekNumber(string name){
     eventName = name;
+}
+
+events::~events(){
+    delete[] rosterOfPeople;
 }

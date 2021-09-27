@@ -30,7 +30,7 @@ class person{
     int getAge();
     void setAge(int age);
 
-    virtual void getContactInformation() = 0;
+    virtual void getContactInformation();
 
     ~person();
 
