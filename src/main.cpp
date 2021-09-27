@@ -1,5 +1,5 @@
 #include <iostream>
-#include <string.h>
+#include <string>
 #include "roster.h"
 #include "person.h"
 #include "adult.h"
@@ -14,6 +14,7 @@ void addPerson(person * arr, int * ammount){
     bool isTrue = true;
     string name;
     int age, competency;
+    adult newAdult("name", 0);
 
     // picking whether you are adding a Adult or Child
     while(isTrue){
@@ -26,31 +27,40 @@ void addPerson(person * arr, int * ammount){
             case 1:
                 isTrue = false;
                 // creating a new array person
-                tempArrayOfPerople = new person[*ammount];
+                if(*ammount>0){
 
-                for (int i = 0; i < *ammount; i++){
-                    arr[i] = tempArrayOfPerople[i];
+                    tempArrayOfPerople = new person[*ammount];
+
+                    for (int i = 0; i < *ammount; i++){
+                        arr[i] = tempArrayOfPerople[i];
+                    }
+
+                    delete[] arr;
+                    // id of people incease
+                    *ammount++;
+                    arr = new person[*ammount]; 
+
+                    for (int i = 0; i < *ammount-1; i++){
+                        tempArrayOfPerople[i] = arr[i];
+                    }
+
+                    delete[] tempArrayOfPerople;
+                }
+                else if(*ammount=0){
+                    arr = new person[1];
                 }
 
-                delete[] arr;
-                // id of people incease
-                *ammount++;
-                arr = new person[*ammount]; 
-
-                for (int i = 0; i < *ammount-1; i++){
-                    tempArrayOfPerople[i] = arr[i];
-                }
-
-                delete[] tempArrayOfPerople;
-                
                 cout << "name for the person: ";
                 cin >> name;
 
                 cout << "Age of the person: ";
                 cin >> age;
 
-                arr[*ammount] = adult(name, age);
+                newAdult.setPersonName(name);
+                newAdult.setAge(age);
+                cout << &arr << endl;
 
+                arr[*ammount] = newAdult;
                 cout << "ability of sound: ";
                 cin >> competency;
 
