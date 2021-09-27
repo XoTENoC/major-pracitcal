@@ -1,3 +1,5 @@
+// child class inherits from parent class "person" to add behaviours and states which are unique to children only.
+
 #include <string>
 #include <iostream>
 #include "child.h"

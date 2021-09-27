@@ -1,3 +1,6 @@
+
+// Adult class inherits from parent class "person" to add behaviours and states which are unique to adults only.
+
 #include <string>
 #include <iostream>
 #include "adult.h"
