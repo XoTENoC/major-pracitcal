@@ -1,4 +1,4 @@
-// This class is defined for each week of the rooster, this houses all the
+// This class is defined for each week of the roster, this houses all the
 // people within the week. It holds the event name, what week of the roster it
 // is and how many people are on the roster for that week
 

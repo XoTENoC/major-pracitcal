@@ -1,3 +1,5 @@
+//defines the abstract person class from which objects of type child and adult are created. 
+
 #ifndef PERSON_H
 #define PERSON_H
 

@@ -1,4 +1,4 @@
-// The file discribes the functions for the events class, it definds how the
+// The file describes the functions for the events class, it definds how the
 // class will function.
 
 #include <string>
