@@ -4,7 +4,6 @@
 
 using namespace std; 
 
-
 person::person(){
 
 }
@@ -34,33 +33,10 @@ void person::getContactInformation(){
     // A void type is used so that the adult class may output a single string while the child class can output multiple lines of contacts.
 }
 
-void person::setComputerGraphicsCapability(int aCGAbility){
-
-    computerGraphicsCapability = aCGAbility;
+int person::getCompetency(int index){
+    return competencies[index];
 }
 
-int person::getComputerGraphicsCapability(){
-
-    return computerGraphicsCapability;
+int person::setCompetency(int index, int aCompetency){
+    competencies[index] = aCompetency;
 }
-
-void person::setLightingCapability(int aLightingAbility){
-
-    lightingCapability = aLightingAbility;
-}
-
-int person::getLightingCapability(){
-
-    return lightingCapability;
-}
-
-void person::setSoundCapability(int aSoundAbility){
-
-    soundCapability = aSoundAbility;
-}
-
-int person::getSoundCapability(){
-
-    return soundCapability;
-}
-
