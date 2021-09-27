@@ -16,6 +16,11 @@ class person{
     // 1 - lighting
     // 2 - computer graphics
 
+    // legend of competencies
+    // 0 = can't do
+    // 1 = training
+    // 2 = competent
+    
     int competencies[3] = {};
 
     int getCompetency(int index);
