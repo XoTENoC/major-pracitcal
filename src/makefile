@@ -24,5 +24,5 @@
 # 	./$(TARGET) firstArgment || echo "FAILED"
 
 
-changosfuckup:
+main:
 	g++ person.cpp adult.cpp child.cpp events.cpp roster.cpp main.cpp -o main -Wall -std=c++11
