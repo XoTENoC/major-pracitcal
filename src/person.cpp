@@ -37,6 +37,6 @@ int person::getCompetency(int index){
     return competencies[index];
 }
 
-int person::setCompetency(int index, int aCompetency){
+void person::setCompetency(int index, int aCompetency){
     competencies[index] = aCompetency;
 }

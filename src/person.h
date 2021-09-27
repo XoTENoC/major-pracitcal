@@ -22,7 +22,7 @@ class person{
     int competencies[3] = {};
 
     int getCompetency(int index);
-    int setCompetency(int index, int aCompetency);
+    void setCompetency(int index, int aCompetency);
 
     std::string personName;
     std::string getPersonName();
