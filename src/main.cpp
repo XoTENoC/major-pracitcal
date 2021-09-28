@@ -15,6 +15,7 @@ void addPerson(person * arr, int * ammount){
     string name;
     int age, competency;
     adult newAdult("name", 0);
+    child newChild("name", 0);
 
     // picking whether you are adding a Adult or Child
     while(isTrue){
@@ -98,7 +99,74 @@ void addPerson(person * arr, int * ammount){
             case 2:
                 isTrue = false;
 
-                // add the case for the child
+                // creating a new array person
+
+                // checking to make sure that there are already people in the
+                // array
+                if(*ammount>0){
+
+                    // starting the temp array to store people
+                    tempArrayOfPerople = new person[*ammount];
+
+                    // moving all there perople into the array
+                    for (int i = 0; i < *ammount; i++){
+                        arr[i] = tempArrayOfPerople[i];
+                    }
+
+                    // making room for the next array
+                    delete[] arr;
+
+                    // id of people incease
+                    *ammount += 1;
+
+                    // making the array one person bigger
+                    arr = new person[*ammount]; 
+
+                    // moving people into the new array
+                    for (int i = 0; i < *ammount-1; i++){
+                        tempArrayOfPerople[i] = arr[i];
+                    }
+                    
+                    // Deleting the temp array
+                    delete[] tempArrayOfPerople;
+                }
+
+                // if there are no people in the array make the array 1.
+                else if( (*ammount = 0) ){
+                    delete[] arr;
+                    arr = new person[1];
+                }
+
+                // Asking for the name
+                cout << "name for the person: ";
+                cin >> name;
+
+                // Asking for the age
+                cout << "Age of the person: ";
+                cin >> age;
+
+                // assinging the name and the age
+                newChild.setPersonName(name);
+                newChild.setAge(age);
+
+                // assigning the person to the array in the last spot
+                arr[*ammount] = newChild;
+
+                // assigning all the competencies of the person
+                cout << "ability of sound: ";
+                cin >> competency;
+
+                arr[*ammount].setCompetency(0, competency);
+
+                cout << "ability of lighting: ";
+                cin >> competency;
+
+                arr[*ammount].setCompetency(1, competency);
+
+                cout << "ability of computer graphics: ";
+                cin >> competency;
+
+                arr[*ammount].setCompetency(2, competency);
 
                 break;
             case 3:
@@ -116,6 +184,7 @@ int main(){
     // keeping a track of all the people created
     int numberOfPeople = 0;
     person * arrayOfPeople;
+    arrayOfPeople = new person[1];
 
     int choice = 0;
 
