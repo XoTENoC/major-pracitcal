@@ -28,6 +28,7 @@ void addPerson(person * arr, int * ammount){
             case 1:
                 isTrue = false;
                 // creating a new array person
+                cout << *ammount << endl;
 
                 // checking to make sure that there are already people in the
                 // array
@@ -39,6 +40,7 @@ void addPerson(person * arr, int * ammount){
                     // moving all there perople into the array
                     for (int i = 0; i < *ammount; i++){
                         arr[i] = tempArrayOfPerople[i];
+                        cout << i << endl;
                     }
 
                     // making room for the next array
@@ -58,10 +60,12 @@ void addPerson(person * arr, int * ammount){
                     // Deleting the temp array
                     delete[] tempArrayOfPerople;
                 }
-
+                
                 // if there are no people in the array make the array 1.
-                else if( (*ammount = 0) ){
+                else if( *ammount == 0 ){
                     arr = new person[1];
+                    cout << "created 1" << endl;
+                    *ammount += 1;
                 }
 
                 // Asking for the name
@@ -132,9 +136,10 @@ void addPerson(person * arr, int * ammount){
                 }
 
                 // if there are no people in the array make the array 1.
-                else if( (*ammount = 0) ){
+                else if( *ammount == 0 ){
                     delete[] arr;
                     arr = new person[1];
+                    *ammount += 1;
                 }
 
                 // Asking for the name
@@ -177,6 +182,16 @@ void addPerson(person * arr, int * ammount){
 
 }
 
+void viewAllPeople(person * arr, int * ammount){
+
+    for (int i = 0; i < *ammount; i++){
+        cout << i + 1 << " : ";
+        arr[i].getPersonName();
+        cout << endl;
+    }
+
+}
+
 int main(){
     bool inProgram = true;
     bool mainMenu = true;
@@ -209,6 +224,7 @@ int main(){
                     break;
                 case 2:
                     mainMenu = false;
+                    viewAllPeople(arrayOfPeople, &numberOfPeople);
                     break;
                 case 3:
                     mainMenu = false;
