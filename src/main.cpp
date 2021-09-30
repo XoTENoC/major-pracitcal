@@ -10,6 +10,7 @@ using namespace std;
 
 void addPerson(person * arr, int * ammount){
     person * tempArrayOfPerople;
+    int size = *ammount;
     int option = 0;
     bool isTrue = true;
     string name;
@@ -28,14 +29,14 @@ void addPerson(person * arr, int * ammount){
             case 1:
                 isTrue = false;
                 // creating a new array person
-                cout << *ammount << endl;
 
                 // checking to make sure that there are already people in the
                 // array
                 if(*ammount>0){
 
                     // starting the temp array to store people
-                    tempArrayOfPerople = new person[*ammount];
+                    tempArrayOfPerople = new person[size];
+                    cout << "created temp array" << endl;
 
                     // moving all there perople into the array
                     for (int i = 0; i < *ammount; i++){
