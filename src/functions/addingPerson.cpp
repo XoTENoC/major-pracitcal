@@ -50,9 +50,54 @@ void addingAdult(vector<person*> &vectorPeople){
 
 }
 
+void addingChild(vector<person*> &vectorPeople){
+
+    int ammountOfPeople = 0;
+    string name;
+    int age, competency;
+
+    // asking how many people the user would like to add
+    cout << "how many people would you like to add: ";
+    cin >> ammountOfPeople;
+
+    for (int i = 0; i < ammountOfPeople; i++){
+
+        // asking for the name of the person
+        cout << "what is the name of the person: ";
+        cin >> name;
+
+        //asking for the age of the person
+        cout << "What is the age of the person: ";
+        cin >> age;
+
+        // adding the person to the array
+        vectorPeople.push_back(new child(name, age));
+
+        // setting the competency
+        cout << "ability at Sound: ";
+        cin >> competency;
+
+        vectorPeople.back()->setCompetency(0, competency);
+
+        cout << "ability at Lighing: ";
+        cin >> competency;
+
+        vectorPeople.back()->setCompetency(1, competency);
+
+        cout << "ability at Computer Graphics: ";
+        cin >> competency;
+
+        vectorPeople.back()->setCompetency(2, competency);
+    }
+
+}
+
 void listAllpeople(vector<person*> &vectorPeople){
     cout << endl;
-    cout << "****** All the People ******" << endl;
+    cout << "+------------------------------------------------------+" << endl;
+    cout << "|                    List of People                    |" << endl;
+    cout << "+------------------------------------------------------+" << endl;
+    cout << endl;
     
     // listing all the people in the list
 
@@ -90,7 +135,8 @@ void addPerson(vector<person*> &vectorPeople, int * ammount){
             break;
 
         case 2:
-            addingPeople = false;
+            addingChild(vectorPeople);
+            *ammount = (int)vectorPeople.size();
             break;
 
         case 3:

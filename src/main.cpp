@@ -36,6 +36,13 @@ int main(){
         // MAIN MENU
         mainMenu = true;
         while(mainMenu){
+
+            cout << endl;
+            cout << "+------------------------------------------------------+" << endl;
+            cout << "|                      Main Menu                       |" << endl;
+            cout << "+------------------------------------------------------+" << endl;
+            cout << endl;
+
             cout << "1 - Add a new person" << endl;
             cout << "2 - View all the people" << endl;
             cout << "3 - Create a roster" << endl;
