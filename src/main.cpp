@@ -1,45 +1,14 @@
 #include <iostream>
 #include <string>
+#include <vector>
 #include "classes/roster.h"
 #include "classes/person.h"
 #include "classes/adult.h"
 #include "classes/child.h"
 #include "classes/events.h"
+#include "functions/addingPerson.h"
 
 using namespace std;
-
-void addPerson(person ** arr, int * ammount){
-    person ** tempArrayOfPerople;
-    int size = *ammount;
-    int option = 0;
-    bool isTrue = true;
-    string name;
-    int age, competency;
-    adult newAdult("name", 0);
-    child newChild("name", 0);
-
-    // picking whether you are adding a Adult or Child
-    while(isTrue){
-        cout << "1 - To add an Adult" << endl;
-        cout << "2 - To add a Child" << endl;
-        cout << "3 - Exit" << endl;
-        cin >> option;
-
-        switch (option){
-            case 1:
-                isTrue = false;
-                break;
-            case 2:
-                isTrue = false;
-
-                break;
-            case 3:
-                isTrue = false;
-                break;
-        }
-    }
-
-}
 
 void viewAllPeople(person ** arr, int * ammount){
 
@@ -55,6 +24,11 @@ int main(){
     // Starting the program
     bool inProgram = true;
     bool mainMenu = true;
+
+    // list of people
+    vector<person*> people;
+
+    int ammount = 0;
 
     int choice = 0;
 
@@ -73,11 +47,10 @@ int main(){
             switch(choice){
                 // adding a person the array of people
                 case 1:
-                    mainMenu = false;
+                    addPerson(people, &ammount);
                     break;
                 case 2:
-                    mainMenu = false;
-                    // viewAllPeople(arrayOfPeople, &numberOfPeople);
+                    listAllpeople(people);
                     break;
                 case 3:
                     mainMenu = false;

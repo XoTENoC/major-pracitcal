@@ -24,5 +24,5 @@
 # 	./$(TARGET) firstArgment || echo "FAILED"
 
 
-main:
-	g++ classes/person.cpp classes/adult.cpp classes/child.cpp classes/events.cpp classes/roster.cpp main.cpp -o main -Wall -std=c++11
+apple:
+	g++ classes/person.cpp classes/adult.cpp classes/child.cpp classes/events.cpp classes/roster.cpp functions/addingPerson.cpp main.cpp -o main -Wall -std=c++11
