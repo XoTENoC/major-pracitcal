@@ -8,7 +8,12 @@
 #include "../classes/child.h"
 #include "../classes/events.h"
 
+
+// this function adds adults to the list of people, and also allows to add
+// multiple people at once to allow for fast batch additions of people.
 void addingAdult(vector<person*> &vectorPeople){
+
+    cout << endl;
 
     int ammountOfPeople = 0;
     string name;
@@ -19,6 +24,9 @@ void addingAdult(vector<person*> &vectorPeople){
     cin >> ammountOfPeople;
 
     for (int i = 0; i < ammountOfPeople; i++){
+
+        cout << endl;
+        cout << "Person " << i+1 << endl;
 
         // asking for the name of the person
         cout << "what is the name of the person: ";
@@ -50,7 +58,12 @@ void addingAdult(vector<person*> &vectorPeople){
 
 }
 
+
+// this function adds children to the list of people, and also allows to add
+// multiple people at once to allow for fast batch additions of people.
 void addingChild(vector<person*> &vectorPeople){
+
+    cout << endl;
 
     int ammountOfPeople = 0;
     string name;
@@ -61,6 +74,9 @@ void addingChild(vector<person*> &vectorPeople){
     cin >> ammountOfPeople;
 
     for (int i = 0; i < ammountOfPeople; i++){
+
+        cout << endl;
+        cout << "Person " << i+1 << endl;
 
         // asking for the name of the person
         cout << "what is the name of the person: ";
@@ -119,6 +135,12 @@ void addPerson(vector<person*> &vectorPeople, int * ammount){
     while (addingPeople)
     {
         
+        cout << endl;
+        cout << "+------------------------------------------------------+" << endl;
+        cout << "|                   Add a New Person                   |" << endl;
+        cout << "+------------------------------------------------------+" << endl;
+        cout << endl;
+
         // Printing the menu and asking for choice
         cout << "1 - add an adult" << endl;
         cout << "2 - add an child" << endl;
