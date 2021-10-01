@@ -28,11 +28,12 @@ int main(){
     // list of people
     vector<person*> people;
 
+    // init variables
     int ammount = 0;
-
     int choice = 0;
 
     while(inProgram){
+        
         // MAIN MENU
         mainMenu = true;
         while(mainMenu){
