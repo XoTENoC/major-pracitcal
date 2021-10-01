@@ -25,4 +25,4 @@
 
 
 main:
-	g++ person.cpp adult.cpp child.cpp events.cpp roster.cpp main.cpp -o main -Wall -std=c++11
+	g++ classes/person.cpp classes/adult.cpp classes/child.cpp classes/events.cpp classes/roster.cpp main.cpp -o main -Wall -std=c++11

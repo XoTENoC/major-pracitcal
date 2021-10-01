@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <memory>
 #include "person.h"
 #include "adult.h"
 
