@@ -10,15 +10,6 @@
 
 using namespace std;
 
-void viewAllPeople(person ** arr, int * ammount){
-
-    for (int i = 0; i < *ammount; i++){
-        cout << i + 1 << " : ";
-        cout << endl;
-    }
-
-}
-
 int main(){
 
     // Starting the program
