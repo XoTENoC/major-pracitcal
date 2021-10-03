@@ -104,6 +104,31 @@ void listAllpeople(vector<person*> &vectorPeople){
     cout << endl;
 }
 
+void modifyPerson(vector<person*> &vectorPeople){
+
+    // List all the people and there entries
+    cout << endl;
+    cout << "+------------------------------------------------------+" << endl;
+    cout << "|                  list of Everything                  |" << endl;
+    cout << "+------------------------------------------------------+" << endl;
+    cout << endl;
+
+    int allThePeople = (int)vectorPeople.size();
+
+    for (int i = 0; i < allThePeople; i++){
+        cout << i+1 << ": ";
+        cout << vectorPeople[i]->getPersonName() << " ";
+        cout << vectorPeople[i]->getAge() << " ";
+        cout << vectorPeople[i]->getCompetency(0) << " ";
+        cout << vectorPeople[i]->getCompetency(1) << " ";
+        cout << vectorPeople[i]->getCompetency(2) << " ";
+        cout << endl;
+    }
+
+    // cout << "what person do you want to modify: ";
+
+}
+
 void addPerson(vector<person*> &vectorPeople, int * ammount){
     
     bool addingPeople = true;
@@ -119,8 +144,8 @@ void addPerson(vector<person*> &vectorPeople, int * ammount){
         cout << endl;
 
         // Printing the menu and asking for choice
-        cout << "1 - add an adult" << endl;
-        cout << "2 - add an child" << endl;
+        cout << "1 - add People" << endl;
+        cout << "2 - Modify Entries" << endl;
         cout << "3 - exit" << endl;
 
         cin >> choice;
@@ -134,7 +159,7 @@ void addPerson(vector<person*> &vectorPeople, int * ammount){
             break;
 
         case 2:
-            addingPeople = false;
+            modifyPerson(vectorPeople);
             break;
 
         case 3:
