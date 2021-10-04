@@ -32,6 +32,9 @@ DEPS = $(OBJS:.o=.d)
 # Name the compiler
 CC = g++
 
+# Flags for the compiler
+CCFLAGS := -Wall -Werror -std=c++11
+
 # OS specific part
 ifeq ($(OS),Windows_NT)
 	RM = del /F /Q 
@@ -61,7 +64,7 @@ endif
 define generateRules
 $(1)/%.o: %.cpp
 	@echo Building $$@
-	$(HIDE)$(CC) -c $$(INCLUDES) -o $$(subst /,$$(PSEP),$$@) $$(subst /,$$(PSEP),$$<) -MMD
+	$(HIDE)$(CC) -c $$(INCLUDES) -o $$(subst /,$$(PSEP),$$@) $$(subst /,$$(PSEP),$$<) -MMD $(CCFLAGS)
 endef
 
 .PHONY: all clean directories 
