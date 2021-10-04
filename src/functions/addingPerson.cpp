@@ -125,7 +125,7 @@ void modifyPerson(vector<person*> &vectorPeople){
         cout << endl;
     }
 
-    // cout << "what person do you want to modify: ";
+    // add modify person details here
 
 }
 

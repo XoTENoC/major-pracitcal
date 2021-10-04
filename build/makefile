@@ -7,7 +7,7 @@ BUILDDIR := $(PROJDIR)/build
 TARGET = main
 
 # Decide whether the commands will be shwon or not
-VERBOSE = FALSE
+VERBOSE = TRUE
 
 # Create the list of directories
 DIRS = classes functions ./
