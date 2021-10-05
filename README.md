@@ -1,3 +1,16 @@
 # Austen, Sophie and Nathaniel's Major Practical
 
-### install
+## Build
+To build the program navigate to the `/build` and run the following command
+
+```Bash
+Make all
+```
+
+once finsished run:
+
+```bash
+Make clean
+```
+
+to clear all .o and .d files

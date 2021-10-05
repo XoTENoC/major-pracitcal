@@ -1,3 +1,7 @@
 .vscode/
 !/**/
 !*.*
+*
+!*makefile*
+.o
+.d
