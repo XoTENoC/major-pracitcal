@@ -14,3 +14,6 @@ Make clean
 ```
 
 to clear all .o and .d files
+
+## Note
+Doesn't compile on MacOS or Linux systems
