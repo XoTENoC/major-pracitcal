@@ -6,7 +6,7 @@ BUILDDIR := $(PROJDIR)/build
 # Name of the final executable
 TARGET = main
 
-# Decide whether the commands will be shwon or not
+# Decide whether the commands will be shown or not
 VERBOSE = TRUE
 
 # Create the list of directories
