@@ -7,11 +7,11 @@
 
 using namespace std;
 
-void adult::setWorkingWithChildrenNumber(int aWorkingWithChildrenNumber){
+void adult::setWorkingWithChildrenNumber(std::string aWorkingWithChildrenNumber){
     workingWithChildrenNumber = aWorkingWithChildrenNumber;
 }
 
-int adult::getWorkingWithChildrenNumber(){
+string adult::getWorkingWithChildrenNumber(){
     return workingWithChildrenNumber;
 }
 
