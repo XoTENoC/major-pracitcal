@@ -16,6 +16,7 @@ class events{
     public:
         // Variable within the week.
         int numberOfStaffNeeded;
+        // this is the roster of people for the event.
         person* rosterOfPeople;
         string eventName;
         int weekNumber;
@@ -34,6 +35,8 @@ class events{
 
         string getEventName();
         void setEventName(string name);
+
+        // add a function to make a person
 
         ~events();
 };
