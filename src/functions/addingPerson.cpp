@@ -15,15 +15,15 @@ void addingPerson(vector<person*> &vectorPeople){
 
     cout << endl;
 
-    int ammountOfPeople = 0;
+    int amountOfPeople = 0;
     string name;
     int age, competency;
 
     // asking how many people the user would like to add
     cout << "how many people would you like to add: ";
-    cin >> ammountOfPeople;
+    cin >> amountOfPeople;
 
-    for (int i = 0; i < ammountOfPeople; i++){
+    for (int i = 0; i < amountOfPeople; i++){
 
         cout << endl;
         cout << "Person " << i+1 << endl;

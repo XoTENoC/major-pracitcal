@@ -20,7 +20,7 @@ int main(){
     vector<person*> people;
 
     // init variables
-    int ammount = 0;
+    int amount = 0;
     int choice = 0;
 
     while(inProgram){
@@ -46,7 +46,7 @@ int main(){
             switch(choice){
                 // adding a person the array of people
                 case 1:
-                    addPerson(people, &ammount);
+                    addPerson(people, &amount);
                     break;
                 case 2:
                     listAllpeople(people);
