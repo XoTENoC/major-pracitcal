@@ -17,9 +17,9 @@ class adult: public person{
         age = aAge;
     }
 
-    int workingWithChildrenNumber;
-    void setWorkingWithChildrenNumber(int aWorkingWithChildrenNumber);
-    int getWorkingWithChildrenNumber();
+    string workingWithChildrenNumber;
+    void setWorkingWithChildrenNumber(string aWorkingWithChildrenNumber);
+    string getWorkingWithChildrenNumber();
 
     std::string contactInformation;
     void addContactInformation(std::string emailAddress, std::string phoneNumber);

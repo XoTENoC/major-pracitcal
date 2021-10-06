@@ -1,0 +1,5 @@
+Please input a name: Please input an age: name = Austen
+age = 19
+Please enter a new name: name = Sarah
+Please enter a new age: age = 51
+Please enter a working with children number: Working with children number = SRN-128-0678
