@@ -33,7 +33,7 @@ DEPS = $(OBJS:.o=.d)
 CC = g++
 
 # Flags for the compiler
-CCFLAGS := -Wall -Werror -std=c++11
+CCFLAGS := -Wall -std=c++11
 
 # OS specific part
 ifeq ($(OS),Windows_NT)
