@@ -10,6 +10,35 @@
 
 using namespace std;
 
+//Sophie's code - not working as vector people array has been changed from a standard array! Hence the constructor doesn't work. 
+// void createRoster(vector<person*> people, int numberOfStaffTotal){
+//         int numWeeks=0;
+//         cout<<"Please input the number of weeks to be created:";
+//         cin>>numWeeks;
+//         roster *newRoster = new roster(numWeeks);
+//         int thisNum = newRoster->getNumberOfEvents();
+//         cout<<thisNum;
+
+//         for(int i=0;i<numWeeks;i++){
+//         string thisEventName; 
+//         cout<< "Please enter the name for event "<< i<<":";
+//         cin >>thisEventName;
+//         cout<<endl; 
+//         int numPeopleRequired =0;
+
+//         cout<< "Please enter the number of people required for the event: ";
+//         cin>> numPeopleRequired;
+//         cout<<endl; 
+//         events *newEvent = new events(numPeopleRequired,people,thisEventName,i);
+//         int thisNumStaff = newEvent->numberOfStaffNeeded;
+//         cout<<thisNumStaff;
+
+//         cout<<"event added"<<endl;
+
+
+//         }
+// }
+
 int main(){
 
     // Starting the program
