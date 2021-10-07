@@ -7,10 +7,38 @@
 #include "classes/child.h"
 #include "classes/events.h"
 #include "functions/addingPerson.h"
-#include "functions/addingRoster.h"
+
 using namespace std;
 
+//Sophie's code - not working as vector people array has been changed from a standard array! Hence the constructor doesn't work. 
+void createRoster(vector<person*> people, int numberOfStaffTotal){
+        int numWeeks=0;
+        cout<<"Please input the number of weeks to be created:";
+        cin>>numWeeks;
+        cout<<endl; 
+        roster *newRoster = new roster(numWeeks);
 
+        for(int i=0;i<numWeeks;i++){
+        string thisEventName; 
+        cout<< "Please enter the name for event "<< i+1<<":";
+        cin >>thisEventName;
+        cout<<endl; 
+        int numPeopleRequired =0;
+
+        cout<< "Please enter the number of people required for the event: ";
+        cin>> numPeopleRequired;
+        cout<<endl; 
+        person thesePeople[numPeopleRequired]; 
+        events *newEvent = new events(numPeopleRequired,thesePeople,thisEventName,i);
+        newEvent->addRosteredPeople(people);
+
+        int thisNumStaff = newEvent->numberOfStaffNeeded;
+
+        cout<<"event added"<<endl;
+
+
+        }
+}
 
 int main(){
 
