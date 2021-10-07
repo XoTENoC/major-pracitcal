@@ -1,13 +1,13 @@
 # Compile.
 echo Compiling adultTest.cpp
-g++ ../../src/classes/person.cpp ../../src/classes/adult.cpp adultTest.cpp -o adultTest -Wall -std=c++11
+g++ adult/../../src/classes/person.cpp adult/../../src/classes/adult.cpp adult/adultTest.cpp -o adultTest -Wall -std=c++11
 echo Finished Compiling
 
 # Test.
 echo Testing adult
 
 # Standard Test.
-./adultTest < inputs/adultIn-01.txt | diff - outputs/adultOut-01.txt
+./adultTest < adult/inputs/adultIn-01.txt | diff - adult/outputs/adultOut-01.txt
 
 # Produce an output file.
 #./adultTest < inputs/adultIn-01.txt > adultOut.txt
@@ -17,5 +17,5 @@ echo Testing adult
 # rm adultOut.txt
 
 # Cleanup
-#rm adultTest
+rm adultTest
 echo Finished Testing adult Class
