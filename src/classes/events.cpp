@@ -2,8 +2,11 @@
 // class will function.
 
 #include <string>
+#include<iostream>
+#include<vector>
 #include "events.h"
 #include "person.h"
+
 
 using namespace std;
 
@@ -43,6 +46,11 @@ string events::getEventName(){
 
 void events::setEventName(string name){
     eventName = name;
+}
+
+void events::addRosteredPeople(vector<person*> people){
+
+    cout<<endl<<"working"<<endl;
 }
 
 events::~events(){

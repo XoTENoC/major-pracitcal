@@ -6,6 +6,8 @@
 #define EVENTS_H
 
 #include <string>
+#include<vector>
+
 #include "person.h"
 
 using namespace std;
@@ -27,6 +29,8 @@ class events{
 
         int getWeekNumber();
         void setWeekNumber(int number);
+
+        void addRosteredPeople(vector<person*> people);
 
         string getEventName();
         void setEventName(string name);
