@@ -11,6 +11,5 @@ for classDirectory in os.listdir(basepath):
         for file in os.listdir(classDirectory):
             
             if file.endswith('.sh'):
-                print(file)
-                print(os.path.join(basepath, classDirectory, file))
+                print("running: " + file)
                 subprocess.call(['bash', os.path.join(basepath, classDirectory, file)])
