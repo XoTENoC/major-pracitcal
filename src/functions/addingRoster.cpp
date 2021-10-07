@@ -27,7 +27,7 @@ void createRoster(vector<person*> people, int numberOfStaffTotal){
         cout<<endl; 
         person thesePeople[numPeopleRequired]; 
         events *newEvent = new events(numPeopleRequired,thesePeople,thisEventName,i);
-        newEvent->addRosteredPeople(people);
+        newEvent->addRosteredPeople(people, numberOfStaffTotal);
 
         int thisNumStaff = newEvent->numberOfStaffNeeded;
 

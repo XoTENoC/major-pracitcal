@@ -48,9 +48,26 @@ void events::setEventName(string name){
     eventName = name;
 }
 
-void events::addRosteredPeople(vector<person*> people){
+void events::addRosteredPeople(vector<person*> people,int numberOfTotalStaff){
+    // if(numberOfTotalStaff>3){
+    // for(int i=0;i<numberOfTotalStaff;i++){
 
-    cout<<endl<<"working"<<endl;
+    //     int sound; 
+    //     sound = people[i]->getCompetency(0);
+    //     if(sound == 2){
+    //         rosterOfPeople[1]= *people[i]; 
+    //     }
+    // }
+    // for(int i=0;i<numberOfStaffNeeded;i++){
+    //     int lighting;
+    //     lighting = people[i]->getCompetency(1);
+    //     if(lighting==2&&(people[i]->personName!=rosterOfPeople[0].personName)){
+    //         rosterOfPeople[i]=*people[i];
+    //     }
+
+    // }
+    // }
+    // cout<<endl<<"working"<<endl;
 }
 
 events::~events(){

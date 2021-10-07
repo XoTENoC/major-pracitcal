@@ -30,7 +30,7 @@ class events{
         int getWeekNumber();
         void setWeekNumber(int number);
 
-        void addRosteredPeople(vector<person*> people);
+        void addRosteredPeople(vector<person*> people, int numberOfTotalStaff);
 
         string getEventName();
         void setEventName(string name);
