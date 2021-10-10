@@ -15,5 +15,9 @@ Make clean
 
 to clear all .o and .d files
 
-## Note
-Doesn't compile on MacOS or Linux systems
+## Tests
+To run the unit tests for the program, navigate to `/tests` and run the following command
+
+```Bash
+python3 testingHarness.py
+```
