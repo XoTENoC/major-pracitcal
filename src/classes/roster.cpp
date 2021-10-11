@@ -21,6 +21,7 @@ void roster::setNumberOfEvents(int eventsAmmount){
     numberOfEvents = eventsAmmount;
 }
 
+
 // roster::~roster(){
 //     // delete[] rosterArray;
 // }
