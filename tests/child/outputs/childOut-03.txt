@@ -1,0 +1,4 @@
+Please input a name: Please input an age: name = Joseph
+age = 43
+Please enter a new name: name = Jo
+Please enter a new age: age = 54

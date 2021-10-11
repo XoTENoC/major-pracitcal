@@ -15,11 +15,11 @@ echo "adult test 3"
 ./adultTest < adult/inputs/adultIn-03.txt | diff - adult/outputs/adultOut-03.txt
 
 # Produce an output file.
-#./adultTest < inputs/adultIn-01.txt > adultOut.txt
+# ./adultTest < inputs/adultIn-01.txt > adultOut.txt
 
 # Take user Input.
-#./adultTest  > adultOut.txt
-rm adultOut.txt
+# ./adultTest  > adultOut.txt
+# rm adultOut.txt
 
 # Cleanup
 rm adultTest
