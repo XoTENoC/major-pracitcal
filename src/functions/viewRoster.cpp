@@ -30,16 +30,36 @@ void displayRoster(vector<events*> allEvents){
         int numberOfPeople = allEvents[i]->getNumberOfStaffNeeded();
         // printing out all the people
 
-    cout << "+------------------------------------------------------+" << endl;
-    cout << "|                    Week "<<i+1<<"                            |" << endl;
- 
-            
 
+    //print event name, centering in box
+    int numberOfSpaces =( 54- allEvents[i]->eventName.length() )/2;
+
+    cout << "+------------------------------------------------------+" << endl;
+    cout << "+";
+
+    for(int s =0;s<numberOfSpaces;s++){
+        cout<<" ";
+    }
+
+    cout<< allEvents[i]->eventName;
+    if(allEvents[i]->eventName.length()%2==0){
+    for(int s =0;s<numberOfSpaces;s++){
+        cout<<" ";
+    }
+    }
+    else{
+        for(int s =0;s<numberOfSpaces+1;s++){
+        cout<<" ";
+    }
+    }
+
+    cout << "+";
+
+    cout<<endl; 
 
         for (int j = 0; j < numberOfPeople; j++){
             cout << "+------------------------------------------------------+" << endl;
             cout << "| "<<positionsArray3[j]<<"  | "<< allEvents[i]->rosterOfPeople[j]->getPersonName()<<"                           |" << endl;
-           // cout << allEvents[i]->rosterOfPeople[j]->getPersonName() << " ";
         }
 
         // printing the new line
