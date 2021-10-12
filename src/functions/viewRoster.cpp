@@ -56,15 +56,27 @@ void displayRoster(vector<events*> allEvents){
     cout << "+";
 
     cout<<endl; 
-
+        if(numberOfPeople<8){
         for (int j = 0; j < numberOfPeople; j++){
             cout << "+------------------------------------------------------+" << endl;
             cout << "| "<<positionsArray3[j]<<"  | "<< allEvents[i]->rosterOfPeople[j]->getPersonName()<<"                           |" << endl;
         }
+        }
+        else{
+            for (int j = 0; j < 7; j++){
+            cout << "+------------------------------------------------------+" << endl;
+            cout << "| "<<positionsArray3[j]<<"  | "<< allEvents[i]->rosterOfPeople[j]->getPersonName()<<"                           |" << endl;
+        }
+            for(int l = 7;l<numberOfPeople;l++){
+            cout << "+------------------------------------------------------+" << endl;
+            cout << "| "<<"Undefined Role  "<<"  | "<< allEvents[i]->rosterOfPeople[l]->getPersonName()<<"                           |" << endl;
+
+            }
+        }
 
         // printing the new line
         cout << "+------------------------------------------------------+" << endl;
-
+    
     
     }
 }

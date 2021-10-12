@@ -85,7 +85,7 @@ int main(){
 
             cout << "1 - Add a new person" << endl;
             cout << "2 - View all the people" << endl;
-            cout << "3 - Create a roster" << endl;
+            cout << "3 - Add An Event" << endl;
             cout << "4 - View roster" << endl;
             cout << "5 - Exit" << endl;
 
