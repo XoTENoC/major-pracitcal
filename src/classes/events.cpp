@@ -16,11 +16,13 @@ events::events(){
     weekNumber = 0;
 }
 
-events::events(int numberOfStaff, person* roster, string name, int number){
+events::events(int numberOfStaff, string name, int number){
     numberOfStaffNeeded = numberOfStaff;
-    rosterOfPeople = roster;
     eventName = name;
     weekNumber = number;
+
+    rosterOfPeople = new person*[numberOfStaffNeeded];
+
 }
 
 int events::getNumberOfStaffNeeded(){
@@ -29,7 +31,6 @@ int events::getNumberOfStaffNeeded(){
 
 void events::setNumberOfStaffNeeded(int numberOfStaff){
     numberOfStaffNeeded = numberOfStaff;
-    rosterOfPeople = new person[numberOfStaff];
 }
 
 int events::getWeekNumber(){
@@ -48,26 +49,12 @@ void events::setEventName(string name){
     eventName = name;
 }
 
-void events::addRosteredPeople(vector<person*> people,int numberOfTotalStaff){
-    // if(numberOfTotalStaff>3){
-    // for(int i=0;i<numberOfTotalStaff;i++){
+void events::addRosteredPeople(vector<person*> people){
+    
+    for(int i = 0; i < numberOfStaffNeeded; i++){
 
-    //     int sound; 
-    //     sound = people[i]->getCompetency(0);
-    //     if(sound == 2){
-    //         rosterOfPeople[1]= *people[i]; 
-    //     }
-    // }
-    // for(int i=0;i<numberOfStaffNeeded;i++){
-    //     int lighting;
-    //     lighting = people[i]->getCompetency(1);
-    //     if(lighting==2&&(people[i]->personName!=rosterOfPeople[0].personName)){
-    //         rosterOfPeople[i]=*people[i];
-    //     }
+    }
 
-    // }
-    // }
-    // cout<<endl<<"working"<<endl;
 }
 
 events::~events(){

@@ -17,13 +17,13 @@ class events{
         // Variable within the week.
         int numberOfStaffNeeded;
         // this is the roster of people for the event.
-        person* rosterOfPeople;
+        person ** rosterOfPeople;
         string eventName;
         int weekNumber;
 
         //functions of the class
         events();
-        events(int numberOfStaff, person* roster, string name, int number);
+        events(int numberOfStaff, string name, int number);
         
         int getNumberOfStaffNeeded();
         void setNumberOfStaffNeeded(int numberOfStaff);
@@ -31,7 +31,7 @@ class events{
         int getWeekNumber();
         void setWeekNumber(int number);
 
-        void addRosteredPeople(vector<person*> people, int numberOfTotalStaff);
+        void addRosteredPeople(vector<person*> people);
 
         string getEventName();
         void setEventName(string name);
