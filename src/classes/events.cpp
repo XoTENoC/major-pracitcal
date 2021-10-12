@@ -4,6 +4,7 @@
 #include <string>
 #include<iostream>
 #include<vector>
+#include <stdlib.h>
 #include "events.h"
 #include "person.h"
 
@@ -49,10 +50,23 @@ void events::setEventName(string name){
     eventName = name;
 }
 
+
+// Function for creating a roster for the week
 void events::addRosteredPeople(vector<person*> people){
     
+    int ammountOfPeople = (int)people.size();
+
+    // variable to rand select a peson
+    int personSelect;
+
+    // looping for each person in the array
     for(int i = 0; i < numberOfStaffNeeded; i++){
-        rosterOfPeople[i] = people[i];
+
+        // generate the number
+        personSelect = rand() % ammountOfPeople + 1;
+
+        rosterOfPeople[i] = people[personSelect-1];
+
     }
 
 }
