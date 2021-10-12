@@ -83,13 +83,94 @@ void events::addRosteredPeople(vector<person*> people){
     }
 
     // looping for each person in the array
-    for(int i = 1; i < numberOfStaffNeeded; i++){
 
-        // generate the number
-        personSelect = rand() % ammountOfPeople + 1;
+    if (numberOfStaffNeeded == 4)
+    {
+        for(int i = 1; i < numberOfStaffNeeded; i++){
 
-        rosterOfPeople[i] = people[personSelect-1];
+            bool foundPerson = false;
 
+            while (foundPerson = flase)
+            {
+                // generate the number
+                personSelect = rand() % ammountOfPeople + 1;
+
+                switch (i)
+                {
+
+                // sound person
+                case 1:
+                    /* code */
+                    break;
+
+                // lighting Person
+                case 2:
+                    /* code */
+                    break;
+
+                // Computer Graphics Person
+                case 3:
+                    /* code */
+                    break;
+                    
+                default:
+                    break;
+                }
+            }
+
+        }
+    }
+    else if (numberOfStaffNeeded == 7)
+    {
+        for(int i = 1; i < numberOfStaffNeeded; i++){
+
+            bool foundPerson = false;
+
+            while (foundPerson = flase)
+            {
+                // generate the number
+                personSelect = rand() % ammountOfPeople + 1;
+
+                switch (i)
+                {
+
+                // sound person
+                case 1:
+                    /* code */
+                    break;
+
+                // lighting Person
+                case 2:
+                    /* code */
+                    break;
+
+                // Computer Graphics Person
+                case 3:
+                    /* code */
+                    break;
+                
+                // Sound Training
+                case 4:
+                    /* code */
+                    break;
+
+                // Lighting Training
+                case 5:
+                    /* code */
+                    break;
+
+                // Computer Graphics Training
+                case 6:
+                    /* code */
+                    break;
+
+                default:
+                    break;
+                }
+            }
+            
+
+        }
     }
 
 }
