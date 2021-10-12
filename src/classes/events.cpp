@@ -61,9 +61,6 @@ void events::addRosteredPeople(vector<person*> people){
     // variable to rand select a peson
     int personSelect;
 
-    // array of people in roster
-    string peopleInRoster[7];
-
     // finding the leader
     bool active = true;
 
@@ -98,21 +95,28 @@ void events::addRosteredPeople(vector<person*> people){
         for(int i = 1; i < numberOfStaffNeeded; i++){
 
             bool foundPerson = false;
+            
+            vector<int> tempPeople;
+            tempPeople = peopleLeft;
 
-            while (foundPerson = flase)
+            while (foundPerson == false)
             {
 
-                vectot<int> tempPeople;
-                tempPeople = peopleLeft;
                 // generate the number & remove
-                personSelect = rand() % ammountOfPeople + 1;
+                personSelect = tempPeople[rand() % tempPeople.size()];
                 tempPeople.erase(remove(tempPeople.begin(), tempPeople.end(), personSelect), tempPeople.end());
+                
                 switch (i)
                 {
 
                 // sound person
                 case 1:
                     /* code */
+                    if(people[personSelect]->getCompetency(0) == 2){
+                        rosterOfPeople[i] = people[personSelect];
+                        peopleLeft.erase(remove(peopleLeft.begin(), peopleLeft.end(), personSelect), peopleLeft.end());
+                        foundPerson = true;
+                    }
                     break;
 
                 // lighting Person
@@ -140,7 +144,7 @@ void events::addRosteredPeople(vector<person*> people){
 
             bool foundPerson = false;
 
-            while (foundPerson = flase)
+            while (foundPerson == false)
             {
                 // generate the number
                 personSelect = rand() % ammountOfPeople + 1;
