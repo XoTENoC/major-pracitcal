@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "classes/roster.h"
 #include "classes/person.h"
 #include "classes/adult.h"
 #include "classes/child.h"
@@ -20,6 +19,8 @@ int main(){
 
     // list of people
     vector<person*> people;
+    vector<events*> allEvents;
+
 
     // init variables
     int amount = 0;
@@ -55,7 +56,7 @@ int main(){
                     break;
                 case 3:
                     //mainMenu = false;
-                    createRoster(people, 10);
+                    addEvent(people, allEvents);
                     break;
                 case 4:
                     mainMenu = false;

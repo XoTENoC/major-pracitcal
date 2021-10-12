@@ -6,13 +6,12 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "../classes/roster.h"
 #include "../classes/person.h"
 #include "../classes/adult.h"
 #include "../classes/child.h"
 #include "../classes/events.h"
 
-void createRoster(vector<person*> people, int numberOfStaffTotal);
+void addEvent(vector<person*> people, vector<events*> allEvents);
 
 
 #endif 
