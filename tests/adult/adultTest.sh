@@ -22,5 +22,5 @@ echo "adult test 3"
 # rm adultOut.txt
 
 # Cleanup
-rm adultTest
+# rm adultTest
 echo Finished Testing adult Class

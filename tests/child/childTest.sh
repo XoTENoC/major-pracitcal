@@ -22,5 +22,5 @@ echo "child test 3"
 # rm childOut.txt
 
 # Cleanup
-rm childTest
+# rm childTest
 echo Finished Testing child Class
