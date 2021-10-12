@@ -55,8 +55,7 @@ void events::setEventName(string name){
 
 // Function for creating a roster for the week
 void events::addRosteredPeople(vector<person*> people){
-    
-    int ammountOfPeople = (int)people.size();
+
 
     // variable to rand select a peson
     int personSelect;
@@ -64,29 +63,30 @@ void events::addRosteredPeople(vector<person*> people){
     // finding the leader
     bool active = true;
 
+    // array of people to pick from using Numberic
+    vector<int> peopleLeft((int)people.size());
+    iota(peopleLeft.begin(), peopleLeft.end(), 0);
+
     while(active == true){
 
         // picking a random person
-        personSelect = rand() % ammountOfPeople + 1;
+        personSelect = peopleLeft[rand() % peopleLeft.size()];
         bool canBeLeader = true;
 
         // checking that the person can do everything
         for(int i = 0; i < 3; i++){
-            if (people[personSelect-1]->getCompetency(i) != 2){
+            if (people[personSelect]->getCompetency(i) != 2){
                 canBeLeader = false;
             }
         }
 
         // setting the leader of ther event
         if(canBeLeader == true){
-            rosterOfPeople[0] = people[personSelect-1];
+            rosterOfPeople[0] = people[personSelect];
+            // cout << rosterOfPeople[0]->getPersonName() << endl; // Print the team lead ofter found
             active = false;
         }
     }
-
-    // array of people to pick from using Numberic
-    vector<int> peopleLeft((int)people.size());
-    iota(peopleLeft.begin(), peopleLeft.end(), 0);
 
     // looping for each person in the array
 
@@ -97,7 +97,10 @@ void events::addRosteredPeople(vector<person*> people){
             bool foundPerson = false;
             
             vector<int> tempPeople;
-            tempPeople = peopleLeft;
+            for(int k = 0; k < (int)peopleLeft.size(); k++){
+                tempPeople.push_back(peopleLeft[k]);
+            }
+
 
             while (foundPerson == false)
             {
@@ -106,29 +109,52 @@ void events::addRosteredPeople(vector<person*> people){
                 personSelect = tempPeople[rand() % tempPeople.size()];
                 tempPeople.erase(remove(tempPeople.begin(), tempPeople.end(), personSelect), tempPeople.end());
                 
+                // testing
+                // for ( int k = 0; k < (int)tempPeople.size(); k++){
+                //     cout << tempPeople[k] << endl;
+                // }
+                
                 switch (i)
                 {
 
                 // sound person
                 case 1:
                     /* code */
+                    // make sure that people with compentecy 2 get picked
                     if(people[personSelect]->getCompetency(0) == 2){
+                        // asigning the person to the role
                         rosterOfPeople[i] = people[personSelect];
+                        // removing them from the list of people
                         peopleLeft.erase(remove(peopleLeft.begin(), peopleLeft.end(), personSelect), peopleLeft.end());
+                        // going to the next person
                         foundPerson = true;
                     }
                     break;
 
                 // lighting Person
                 case 2:
-                    rosterOfPeople[i] = people[1];
-                    foundPerson = true;
+                    // make sure that people with compentecy 2 get picked
+                    if(people[personSelect]->getCompetency(1) == 2){
+                        // asigning the person to the role
+                        rosterOfPeople[i] = people[personSelect];
+                        // removing them from the list of people
+                        peopleLeft.erase(remove(peopleLeft.begin(), peopleLeft.end(), personSelect), peopleLeft.end());
+                        // going to the next person
+                        foundPerson = true;
+                    }
                     break;
 
                 // Computer Graphics Person
                 case 3:
-                    rosterOfPeople[i] = people[1];
-                    foundPerson = true;
+                    // make sure that people with compentecy 2 get picked
+                    if(people[personSelect]->getCompetency(2) == 2){
+                        // asigning the person to the role
+                        rosterOfPeople[i] = people[personSelect];
+                        // removing them from the list of people
+                        peopleLeft.erase(remove(peopleLeft.begin(), peopleLeft.end(), personSelect), peopleLeft.end());
+                        // going to the next person
+                        foundPerson = true;
+                    }
                     break;
 
                 default:
@@ -136,65 +162,66 @@ void events::addRosteredPeople(vector<person*> people){
                 }
             }
 
+            tempPeople.erase(tempPeople.begin(), tempPeople.end());
         }
     }
     else if (numberOfStaffNeeded == 7)
     {
-        for(int i = 1; i < numberOfStaffNeeded; i++){
+        // for(int i = 1; i < numberOfStaffNeeded; i++){
 
-            bool foundPerson = false;
+        //     bool foundPerson = false;
 
-            while (foundPerson == false)
-            {
-                // generate the number
-                personSelect = rand() % ammountOfPeople + 1;
+        //     while (foundPerson == false)
+        //     {
+        //         // generate the number
+        //         personSelect = rand() % ammountOfPeople + 1;
 
-                switch (i)
-                {
+        //         switch (i)
+        //         {
 
-                // sound person
-                case 1:
-                    rosterOfPeople[i] = people[1];
-                    foundPerson = true;
-                    break;
+        //         // sound person
+        //         case 1:
+        //             rosterOfPeople[i] = people[1];
+        //             foundPerson = true;
+        //             break;
 
-                // lighting Person
-                case 2:
-                    rosterOfPeople[i] = people[1];
-                    foundPerson = true;
-                    break;
+        //         // lighting Person
+        //         case 2:
+        //             rosterOfPeople[i] = people[1];
+        //             foundPerson = true;
+        //             break;
 
-                // Computer Graphics Person
-                case 3:
-                    rosterOfPeople[i] = people[1];
-                    foundPerson = true;
-                    break;
+        //         // Computer Graphics Person
+        //         case 3:
+        //             rosterOfPeople[i] = people[1];
+        //             foundPerson = true;
+        //             break;
                 
-                // Sound Training
-                case 4:
-                    rosterOfPeople[i] = people[1];
-                    foundPerson = true;
-                    break;
+        //         // Sound Training
+        //         case 4:
+        //             rosterOfPeople[i] = people[1];
+        //             foundPerson = true;
+        //             break;
 
-                // Lighting Training
-                case 5:
-                    rosterOfPeople[i] = people[1];
-                    foundPerson = true;
-                    break;
+        //         // Lighting Training
+        //         case 5:
+        //             rosterOfPeople[i] = people[1];
+        //             foundPerson = true;
+        //             break;
 
-                // Computer Graphics Training
-                case 6:
-                    rosterOfPeople[i] = people[1];
-                    foundPerson = true;
-                    break;
+        //         // Computer Graphics Training
+        //         case 6:
+        //             rosterOfPeople[i] = people[1];
+        //             foundPerson = true;
+        //             break;
 
-                default:
-                    break;
-                }
-            }
+        //         default:
+        //             break;
+        //         }
+        //     }
             
 
-        }
+        // }
     }
 
 }

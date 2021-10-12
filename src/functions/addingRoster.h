@@ -3,5 +3,4 @@
 
 void addEvent(vector<events*> &allEvents, vector<person*> people);
 
-
 #endif 

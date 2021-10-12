@@ -18,7 +18,7 @@ void addingTestPeople(vector<person*> &vectorPeople){
     vectorPeople.back()->setCompetency(2, 2);
 
     vectorPeople.push_back(new adult("Anikin", 15));
-    vectorPeople.back()->setCompetency(0, 2);
+    vectorPeople.back()->setCompetency(0, 1);
     vectorPeople.back()->setCompetency(1, 2);
     vectorPeople.back()->setCompetency(2, 2);
 
@@ -49,7 +49,7 @@ void addingTestPeople(vector<person*> &vectorPeople){
 
     vectorPeople.push_back(new adult("yoda", 130));
     vectorPeople.back()->setCompetency(0, 2);
-    vectorPeople.back()->setCompetency(1, 1);
+    vectorPeople.back()->setCompetency(1, 2);
     vectorPeople.back()->setCompetency(2, 0);
 }
 

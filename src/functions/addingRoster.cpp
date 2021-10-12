@@ -33,8 +33,6 @@ void rosteringPeople(vector<events*> &allEvents, vector<person*> allPeople){
 	// finding the lasts event
 	int lastEvent = (int)allEvents.size() - 1;
 
-	cout << allPeople[0]->getPersonName() << endl;
-
 	// rostering people
 	allEvents[lastEvent]->addRosteredPeople(allPeople);
 
