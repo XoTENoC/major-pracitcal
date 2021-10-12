@@ -10,28 +10,30 @@
 using namespace std;
 
 // adding a new event to the array
-void addingNewEvent(vector < events * > allEvents){
+void addingNewEvent(vector < events * > &allEvents){
 
-	int numberOfStaffNeeded;
+	int numberOfStaff;
 	string nameOfEvent;
 
 	// asking for the number of Staff
 	cout << "how many staff are needed for the event: ";
-	cin >> numberOfStaffNeeded;
+	cin >> numberOfStaff;
 
 	// asking for the name of the event
 	cout << "What is the name of event: ";
 	cin >> nameOfEvent;
 
 	// adds the events to the array
-	allEvents.push_back(new events(numberOfStaffNeeded, nameOfEvent, (int)allEvents.size()));
+	allEvents.push_back(new events(numberOfStaff, nameOfEvent, 0));
 
 }
 
-void rosteringPeople(vector<events*> allEvents, vector<person*> allPeople){
+void rosteringPeople(vector<events*> &allEvents, vector<person*> allPeople){
 
 	// finding the lasts event
 	int lastEvent = (int)allEvents.size() - 1;
+
+	cout << allPeople[0]->getPersonName() << endl;
 
 	// rostering people
 	allEvents[lastEvent]->addRosteredPeople(allPeople);
@@ -39,7 +41,7 @@ void rosteringPeople(vector<events*> allEvents, vector<person*> allPeople){
 }
 
 
-void addEvent(vector < person * > people, vector < events * > allEvents) {
+void addEvent(vector<events*> &allEvents, vector<person*> people) {
 
   
   bool isComplete = false;
@@ -61,10 +63,6 @@ void addEvent(vector < person * > people, vector < events * > allEvents) {
 		rosteringPeople(allEvents, people);
         break;
     case 2:
-      // cout<<"Working";
-      // newRoster->rosterArray = arrayOfEvents;
-
-      // cout<<newRoster->rosterArray[1].getEventName()<<"added";
       isComplete = true;
 
       break;
