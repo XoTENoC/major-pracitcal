@@ -2,9 +2,11 @@
 // class will function.
 
 #include <string>
-#include<iostream>
-#include<vector>
+#include <iostream>
+#include <vector>
+#include <numeric>
 #include <stdlib.h>
+#include <algorithm>
 #include "events.h"
 #include "person.h"
 
@@ -59,6 +61,9 @@ void events::addRosteredPeople(vector<person*> people){
     // variable to rand select a peson
     int personSelect;
 
+    // array of people in roster
+    string peopleInRoster[7];
+
     // finding the leader
     bool active = true;
 
@@ -82,6 +87,10 @@ void events::addRosteredPeople(vector<person*> people){
         }
     }
 
+    // array of people to pick from using Numberic
+    vector<int> peopleLeft((int)people.size());
+    iota(peopleLeft.begin(), peopleLeft.end(), 0);
+
     // looping for each person in the array
 
     if (numberOfStaffNeeded == 4)
@@ -92,9 +101,12 @@ void events::addRosteredPeople(vector<person*> people){
 
             while (foundPerson = flase)
             {
-                // generate the number
-                personSelect = rand() % ammountOfPeople + 1;
 
+                vectot<int> tempPeople;
+                tempPeople = peopleLeft;
+                // generate the number & remove
+                personSelect = rand() % ammountOfPeople + 1;
+                tempPeople.erase(remove(tempPeople.begin(), tempPeople.end(), personSelect), tempPeople.end());
                 switch (i)
                 {
 
@@ -105,14 +117,16 @@ void events::addRosteredPeople(vector<person*> people){
 
                 // lighting Person
                 case 2:
-                    /* code */
+                    rosterOfPeople[i] = people[1];
+                    foundPerson = true;
                     break;
 
                 // Computer Graphics Person
                 case 3:
-                    /* code */
+                    rosterOfPeople[i] = people[1];
+                    foundPerson = true;
                     break;
-                    
+
                 default:
                     break;
                 }
@@ -136,32 +150,38 @@ void events::addRosteredPeople(vector<person*> people){
 
                 // sound person
                 case 1:
-                    /* code */
+                    rosterOfPeople[i] = people[1];
+                    foundPerson = true;
                     break;
 
                 // lighting Person
                 case 2:
-                    /* code */
+                    rosterOfPeople[i] = people[1];
+                    foundPerson = true;
                     break;
 
                 // Computer Graphics Person
                 case 3:
-                    /* code */
+                    rosterOfPeople[i] = people[1];
+                    foundPerson = true;
                     break;
                 
                 // Sound Training
                 case 4:
-                    /* code */
+                    rosterOfPeople[i] = people[1];
+                    foundPerson = true;
                     break;
 
                 // Lighting Training
                 case 5:
-                    /* code */
+                    rosterOfPeople[i] = people[1];
+                    foundPerson = true;
                     break;
 
                 // Computer Graphics Training
                 case 6:
-                    /* code */
+                    rosterOfPeople[i] = people[1];
+                    foundPerson = true;
                     break;
 
                 default:
