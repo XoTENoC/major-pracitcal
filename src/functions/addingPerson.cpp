@@ -11,6 +11,9 @@
 #include <stdexcept> // std::runtime_error
 #include <sstream> // std::stringstream
 
+
+//Note: most of the code for csv read comes from https://www.gormanalysis.com/blog/reading-and-writing-csv-files-with-cpp/, only edited so that a person is added, and got rid of some redundant code.
+//should be further customised for our purposes!
 std::vector<std::pair<std::string, std::vector<int>>> read_csv(std::string filename){
     // Reads a CSV file into a vector of <string, vector<int>> pairs where
     // each pair represents <column name, column values>
@@ -48,6 +51,7 @@ std::vector<std::pair<std::string, std::vector<int>>> read_csv(std::string filen
     // Read data, line by line
     while(std::getline(myFile, line))
     {
+
         // Create a stringstream of the current line
         std::stringstream ss(line);
         
@@ -56,10 +60,10 @@ std::vector<std::pair<std::string, std::vector<int>>> read_csv(std::string filen
         
         // Extract each integer
         while(ss >> val){
-            
+            cout<<line;
             // Add the current integer to the 'colIdx' column's values vector
             result.at(colIdx).second.push_back(val);
-            
+
             // If the next token is a comma, ignore it and move on
             if(ss.peek() == ',') ss.ignore();
             
@@ -208,7 +212,6 @@ void addFromCsv(vector<person*> &vectorPeople){
     vectorPeople.back()->setCompetency(0, thisSound);
     vectorPeople.back()->setCompetency(1, thisLight);
     vectorPeople.back()->setCompetency(0, thisCG);
-
 
 }
 
