@@ -6,7 +6,73 @@
 #include "../classes/adult.h"
 #include "../classes/child.h"
 #include "../classes/events.h"
+#include <fstream>
+#include <utility> // std::pair
+#include <stdexcept> // std::runtime_error
+#include <sstream> // std::stringstream
 
+std::vector<std::pair<std::string, std::vector<int>>> read_csv(std::string filename){
+    // Reads a CSV file into a vector of <string, vector<int>> pairs where
+    // each pair represents <column name, column values>
+
+    // Create a vector of <string, int vector> pairs to store the result
+    std::vector<std::pair<std::string, std::vector<int>>> result;
+
+    // Create an input filestream
+    std::ifstream myFile(filename);
+
+    // Make sure the file is open
+    if(!myFile.is_open()) throw std::runtime_error("Could not open file");
+
+    // Helper vars
+    std::string line, colname;
+    int val;
+
+    // Read the column names
+    if(myFile.good())
+    {
+        // Extract the first line in the file
+        std::getline(myFile, line);
+
+        // Create a stringstream from line
+        std::stringstream ss(line);
+
+        // Extract each column name
+        while(std::getline(ss, colname, ',')){
+            
+            // Initialize and add <colname, int vector> pairs to result
+            result.push_back({colname, std::vector<int> {}});
+        }
+    }
+
+    // Read data, line by line
+    while(std::getline(myFile, line))
+    {
+        // Create a stringstream of the current line
+        std::stringstream ss(line);
+        
+        // Keep track of the current column index
+        int colIdx = 0;
+        
+        // Extract each integer
+        while(ss >> val){
+            
+            // Add the current integer to the 'colIdx' column's values vector
+            result.at(colIdx).second.push_back(val);
+            
+            // If the next token is a comma, ignore it and move on
+            if(ss.peek() == ',') ss.ignore();
+            
+            // Increment the column index
+            colIdx++;
+        }
+    }
+
+    // Close file
+    myFile.close();
+
+    return result;
+}
 
 // this function adds adults to the list of people, and also allows to add
 // multiple people at once to allow for fast batch additions of people.
@@ -128,6 +194,24 @@ void modifyPerson(vector<person*> &vectorPeople){
 
 }
 
+void addFromCsv(vector<person*> &vectorPeople){
+    
+    std::vector<std::pair<std::string, std::vector<int>>> people = read_csv("People.csv");
+    int numArguments = (int)people.size();
+
+    string thisName = people[0].first;
+    int thisAge = stoi(people[1].first);
+    int thisSound = stoi(people[2].first);
+    int thisLight = stoi(people[3].first);
+    int thisCG = stoi(people[4].first); 
+    vectorPeople.push_back(new adult(thisName, thisAge));
+    vectorPeople.back()->setCompetency(0, thisSound);
+    vectorPeople.back()->setCompetency(1, thisLight);
+    vectorPeople.back()->setCompetency(0, thisCG);
+
+
+}
+
 void addPerson(vector<person*> &vectorPeople, int * ammount){
     
     bool addingPeople = true;
@@ -146,6 +230,7 @@ void addPerson(vector<person*> &vectorPeople, int * ammount){
         cout << "1 - add People" << endl;
         cout << "2 - Modify Entries" << endl;
         cout << "3 - exit" << endl;
+        cout <<"4 - Add from csv"<<endl; 
 
         cin >> choice;
 
@@ -164,6 +249,10 @@ void addPerson(vector<person*> &vectorPeople, int * ammount){
         case 3:
             addingPeople = false;
             break;
+
+        case 4:
+            addFromCsv(vectorPeople); 
+            break; 
 
         default:
             break;
