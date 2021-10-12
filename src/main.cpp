@@ -57,6 +57,7 @@ int main(){
                 case 3:
                     //mainMenu = false;
                     addEvent(people, allEvents);
+                    cout << allEvents[0]->rosterOfPeople[0]->personName << endl;
                     break;
                 case 4:
                     mainMenu = false;

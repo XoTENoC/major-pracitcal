@@ -52,7 +52,7 @@ void events::setEventName(string name){
 void events::addRosteredPeople(vector<person*> people){
     
     for(int i = 0; i < numberOfStaffNeeded; i++){
-
+        rosterOfPeople[i] = people[i];
     }
 
 }

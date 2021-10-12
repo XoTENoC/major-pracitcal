@@ -41,8 +41,7 @@ void rosteringPeople(vector<events*> allEvents, vector<person*> allPeople){
 
 void addEvent(vector < person * > people, vector < events * > allEvents) {
 
-  int numberOfEvents = 0;
-  int * ptrNumEvents = & numberOfEvents;
+  
   bool isComplete = false;
   while (isComplete != true) {
 
