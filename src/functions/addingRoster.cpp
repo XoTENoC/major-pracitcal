@@ -17,16 +17,9 @@ events* addEvent(int *numberOfEventsPtr, vector<person *> people, int numberOfSt
         cout << endl;
         int numPeopleRequired = 0;
 
-        //bool okNumberEntered = false;
-        //while (okNumberEntered == false){
         cout << "Please enter the number of people required for the event: ";
         cin >> numPeopleRequired;
-        //if (numPeopleRequired>=numberOfStaffTotal){
-          //      okNumberEntered= true;
-        //}
-
-        //cout << "More people required than total staff, try again please.";
-        //}
+        cout << endl;
         person thesePeople[numPeopleRequired];
         events *newEvent = new events(numPeopleRequired, thesePeople, thisEventName, 1);
         newEvent->addRosteredPeople(people, numberOfStaffTotal);
@@ -79,9 +72,9 @@ void createRoster(vector<person *> people, int numberOfStaffTotal)
                         break;
                 case 2:
                         // cout<<"Working";
-                        newRoster->rosterArray = arrayOfEvents;
+                        // newRoster->rosterArray = arrayOfEvents;
 
-                         cout<<newRoster->rosterArray[1].getEventName()<<"added";
+                        // cout<<newRoster->rosterArray[1].getEventName()<<"added";
                         isComplete = true;
 
                         break;
