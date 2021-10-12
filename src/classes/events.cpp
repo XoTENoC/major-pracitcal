@@ -59,8 +59,31 @@ void events::addRosteredPeople(vector<person*> people){
     // variable to rand select a peson
     int personSelect;
 
+    // finding the leader
+    bool active = true;
+
+    while(active == true){
+
+        // picking a random person
+        personSelect = rand() % ammountOfPeople + 1;
+        bool canBeLeader = true;
+
+        // checking that the person can do everything
+        for(int i = 0; i < 3; i++){
+            if (people[personSelect-1]->getCompetency(i) != 2){
+                canBeLeader = false;
+            }
+        }
+
+        // setting the leader of ther event
+        if(canBeLeader == true){
+            rosterOfPeople[0] = people[personSelect-1];
+            active = false;
+        }
+    }
+
     // looping for each person in the array
-    for(int i = 0; i < numberOfStaffNeeded; i++){
+    for(int i = 1; i < numberOfStaffNeeded; i++){
 
         // generate the number
         personSelect = rand() % ammountOfPeople + 1;
