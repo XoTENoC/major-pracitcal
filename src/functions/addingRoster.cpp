@@ -16,7 +16,7 @@ void addingNewEvent(vector < events * > &allEvents){
 	string nameOfEvent;
 
 	// asking for the number of Staff
-	cout << "how many staff are needed for the event: ";
+	cout << "how many staff are needed for the event (either 4 or 7): ";
 	cin >> numberOfStaff;
 
 	// asking for the name of the event
