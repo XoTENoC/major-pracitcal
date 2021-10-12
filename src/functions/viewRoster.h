@@ -1,5 +1,5 @@
-#ifdef VIEWFOSTER_H
-#define VIEWFOSTER_H
+#ifndef VIEWROSTER_H
+#define VIEWROSTER_H
 
 void displayRoster(vector<events*> allEvents);
 

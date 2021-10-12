@@ -7,6 +7,7 @@
 #include "classes/events.h"
 #include "functions/addingPerson.h"
 #include "functions/addingRoster.h"
+#include "functions/viewRoster.h"
 using namespace std;
 
 // Adding Test Data
@@ -99,12 +100,10 @@ int main(){
                     listAllpeople(people);
                     break;
                 case 3:
-                    //mainMenu = false;
                     addEvent(allEvents, people);
-                    cout << allEvents[0]->rosterOfPeople[1]->getPersonName()<< endl;
                     break;
                 case 4:
-                    mainMenu = false;
+                    displayRoster(allEvents);
                     break;
                 case 5:
                     mainMenu = false;
