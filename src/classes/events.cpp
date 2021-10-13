@@ -226,7 +226,7 @@ void events::addRosteredPeople(vector<person*> people){
                     // make sure that people with compentecy 2 get picked
                     if (tempPeople.empty()==0)
                     {
-                        if(people[personSelect]->getCompetency(2) == 1){
+                        if(people[personSelect]->getCompetency(0) == 2){
                             // asigning the person to the role
                             rosterOfPeople[1] = people[personSelect];
                             // removing them from the list of people
@@ -248,7 +248,7 @@ void events::addRosteredPeople(vector<person*> people){
                     // make sure that people with compentecy 2 get picked
                     if (tempPeople.empty()==0)
                     {
-                        if(people[personSelect]->getCompetency(2) == 1){
+                        if(people[personSelect]->getCompetency(1) == 2){
                             // asigning the person to the role
                             rosterOfPeople[3] = people[personSelect];
                             // removing them from the list of people
@@ -292,7 +292,7 @@ void events::addRosteredPeople(vector<person*> people){
                     // make sure that people with compentecy 2 get picked
                     if (tempPeople.empty()==0)
                     {
-                        if(people[personSelect]->getCompetency(2) == 1){
+                        if(people[personSelect]->getCompetency(0) == 1){
                             // asigning the person to the role
                             rosterOfPeople[2] = people[personSelect];
                             // removing them from the list of people
@@ -314,7 +314,7 @@ void events::addRosteredPeople(vector<person*> people){
                     // make sure that people with compentecy 2 get picked
                     if (tempPeople.empty()==0)
                     {
-                        if(people[personSelect]->getCompetency(2) == 1){
+                        if(people[personSelect]->getCompetency(1) == 1){
                             // asigning the person to the role
                             rosterOfPeople[4] = people[personSelect];
                             // removing them from the list of people
