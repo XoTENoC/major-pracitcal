@@ -9,6 +9,8 @@
 #include <algorithm>
 #include "events.h"
 #include "person.h"
+#include "adult.h"
+#include "adult.h"
 
 
 using namespace std;
@@ -96,6 +98,7 @@ void events::addRosteredPeople(vector<person*> people){
 
             bool foundPerson = false;
             
+            // generating the list of people that are left
             vector<int> tempPeople;
             for(int k = 0; k < (int)peopleLeft.size(); k++){
                 tempPeople.push_back(peopleLeft[k]);
@@ -121,39 +124,60 @@ void events::addRosteredPeople(vector<person*> people){
                 case 1:
                     /* code */
                     // make sure that people with compentecy 2 get picked
-                    if(people[personSelect]->getCompetency(0) == 2){
-                        // asigning the person to the role
-                        rosterOfPeople[i] = people[personSelect];
-                        // removing them from the list of people
-                        peopleLeft.erase(remove(peopleLeft.begin(), peopleLeft.end(), personSelect), peopleLeft.end());
-                        // going to the next person
-                        foundPerson = true;
+                    if (!tempPeople.empty())
+                    {
+                        if(people[personSelect]->getCompetency(0) == 2){
+                            // asigning the person to the role
+                            rosterOfPeople[i] = people[personSelect];
+                            // removing them from the list of people
+                            peopleLeft.erase(remove(peopleLeft.begin(), peopleLeft.end(), personSelect), peopleLeft.end());
+                            // going to the next person
+                            foundPerson = true;
+                        }
+                    }
+                    else 
+                    {
+                        rosterOfPeople[i] = new adult("No Person Found", 0);
                     }
                     break;
 
                 // lighting Person
                 case 2:
                     // make sure that people with compentecy 2 get picked
-                    if(people[personSelect]->getCompetency(1) == 2){
-                        // asigning the person to the role
-                        rosterOfPeople[i] = people[personSelect];
-                        // removing them from the list of people
-                        peopleLeft.erase(remove(peopleLeft.begin(), peopleLeft.end(), personSelect), peopleLeft.end());
-                        // going to the next person
-                        foundPerson = true;
+                    if (!tempPeople.empty())
+                    {
+                        if(people[personSelect]->getCompetency(1) == 2){
+                            // asigning the person to the role
+                            rosterOfPeople[i] = people[personSelect];
+                            // removing them from the list of people
+                            peopleLeft.erase(remove(peopleLeft.begin(), peopleLeft.end(), personSelect), peopleLeft.end());
+                            // going to the next person
+                            foundPerson = true;
+                        }
+                    }
+                    else 
+                    {
+                        rosterOfPeople[i] = new adult("No Person Found", 0);
                     }
                     break;
 
                 // Computer Graphics Person
                 case 3:
                     // make sure that people with compentecy 2 get picked
-                    if(people[personSelect]->getCompetency(2) == 2){
-                        // asigning the person to the role
-                        rosterOfPeople[i] = people[personSelect];
-                        // removing them from the list of people
-                        peopleLeft.erase(remove(peopleLeft.begin(), peopleLeft.end(), personSelect), peopleLeft.end());
-                        // going to the next person
-                        foundPerson = true;
+                    if (!tempPeople.empty())
+                    {
+                        if(people[personSelect]->getCompetency(2) == 2){
+                            // asigning the person to the role
+                            rosterOfPeople[i] = people[personSelect];
+                            // removing them from the list of people
+                            peopleLeft.erase(remove(peopleLeft.begin(), peopleLeft.end(), personSelect), peopleLeft.end());
+                            // going to the next person
+                            foundPerson = true;
+                        }
+                    }
+                    else 
+                    {
+                        rosterOfPeople[i] = new adult("No Person Found", 0);
                     }
                     break;
 
@@ -162,66 +186,77 @@ void events::addRosteredPeople(vector<person*> people){
                 }
             }
 
+            // clearing the array so that it can start again
             tempPeople.erase(tempPeople.begin(), tempPeople.end());
         }
     }
     else if (numberOfStaffNeeded == 7)
     {
-        // for(int i = 1; i < numberOfStaffNeeded; i++){
+        for(int i = 1; i < numberOfStaffNeeded; i++){
 
-        //     bool foundPerson = false;
+            bool foundPerson = false;
 
-        //     while (foundPerson == false)
-        //     {
-        //         // generate the number
-        //         personSelect = rand() % ammountOfPeople + 1;
+            // list of all the people that are left
+            vector<int> tempPeople;
+            for(int k = 0; k < (int)peopleLeft.size(); k++){
+                tempPeople.push_back(peopleLeft[k]);
+            }
 
-        //         switch (i)
-        //         {
+            while (foundPerson == false)
+            {
+                // generate the number
+                // generate the number & remove
+                personSelect = tempPeople[rand() % tempPeople.size()];
+                tempPeople.erase(remove(tempPeople.begin(), tempPeople.end(), personSelect), tempPeople.end());
 
-        //         // sound person
-        //         case 1:
-        //             rosterOfPeople[i] = people[1];
-        //             foundPerson = true;
-        //             break;
+                switch (i)
+                {
 
-        //         // lighting Person
-        //         case 2:
-        //             rosterOfPeople[i] = people[1];
-        //             foundPerson = true;
-        //             break;
+                // sound person
+                case 1:
+                    rosterOfPeople[i] = people[1];
+                    foundPerson = true;
+                    break;
 
-        //         // Computer Graphics Person
-        //         case 3:
-        //             rosterOfPeople[i] = people[1];
-        //             foundPerson = true;
-        //             break;
+                // lighting Person
+                case 2:
+                    rosterOfPeople[i] = people[1];
+                    foundPerson = true;
+                    break;
+
+                // Computer Graphics Person
+                case 3:
+                    rosterOfPeople[i] = people[1];
+                    foundPerson = true;
+                    break;
                 
-        //         // Sound Training
-        //         case 4:
-        //             rosterOfPeople[i] = people[1];
-        //             foundPerson = true;
-        //             break;
+                // Sound Training
+                case 4:
+                    rosterOfPeople[i] = people[1];
+                    foundPerson = true;
+                    break;
 
-        //         // Lighting Training
-        //         case 5:
-        //             rosterOfPeople[i] = people[1];
-        //             foundPerson = true;
-        //             break;
+                // Lighting Training
+                case 5:
+                    rosterOfPeople[i] = people[1];
+                    foundPerson = true;
+                    break;
 
-        //         // Computer Graphics Training
-        //         case 6:
-        //             rosterOfPeople[i] = people[1];
-        //             foundPerson = true;
-        //             break;
+                // Computer Graphics Training
+                case 6:
+                    rosterOfPeople[i] = people[1];
+                    foundPerson = true;
+                    break;
 
-        //         default:
-        //             break;
-        //         }
-        //     }
+                default:
+                    break;
+                }
+            }
             
+            // clearing the array so that it can start again
+            tempPeople.erase(tempPeople.begin(), tempPeople.end());
 
-        // }
+        }
     }
 
 }
