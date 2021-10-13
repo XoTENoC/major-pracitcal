@@ -65,10 +65,6 @@ void events::addRosteredPeople(vector<person*> people){
     // finding the leader
     bool active = true;
 
-    // making a place holder person to fillin any gaps
-    person * notValid;
-    notValid = new adult("No Valid Peson", 0);
-
     // array of people to pick from using Numberic
     vector<int> peopleLeft((int)people.size());
     iota(peopleLeft.begin(), peopleLeft.end(), 0);
@@ -142,6 +138,7 @@ void events::addRosteredPeople(vector<person*> people){
                     else 
                     {
                         rosterOfPeople[i] = new adult("No Person Found", 0);
+                        foundPerson = true;
                     }
                     break;
 
@@ -162,6 +159,7 @@ void events::addRosteredPeople(vector<person*> people){
                     else 
                     {
                         rosterOfPeople[i] = new adult("No Person Found", 0);
+                        foundPerson = true;
                     }
                     break;
 
@@ -170,7 +168,7 @@ void events::addRosteredPeople(vector<person*> people){
                     // make sure that people with compentecy 2 get picked
                     if (tempPeople.empty()==0)
                     {
-                        if(people[personSelect]->getCompetency(2) == 1){
+                        if(people[personSelect]->getCompetency(2) == 2){
                             // asigning the person to the role
                             rosterOfPeople[i] = people[personSelect];
                             // removing them from the list of people
@@ -182,10 +180,8 @@ void events::addRosteredPeople(vector<person*> people){
                     else 
                     {
                         // madd errors here
-                        // rosterOfPeople[i] = nullptr;
-                        // cout << "make all" << endl;
-                        // rosterOfPeople[i] = people[1];
-                        // cout << "make all" << endl;
+                        rosterOfPeople[i] = new adult("No Person Found", 0);
+                        foundPerson = true;
                     }
                     break;
 
@@ -194,83 +190,181 @@ void events::addRosteredPeople(vector<person*> people){
                 }
             }
 
-            // clearing the array so that it can start again
-            tempPeople.erase(tempPeople.begin(), tempPeople.end());
+            // clearing the array so that it can start again if there are still
+            // values in the array
+            if (tempPeople.empty()==0){
+                tempPeople.erase(tempPeople.begin(), tempPeople.end());
+            }
         }
+
     }
+    // rostering for a team of 7 people
     else if (numberOfStaffNeeded == 7)
     {
-        // for(int i = 1; i < numberOfStaffNeeded; i++){
+        for(int i = 1; i < numberOfStaffNeeded; i++){
 
-        //     bool foundPerson = false;
+            bool foundPerson = false;
 
-        //     // list of all the people that are left
-        //     vector<int> tempPeople;
-        //     for(int k = 0; k < (int)peopleLeft.size(); k++){
-        //         tempPeople.push_back(peopleLeft[k]);
-        //     }
+            // list of all the people that are left
+            vector<int> tempPeople;
+            for(int k = 0; k < (int)peopleLeft.size(); k++){
+                tempPeople.push_back(peopleLeft[k]);
+            }
 
-        //     while (foundPerson == false)
-        //     {
-        //         // generate the number
-        //         // generate the number & remove
-        //         personSelect = tempPeople[rand() % tempPeople.size()];
-        //         tempPeople.erase(remove(tempPeople.begin(), tempPeople.end(), personSelect), tempPeople.end());
+            while (foundPerson == false)
+            {
+                // generate the number
+                // generate the number & remove
+                personSelect = tempPeople[rand() % tempPeople.size()];
+                tempPeople.erase(remove(tempPeople.begin(), tempPeople.end(), personSelect), tempPeople.end());
 
-        //         switch (i)
-        //         {
+                switch (i)
+                {
 
-        //         // sound person
-        //         case 1:
-        //             rosterOfPeople[i] = people[1];
-        //             cout << personSelect << endl;
-        //             foundPerson = true;
-        //             break;
+                // sound person
+                case 1:
+                    // make sure that people with compentecy 2 get picked
+                    if (tempPeople.empty()==0)
+                    {
+                        if(people[personSelect]->getCompetency(2) == 1){
+                            // asigning the person to the role
+                            rosterOfPeople[1] = people[personSelect];
+                            // removing them from the list of people
+                            peopleLeft.erase(remove(peopleLeft.begin(), peopleLeft.end(), personSelect), peopleLeft.end());
+                            // going to the next person
+                            foundPerson = true;
+                        }
+                    }
+                    else 
+                    {
+                        // madd errors here
+                        rosterOfPeople[1] = new adult("No Person Found", 0);
+                        foundPerson = true;
+                    }
+                    break;
 
-        //         // lighting Person
-        //         case 2:
-        //             rosterOfPeople[i] = people[1];
-        //             cout << personSelect << endl;
-        //             foundPerson = true;
-        //             break;
+                // lighting Person
+                case 2:
+                    // make sure that people with compentecy 2 get picked
+                    if (tempPeople.empty()==0)
+                    {
+                        if(people[personSelect]->getCompetency(2) == 1){
+                            // asigning the person to the role
+                            rosterOfPeople[3] = people[personSelect];
+                            // removing them from the list of people
+                            peopleLeft.erase(remove(peopleLeft.begin(), peopleLeft.end(), personSelect), peopleLeft.end());
+                            // going to the next person
+                            foundPerson = true;
+                        }
+                    }
+                    else 
+                    {
+                        // madd errors here
+                        rosterOfPeople[3] = new adult("No Person Found", 0);
+                        foundPerson = true;
+                    }
+                    break;
 
-        //         // Computer Graphics Person
-        //         case 3:
-        //             rosterOfPeople[i] = people[1];
-        //             cout << personSelect << endl;
-        //             foundPerson = true;
-        //             break;
+                // Computer Graphics Person
+                case 3:
+                    // make sure that people with compentecy 2 get picked
+                    if (tempPeople.empty()==0)
+                    {
+                        if(people[personSelect]->getCompetency(2) == 2){
+                            // asigning the person to the role
+                            rosterOfPeople[5] = people[personSelect];
+                            // removing them from the list of people
+                            peopleLeft.erase(remove(peopleLeft.begin(), peopleLeft.end(), personSelect), peopleLeft.end());
+                            // going to the next person
+                            foundPerson = true;
+                        }
+                    }
+                    else 
+                    {
+                        // madd errors here
+                        rosterOfPeople[5] = new adult("No Person Found", 0);
+                        foundPerson = true;
+                    }
+                    break;
                 
-        //         // Sound Training
-        //         case 4:
-        //             rosterOfPeople[i] = people[1];
-        //             cout << personSelect << endl;
-        //             foundPerson = true;
-        //             break;
+                // Sound Training
+                case 4:
+                    // make sure that people with compentecy 2 get picked
+                    if (tempPeople.empty()==0)
+                    {
+                        if(people[personSelect]->getCompetency(2) == 1){
+                            // asigning the person to the role
+                            rosterOfPeople[2] = people[personSelect];
+                            // removing them from the list of people
+                            peopleLeft.erase(remove(peopleLeft.begin(), peopleLeft.end(), personSelect), peopleLeft.end());
+                            // going to the next person
+                            foundPerson = true;
+                        }
+                    }
+                    else 
+                    {
+                        // madd errors here
+                        rosterOfPeople[2] = new adult("No Person Found", 0);
+                        foundPerson = true;
+                    }
+                    break;
 
-        //         // Lighting Training
-        //         case 5:
-        //             rosterOfPeople[i] = people[1];
-        //             cout << personSelect << endl;
-        //             foundPerson = true;
-        //             break;
+                // Lighting Training
+                case 5:
+                    // make sure that people with compentecy 2 get picked
+                    if (tempPeople.empty()==0)
+                    {
+                        if(people[personSelect]->getCompetency(2) == 1){
+                            // asigning the person to the role
+                            rosterOfPeople[4] = people[personSelect];
+                            // removing them from the list of people
+                            peopleLeft.erase(remove(peopleLeft.begin(), peopleLeft.end(), personSelect), peopleLeft.end());
+                            // going to the next person
+                            foundPerson = true;
+                        }
+                    }
+                    else 
+                    {
+                        // madd errors here
+                        rosterOfPeople[4] = new adult("No Person Found", 0);
+                        foundPerson = true;
+                    }
+                    break;
 
-        //         // Computer Graphics Training
-        //         case 6:
-        //             rosterOfPeople[i] = people[1];
-        //             cout << personSelect << endl;
-        //             foundPerson = true;
-        //             break;
+                // Computer Graphics Training
+                case 6:
+                    // make sure that people with compentecy 2 get picked
+                    if (tempPeople.empty()==0)
+                    {
+                        if(people[personSelect]->getCompetency(2) == 1){
+                            // asigning the person to the role
+                            rosterOfPeople[6] = people[personSelect];
+                            // removing them from the list of people
+                            peopleLeft.erase(remove(peopleLeft.begin(), peopleLeft.end(), personSelect), peopleLeft.end());
+                            // going to the next person
+                            foundPerson = true;
+                        }
+                    }
+                    else 
+                    {
+                        // madd errors here
+                        rosterOfPeople[6] = new adult("No Person Found", 0);
+                        foundPerson = true;
+                    }
+                    break;
 
-        //         default:
-        //             break;
-        //         }
-        //     }
+                default:
+                    break;
+                }
+            }
             
-        //     // clearing the array so that it can start again
-        //     tempPeople.erase(tempPeople.begin(), tempPeople.end());
+            // clearing the array so that it can start again if there are still
+            // values in the array
+            if (tempPeople.empty()==0){
+                tempPeople.erase(tempPeople.begin(), tempPeople.end());
+            }
 
-        // }
+        }
     }
 
 }
