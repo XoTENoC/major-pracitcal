@@ -168,7 +168,7 @@ void events::addRosteredPeople(vector<person*> people){
                 // Computer Graphics Person
                 case 3:
                     // make sure that people with compentecy 2 get picked
-                    if (!tempPeople.empty())
+                    if (tempPeople.empty()==0)
                     {
                         if(people[personSelect]->getCompetency(2) == 1){
                             // asigning the person to the role
@@ -181,9 +181,11 @@ void events::addRosteredPeople(vector<person*> people){
                     }
                     else 
                     {
-                        // error here assigning people
-                        cout << "made it" << endl;
-                        rosterOfPeople[i] = notValid;
+                        // madd errors here
+                        // rosterOfPeople[i] = nullptr;
+                        // cout << "make all" << endl;
+                        // rosterOfPeople[i] = people[1];
+                        // cout << "make all" << endl;
                     }
                     break;
 
@@ -198,77 +200,77 @@ void events::addRosteredPeople(vector<person*> people){
     }
     else if (numberOfStaffNeeded == 7)
     {
-        for(int i = 1; i < numberOfStaffNeeded; i++){
+        // for(int i = 1; i < numberOfStaffNeeded; i++){
 
-            bool foundPerson = false;
+        //     bool foundPerson = false;
 
-            // list of all the people that are left
-            vector<int> tempPeople;
-            for(int k = 0; k < (int)peopleLeft.size(); k++){
-                tempPeople.push_back(peopleLeft[k]);
-            }
+        //     // list of all the people that are left
+        //     vector<int> tempPeople;
+        //     for(int k = 0; k < (int)peopleLeft.size(); k++){
+        //         tempPeople.push_back(peopleLeft[k]);
+        //     }
 
-            while (foundPerson == false)
-            {
-                // generate the number
-                // generate the number & remove
-                personSelect = tempPeople[rand() % tempPeople.size()];
-                tempPeople.erase(remove(tempPeople.begin(), tempPeople.end(), personSelect), tempPeople.end());
+        //     while (foundPerson == false)
+        //     {
+        //         // generate the number
+        //         // generate the number & remove
+        //         personSelect = tempPeople[rand() % tempPeople.size()];
+        //         tempPeople.erase(remove(tempPeople.begin(), tempPeople.end(), personSelect), tempPeople.end());
 
-                switch (i)
-                {
+        //         switch (i)
+        //         {
 
-                // sound person
-                case 1:
-                    rosterOfPeople[i] = people[1];
-                    cout << personSelect << endl;
-                    foundPerson = true;
-                    break;
+        //         // sound person
+        //         case 1:
+        //             rosterOfPeople[i] = people[1];
+        //             cout << personSelect << endl;
+        //             foundPerson = true;
+        //             break;
 
-                // lighting Person
-                case 2:
-                    rosterOfPeople[i] = people[1];
-                    cout << personSelect << endl;
-                    foundPerson = true;
-                    break;
+        //         // lighting Person
+        //         case 2:
+        //             rosterOfPeople[i] = people[1];
+        //             cout << personSelect << endl;
+        //             foundPerson = true;
+        //             break;
 
-                // Computer Graphics Person
-                case 3:
-                    rosterOfPeople[i] = people[1];
-                    cout << personSelect << endl;
-                    foundPerson = true;
-                    break;
+        //         // Computer Graphics Person
+        //         case 3:
+        //             rosterOfPeople[i] = people[1];
+        //             cout << personSelect << endl;
+        //             foundPerson = true;
+        //             break;
                 
-                // Sound Training
-                case 4:
-                    rosterOfPeople[i] = people[1];
-                    cout << personSelect << endl;
-                    foundPerson = true;
-                    break;
+        //         // Sound Training
+        //         case 4:
+        //             rosterOfPeople[i] = people[1];
+        //             cout << personSelect << endl;
+        //             foundPerson = true;
+        //             break;
 
-                // Lighting Training
-                case 5:
-                    rosterOfPeople[i] = people[1];
-                    cout << personSelect << endl;
-                    foundPerson = true;
-                    break;
+        //         // Lighting Training
+        //         case 5:
+        //             rosterOfPeople[i] = people[1];
+        //             cout << personSelect << endl;
+        //             foundPerson = true;
+        //             break;
 
-                // Computer Graphics Training
-                case 6:
-                    rosterOfPeople[i] = people[1];
-                    cout << personSelect << endl;
-                    foundPerson = true;
-                    break;
+        //         // Computer Graphics Training
+        //         case 6:
+        //             rosterOfPeople[i] = people[1];
+        //             cout << personSelect << endl;
+        //             foundPerson = true;
+        //             break;
 
-                default:
-                    break;
-                }
-            }
+        //         default:
+        //             break;
+        //         }
+        //     }
             
-            // clearing the array so that it can start again
-            tempPeople.erase(tempPeople.begin(), tempPeople.end());
+        //     // clearing the array so that it can start again
+        //     tempPeople.erase(tempPeople.begin(), tempPeople.end());
 
-        }
+        // }
     }
 
 }
