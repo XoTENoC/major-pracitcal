@@ -12,72 +12,6 @@
 #include <sstream> // std::stringstream
 
 
-//Note: most of the code for csv read comes from https://www.gormanalysis.com/blog/reading-and-writing-csv-files-with-cpp/, only edited so that a person is added, and got rid of some redundant code.
-//should be further customised for our purposes!
-std::vector<std::pair<std::string, std::vector<int>>> read_csv(std::string filename){
-    // Reads a CSV file into a vector of <string, vector<int>> pairs where
-    // each pair represents <column name, column values>
-
-    // Create a vector of <string, int vector> pairs to store the result
-    std::vector<std::pair<std::string, std::vector<int>>> result;
-
-    // Create an input filestream
-    std::ifstream myFile(filename);
-
-    // Make sure the file is open
-    if(!myFile.is_open()) throw std::runtime_error("Could not open file");
-
-    // Helper vars
-    std::string line, colname;
-    int val;
-
-    // Read the column names
-    if(myFile.good())
-    {
-        // Extract the first line in the file
-        std::getline(myFile, line);
-
-        // Create a stringstream from line
-        std::stringstream ss(line);
-
-        // Extract each column name
-        while(std::getline(ss, colname, ',')){
-            
-            // Initialize and add <colname, int vector> pairs to result
-            result.push_back({colname, std::vector<int> {}});
-        }
-    }
-
-    // Read data, line by line
-    while(std::getline(myFile, line))
-    {
-
-        // Create a stringstream of the current line
-        std::stringstream ss(line);
-        
-        // Keep track of the current column index
-        int colIdx = 0;
-        
-        // Extract each integer
-        while(ss >> val){
-            cout<<line;
-            // Add the current integer to the 'colIdx' column's values vector
-            result.at(colIdx).second.push_back(val);
-
-            // If the next token is a comma, ignore it and move on
-            if(ss.peek() == ',') ss.ignore();
-            
-            // Increment the column index
-            colIdx++;
-        }
-    }
-
-    // Close file
-    myFile.close();
-
-    return result;
-}
-
 // this function adds adults to the list of people, and also allows to add
 // multiple people at once to allow for fast batch additions of people.
 void addingPerson(vector<person*> &vectorPeople){
@@ -198,7 +132,7 @@ void modifyPerson(vector<person*> &vectorPeople){
 
 }
 
-void addFromCsv(vector<person*> &vectorPeople){
+/*void addFromCsv(vector<person*> &vectorPeople){
     
     std::vector<std::pair<std::string, std::vector<int>>> people = read_csv("People.csv");
     int numArguments = (int)people.size();
@@ -213,7 +147,7 @@ void addFromCsv(vector<person*> &vectorPeople){
     vectorPeople.back()->setCompetency(1, thisLight);
     vectorPeople.back()->setCompetency(0, thisCG);
 
-}
+}*/
 
 void addPerson(vector<person*> &vectorPeople, int * ammount){
     
@@ -233,8 +167,6 @@ void addPerson(vector<person*> &vectorPeople, int * ammount){
         cout << "1 - add People" << endl;
         cout << "2 - Modify Entries" << endl;
         cout << "3 - exit" << endl;
-        cout <<"4 - Add from csv"<<endl; 
-
         cin >> choice;
 
         // diciding where to go
@@ -254,7 +186,6 @@ void addPerson(vector<person*> &vectorPeople, int * ammount){
             break;
 
         case 4:
-            addFromCsv(vectorPeople); 
             break; 
 
         default:
@@ -265,3 +196,79 @@ void addPerson(vector<person*> &vectorPeople, int * ammount){
 
 
 }
+
+
+
+
+
+
+/*
+Sample Code below, to fix and add by due date
+
+
+//Note: most of the code for csv read comes from https://www.gormanalysis.com/blog/reading-and-writing-csv-files-with-cpp/, only edited so that a person is added, and got rid of some redundant code.
+//should be further customised for our purposes!
+std::vector<std::pair<std::string, std::vector<int>>> read_csv(std::string filename){
+    // Reads a CSV file into a vector of <string, vector<int>> pairs where
+    // each pair represents <column name, column values>
+
+    // Create a vector of <string, int vector> pairs to store the result
+    std::vector<std::pair<std::string, std::vector<int>>> result;
+
+    // Create an input filestream
+    std::ifstream myFile(filename);
+
+    // Make sure the file is open
+    if(!myFile.is_open()) throw std::runtime_error("Could not open file");
+
+    // Helper vars
+    std::string line, colname;
+    int val;
+
+    // Read the column names
+    if(myFile.good())
+    {
+        // Extract the first line in the file
+        std::getline(myFile, line);
+
+        // Create a stringstream from line
+        std::stringstream ss(line);
+
+        // Extract each column name
+        while(std::getline(ss, colname, ',')){
+            
+            // Initialize and add <colname, int vector> pairs to result
+            result.push_back({colname, std::vector<int> {}});
+        }
+    }
+
+    // Read data, line by line
+    while(std::getline(myFile, line))
+    {
+
+        // Create a stringstream of the current line
+        std::stringstream ss(line);
+        
+        // Keep track of the current column index
+        int colIdx = 0;
+        
+        // Extract each integer
+        while(ss >> val){
+            cout<<line;
+            // Add the current integer to the 'colIdx' column's values vector
+            result.at(colIdx).second.push_back(val);
+
+            // If the next token is a comma, ignore it and move on
+            if(ss.peek() == ',') ss.ignore();
+            
+            // Increment the column index
+            colIdx++;
+        }
+    }
+
+    // Close file
+    myFile.close();
+
+    return result;
+}
+*/

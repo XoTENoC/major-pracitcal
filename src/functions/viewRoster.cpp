@@ -31,9 +31,6 @@ void outputCsv(vector<events *> allEvents)
     }
 }
 
-
-
-
 void displayRoster(vector<events *> allEvents)
 {
 
@@ -46,7 +43,7 @@ void displayRoster(vector<events *> allEvents)
     int numberOfEvents = (int)allEvents.size();
 
     //defines the meaning of array positions for different sized teams
-    string positionsArray7[7] = {"Team Lead       ", "Sound           ","Trainee Sound   " ,"Lighting        ","Trainee Lighting",  "CG              ", "Trainee CG      "};
+    string positionsArray7[7] = {"Team Lead       ", "Sound           ", "Trainee Sound   ", "Lighting        ", "Trainee Lighting", "CG              ", "Trainee CG      "};
     string positionsArray4[4] = {"Team Lead       ", "Sound           ", "Lighting        ", "CG              "};
 
     // for all the events
@@ -105,7 +102,6 @@ void displayRoster(vector<events *> allEvents)
                 cout << "|" << endl;
             }
             cout << "+------------------------------------------------------+" << endl;
-
         }
 
         //if there are 7 people in the team
@@ -122,11 +118,10 @@ void displayRoster(vector<events *> allEvents)
                     cout << " ";
                 }
                 cout << "|" << endl;
-
             }
             cout << "+------------------------------------------------------+" << endl;
         }
-        
+
         //if there are an unexpected number of people in the team
         if (numberOfPeople != 4 && numberOfPeople != 7)
         {
@@ -145,10 +140,8 @@ void displayRoster(vector<events *> allEvents)
                         cout << " ";
                     }
                     cout << "|" << endl;
-
                 }
                 cout << "+------------------------------------------------------+" << endl;
-
             }
             //if more than 7, output the first 7 as normal, then print out "undefined role" for remaining assigned positions
             else
@@ -165,7 +158,6 @@ void displayRoster(vector<events *> allEvents)
                         cout << " ";
                     }
                     cout << "|" << endl;
-
                 }
                 cout << "+------------------------------------------------------+" << endl;
 
@@ -182,21 +174,17 @@ void displayRoster(vector<events *> allEvents)
                         cout << " ";
                     }
                     cout << "|" << endl;
-
                 }
                 cout << "+------------------------------------------------------+" << endl;
-
             }
 
             // printing the new line
             cout << "+------------------------------------------------------+" << endl;
         }
 
-        //output to csv
-        outputCsv(allEvents);
     }
 
-
-//output to csv
-outputCsv(allEvents);
+    //output to csv
+    outputCsv(allEvents);
+    cout<< "*Csv File Created*"<<endl;
 }
