@@ -2,7 +2,6 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include<fstream>
 #include "../classes/person.h"
 #include "../classes/adult.h"
 #include "../classes/child.h"
@@ -10,20 +9,6 @@
 
 using namespace std;
 
-
-void outputCsv(vector<events*> allEvents){
-    string positionsArray3[7] = {"Team Lead","Sound","Lighting","CG", "Trainee Sound","Trainee Lighting",  "Trainee CG"};
-
-    std::ofstream rosterCSV("roster.csv");
-    for(int j=0;j<(int)allEvents.size();j++){
-        int numberOfPeople = allEvents[j]->getNumberOfStaffNeeded();
-
-    for(int i=0;i<numberOfPeople;i++){
-        rosterCSV<<allEvents[j]->eventName<<","<<positionsArray3[i]<<","<<allEvents[j]->rosterOfPeople[i]->getPersonName()<<"\n";
-    }
-    }
-
-}
 void displayRoster(vector<events*> allEvents){
     
 
@@ -94,6 +79,4 @@ void displayRoster(vector<events*> allEvents){
     
     
     }
-    outputCsv(allEvents);
-
 }

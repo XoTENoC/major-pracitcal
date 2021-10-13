@@ -5,4 +5,3 @@
 !*makefile*
 .o
 .d
-build/main.o
