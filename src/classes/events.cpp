@@ -65,6 +65,10 @@ void events::addRosteredPeople(vector<person*> people){
     // finding the leader
     bool active = true;
 
+    // making a place holder person to fillin any gaps
+    person * notValid;
+    notValid = new adult("No Valid Peson", 0);
+
     // array of people to pick from using Numberic
     vector<int> peopleLeft((int)people.size());
     iota(peopleLeft.begin(), peopleLeft.end(), 0);
@@ -166,7 +170,7 @@ void events::addRosteredPeople(vector<person*> people){
                     // make sure that people with compentecy 2 get picked
                     if (!tempPeople.empty())
                     {
-                        if(people[personSelect]->getCompetency(2) == 2){
+                        if(people[personSelect]->getCompetency(2) == 1){
                             // asigning the person to the role
                             rosterOfPeople[i] = people[personSelect];
                             // removing them from the list of people
@@ -177,7 +181,9 @@ void events::addRosteredPeople(vector<person*> people){
                     }
                     else 
                     {
-                        rosterOfPeople[i] = new adult("No Person Found", 0);
+                        // error here assigning people
+                        cout << "made it" << endl;
+                        rosterOfPeople[i] = notValid;
                     }
                     break;
 
@@ -215,36 +221,42 @@ void events::addRosteredPeople(vector<person*> people){
                 // sound person
                 case 1:
                     rosterOfPeople[i] = people[1];
+                    cout << personSelect << endl;
                     foundPerson = true;
                     break;
 
                 // lighting Person
                 case 2:
                     rosterOfPeople[i] = people[1];
+                    cout << personSelect << endl;
                     foundPerson = true;
                     break;
 
                 // Computer Graphics Person
                 case 3:
                     rosterOfPeople[i] = people[1];
+                    cout << personSelect << endl;
                     foundPerson = true;
                     break;
                 
                 // Sound Training
                 case 4:
                     rosterOfPeople[i] = people[1];
+                    cout << personSelect << endl;
                     foundPerson = true;
                     break;
 
                 // Lighting Training
                 case 5:
                     rosterOfPeople[i] = people[1];
+                    cout << personSelect << endl;
                     foundPerson = true;
                     break;
 
                 // Computer Graphics Training
                 case 6:
                     rosterOfPeople[i] = people[1];
+                    cout << personSelect << endl;
                     foundPerson = true;
                     break;
 
