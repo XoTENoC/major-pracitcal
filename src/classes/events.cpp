@@ -138,6 +138,7 @@ void events::addRosteredPeople(vector<person*> people){
                     else 
                     {
                         rosterOfPeople[i] = new adult("No Person Found", 0);
+                        foundPerson = true;
                     }
                     break;
 
@@ -158,13 +159,14 @@ void events::addRosteredPeople(vector<person*> people){
                     else 
                     {
                         rosterOfPeople[i] = new adult("No Person Found", 0);
+                        foundPerson = true;
                     }
                     break;
 
                 // Computer Graphics Person
                 case 3:
                     // make sure that people with compentecy 2 get picked
-                    if (!tempPeople.empty())
+                    if (tempPeople.empty()==0)
                     {
                         if(people[personSelect]->getCompetency(2) == 2){
                             // asigning the person to the role
@@ -177,7 +179,9 @@ void events::addRosteredPeople(vector<person*> people){
                     }
                     else 
                     {
+                        // madd errors here
                         rosterOfPeople[i] = new adult("No Person Found", 0);
+                        foundPerson = true;
                     }
                     break;
 
@@ -186,10 +190,15 @@ void events::addRosteredPeople(vector<person*> people){
                 }
             }
 
-            // clearing the array so that it can start again
-            tempPeople.erase(tempPeople.begin(), tempPeople.end());
+            // clearing the array so that it can start again if there are still
+            // values in the array
+            if (tempPeople.empty()==0){
+                tempPeople.erase(tempPeople.begin(), tempPeople.end());
+            }
         }
+
     }
+    // rostering for a team of 7 people
     else if (numberOfStaffNeeded == 7)
     {
         for(int i = 1; i < numberOfStaffNeeded; i++){
@@ -214,38 +223,134 @@ void events::addRosteredPeople(vector<person*> people){
 
                 // sound person
                 case 1:
-                    rosterOfPeople[i] = people[1];
-                    foundPerson = true;
+                    // make sure that people with compentecy 2 get picked
+                    if (tempPeople.empty()==0)
+                    {
+                        if(people[personSelect]->getCompetency(0) == 2){
+                            // asigning the person to the role
+                            rosterOfPeople[1] = people[personSelect];
+                            // removing them from the list of people
+                            peopleLeft.erase(remove(peopleLeft.begin(), peopleLeft.end(), personSelect), peopleLeft.end());
+                            // going to the next person
+                            foundPerson = true;
+                        }
+                    }
+                    else 
+                    {
+                        // madd errors here
+                        rosterOfPeople[1] = new adult("No Person Found", 0);
+                        foundPerson = true;
+                    }
                     break;
 
                 // lighting Person
                 case 2:
-                    rosterOfPeople[i] = people[1];
-                    foundPerson = true;
+                    // make sure that people with compentecy 2 get picked
+                    if (tempPeople.empty()==0)
+                    {
+                        if(people[personSelect]->getCompetency(1) == 2){
+                            // asigning the person to the role
+                            rosterOfPeople[3] = people[personSelect];
+                            // removing them from the list of people
+                            peopleLeft.erase(remove(peopleLeft.begin(), peopleLeft.end(), personSelect), peopleLeft.end());
+                            // going to the next person
+                            foundPerson = true;
+                        }
+                    }
+                    else 
+                    {
+                        // madd errors here
+                        rosterOfPeople[3] = new adult("No Person Found", 0);
+                        foundPerson = true;
+                    }
                     break;
 
                 // Computer Graphics Person
                 case 3:
-                    rosterOfPeople[i] = people[1];
-                    foundPerson = true;
+                    // make sure that people with compentecy 2 get picked
+                    if (tempPeople.empty()==0)
+                    {
+                        if(people[personSelect]->getCompetency(2) == 2){
+                            // asigning the person to the role
+                            rosterOfPeople[5] = people[personSelect];
+                            // removing them from the list of people
+                            peopleLeft.erase(remove(peopleLeft.begin(), peopleLeft.end(), personSelect), peopleLeft.end());
+                            // going to the next person
+                            foundPerson = true;
+                        }
+                    }
+                    else 
+                    {
+                        // madd errors here
+                        rosterOfPeople[5] = new adult("No Person Found", 0);
+                        foundPerson = true;
+                    }
                     break;
                 
                 // Sound Training
                 case 4:
-                    rosterOfPeople[i] = people[1];
-                    foundPerson = true;
+                    // make sure that people with compentecy 2 get picked
+                    if (tempPeople.empty()==0)
+                    {
+                        if(people[personSelect]->getCompetency(0) == 1){
+                            // asigning the person to the role
+                            rosterOfPeople[2] = people[personSelect];
+                            // removing them from the list of people
+                            peopleLeft.erase(remove(peopleLeft.begin(), peopleLeft.end(), personSelect), peopleLeft.end());
+                            // going to the next person
+                            foundPerson = true;
+                        }
+                    }
+                    else 
+                    {
+                        // madd errors here
+                        rosterOfPeople[2] = new adult("No Person Found", 0);
+                        foundPerson = true;
+                    }
                     break;
 
                 // Lighting Training
                 case 5:
-                    rosterOfPeople[i] = people[1];
-                    foundPerson = true;
+                    // make sure that people with compentecy 2 get picked
+                    if (tempPeople.empty()==0)
+                    {
+                        if(people[personSelect]->getCompetency(1) == 1){
+                            // asigning the person to the role
+                            rosterOfPeople[4] = people[personSelect];
+                            // removing them from the list of people
+                            peopleLeft.erase(remove(peopleLeft.begin(), peopleLeft.end(), personSelect), peopleLeft.end());
+                            // going to the next person
+                            foundPerson = true;
+                        }
+                    }
+                    else 
+                    {
+                        // madd errors here
+                        rosterOfPeople[4] = new adult("No Person Found", 0);
+                        foundPerson = true;
+                    }
                     break;
 
                 // Computer Graphics Training
                 case 6:
-                    rosterOfPeople[i] = people[1];
-                    foundPerson = true;
+                    // make sure that people with compentecy 2 get picked
+                    if (tempPeople.empty()==0)
+                    {
+                        if(people[personSelect]->getCompetency(2) == 1){
+                            // asigning the person to the role
+                            rosterOfPeople[6] = people[personSelect];
+                            // removing them from the list of people
+                            peopleLeft.erase(remove(peopleLeft.begin(), peopleLeft.end(), personSelect), peopleLeft.end());
+                            // going to the next person
+                            foundPerson = true;
+                        }
+                    }
+                    else 
+                    {
+                        // madd errors here
+                        rosterOfPeople[6] = new adult("No Person Found", 0);
+                        foundPerson = true;
+                    }
                     break;
 
                 default:
@@ -253,8 +358,11 @@ void events::addRosteredPeople(vector<person*> people){
                 }
             }
             
-            // clearing the array so that it can start again
-            tempPeople.erase(tempPeople.begin(), tempPeople.end());
+            // clearing the array so that it can start again if there are still
+            // values in the array
+            if (tempPeople.empty()==0){
+                tempPeople.erase(tempPeople.begin(), tempPeople.end());
+            }
 
         }
     }

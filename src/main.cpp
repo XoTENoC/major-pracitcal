@@ -12,6 +12,7 @@ using namespace std;
 
 // Adding Test Data
 void addingTestPeople(vector<person*> &vectorPeople){
+    
     vectorPeople.push_back(new adult("Obiwan", 100));
     vectorPeople.back()->setCompetency(0, 2);
     vectorPeople.back()->setCompetency(1, 2);
@@ -38,9 +39,9 @@ void addingTestPeople(vector<person*> &vectorPeople){
     vectorPeople.back()->setCompetency(2, 0);
 
     vectorPeople.push_back(new adult("padme", 30));
-    vectorPeople.back()->setCompetency(0, 1);
-    vectorPeople.back()->setCompetency(1, 0);
-    vectorPeople.back()->setCompetency(2, 0);
+    vectorPeople.back()->setCompetency(0, 2);
+    vectorPeople.back()->setCompetency(1, 2);
+    vectorPeople.back()->setCompetency(2, 2);
 
     vectorPeople.push_back(new adult("Liea", 20));
     vectorPeople.back()->setCompetency(0, 1);
