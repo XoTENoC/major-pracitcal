@@ -77,19 +77,39 @@ void displayRoster(vector<events*> allEvents){
     cout<<endl; 
         if(numberOfPeople<8){
         for (int j = 0; j < numberOfPeople; j++){
+            int numberOfSpaces = 33 - allEvents[i]->rosterOfPeople[j]->getPersonName().length();
+
             cout << "+------------------------------------------------------+" << endl;
-            cout << "| "<<positionsArray3[j]<<"  | "<< allEvents[i]->rosterOfPeople[j]->getPersonName()<<"                           |" << endl;
+            cout << "| "<<positionsArray3[j]<<"  | "<< allEvents[i]->rosterOfPeople[j]->getPersonName();
+            for(int s=0;s<numberOfSpaces;s++){
+                cout<<" ";
+            }
+            cout<<"|"<<endl;
         }
+
         }
         else{
+
             for (int j = 0; j < 7; j++){
+            int numberOfSpaces = 33 - allEvents[i]->rosterOfPeople[j]->getPersonName().length();
             cout << "+------------------------------------------------------+" << endl;
-            cout << "| "<<positionsArray3[j]<<"  | "<< allEvents[i]->rosterOfPeople[j]->getPersonName()<<"                           |" << endl;
+
+            cout << "| "<<positionsArray3[j]<<"  | "<< allEvents[i]->rosterOfPeople[j]->getPersonName();
+                        for(int s=0;s<numberOfSpaces;s++){
+                cout<<" ";
+            }
+            cout<<"|"<<endl;
+            
         }
             for(int l = 7;l<numberOfPeople;l++){
-            cout << "+------------------------------------------------------+" << endl;
-            cout << "| "<<"Undefined Role  "<<"  | "<< allEvents[i]->rosterOfPeople[l]->getPersonName()<<"                           |" << endl;
+            int numberOfSpaces = 33 - allEvents[i]->rosterOfPeople[l]->getPersonName().length();
 
+            cout << "+------------------------------------------------------+" << endl;
+            cout << "| "<<"Undefined Role  "<<"  | "<< allEvents[i]->rosterOfPeople[l]->getPersonName();
+            for(int s=0;s<numberOfSpaces;s++){
+                cout<<" ";
+            }
+            cout<<"|"<<endl;
             }
         }
 
