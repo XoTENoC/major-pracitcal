@@ -7,6 +7,7 @@
 #include "../classes/child.h"
 #include "../classes/events.h"
 #include <fstream>
+#include<math.h>
 #include <utility> // std::pair
 #include <stdexcept> // std::runtime_error
 #include <sstream> // std::stringstream
@@ -45,7 +46,8 @@ void addingPerson(vector<person*> &vectorPeople){
             cout << "adult Created" << endl;
             // adding the person to the array
             vectorPeople.push_back(new adult(name, age));
-
+            cout<<endl; 
+            cout<<"For the following criteria, please enter 0 for no ability, 1 for trainee, 2 for operator."<<endl;
             // setting the competency
             cout << "ability at Sound: ";
             cin >> competency;
@@ -67,7 +69,8 @@ void addingPerson(vector<person*> &vectorPeople){
             cout << "child Created" << endl;
             // adding the person to the array
             vectorPeople.push_back(new child(name, age));
-
+            cout<<endl; 
+            cout<<"For the following criteria, please enter 0 for no ability, 1 for trainee, 2 for operator."<<endl;
             // setting the competency
             cout << "ability at Sound: ";
             cin >> competency;
@@ -99,10 +102,25 @@ void listAllpeople(vector<person*> &vectorPeople){
     
     // listing all the people in the list
     int allThePeople = (int)vectorPeople.size();
-
+    cout << "+------------------------------------------------------+" << endl;
+        cout << "| Name                           |Age|Sound|Lighting|CG|" << endl;
+        cout << "+------------------------------------------------------+" << endl;
     for(int i = 0; i < allThePeople; i++){
-        cout << i + 1 << ": ";
-        cout << vectorPeople[i]->getPersonName() << endl;
+        //cout << i + 1 << ": ";
+        int nameLength = vectorPeople[i]->getPersonName().length();
+        cout << "|"<<i+1<<":"<<vectorPeople[i]->getPersonName();
+
+        for(int f= 0;f<30-nameLength;f++){
+            cout<<" ";
+        }
+        cout<<"|"<<vectorPeople[i]->getAge();
+        for(int f=0;f<3-log10(vectorPeople[i]->getAge())-1;f++){
+            cout<<" ";
+        }
+
+        cout<<"|"<<vectorPeople[i]->getCompetency(0)<<"    |"<<vectorPeople[i]->getCompetency(1)<<"       |"<<vectorPeople[i]->getCompetency(2)<<" |"<<endl;
+                cout << "+------------------------------------------------------+" << endl;
+
     }
 
     cout << endl;
