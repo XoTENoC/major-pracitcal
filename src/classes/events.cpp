@@ -84,6 +84,7 @@ void events::addRosteredPeople(vector<person*> people){
         
         int age = people[personSelect]->getAge();
 
+        
         if (age >= 18){
             // checking that the person can do everything
             for(int i = 0; i < 3; i++){
@@ -91,14 +92,14 @@ void events::addRosteredPeople(vector<person*> people){
                     canBeLeader = false;
                 }
             }
-    
+
             // setting the leader of ther event
             if(canBeLeader == true){
                 rosterOfPeople[0] = people[personSelect];
                 // cout << rosterOfPeople[0]->getPersonName() << endl; // Print the team    lead ofter found
                 active = false;
             }
-    
+
             // if no leader can be found it will exit the program
             if(tempPeople.empty()){
                 cout << "no leader can't be found" << endl;
