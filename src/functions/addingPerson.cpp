@@ -11,9 +11,10 @@
 #include <stdexcept> // std::runtime_error
 #include <sstream> // std::stringstream
 
-
+//vector<string>
 // this function adds adults to the list of people, and also allows to add
 // multiple people at once to allow for fast batch additions of people.
+
 void addingPerson(vector<person*> &vectorPeople){
 
     cout << endl;

@@ -9,7 +9,23 @@
 #include "functions/addingRoster.h"
 #include "functions/viewRoster.h"
 using namespace std;
+void printBlurb(){
 
+    cout << "+------------------------------------------------------+" << endl;
+    cout << "|                                                      |"<<endl;
+    cout << "|  ██████╗  ██████╗ ███████╗████████╗███████╗██████╗   |"<<endl;
+    cout << "|  ██╔══██╗██╔═══██╗██╔════╝╚══██╔══╝██╔════╝██╔══██╗  |"<<endl;
+    cout << "|  ██████╔╝██║   ██║███████╗   ██║   █████╗  ██████╔╝  |"<<endl;
+    cout << "|  ██╔══██╗██║   ██║╚════██║   ██║   ██╔══╝  ██╔══██╗  |"<<endl;
+    cout << "|  ██║  ██║╚██████╔╝███████║   ██║   ███████╗██║  ██║  |"<<endl;
+    cout << "|  ╚═╝  ╚═╝ ╚═════╝ ╚══════╝   ╚═╝   ╚══════╝╚═╝  ╚═╝  |"<<endl;
+    cout << "|   Nathaniel Chang, Austen Lindsay, Sophie Davidson   |"<<endl;
+    cout << "|     2021 Semester 2 - Object Oriented Programming    |"<<endl;
+    cout << "|                                                      |"<<endl;
+    cout << "|      A event - based automated rostering system      |"<<endl;
+    cout << "|                                                      |"<<endl;
+    cout << "+------------------------------------------------------+" << endl;
+}
 // Adding Test Data
 void addingTestPeople(vector<person*> &vectorPeople){
     
@@ -55,7 +71,7 @@ void addingTestPeople(vector<person*> &vectorPeople){
 }
 
 int main(){
-
+    printBlurb();
     // Starting the program
     bool inProgram = true;
     bool mainMenu = true;

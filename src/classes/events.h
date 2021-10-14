@@ -15,11 +15,9 @@ using namespace std;
 class events{
     public:
         // Variable within the week.
-        int numberOfStaffNeeded;
         // this is the roster of people for the event.
         person ** rosterOfPeople;
-        string eventName;
-        int weekNumber;
+
 
         //functions of the class
         events();
@@ -39,6 +37,12 @@ class events{
         // add a function to make a person
 
         ~events();
+
+        private:
+        string eventName;
+        int weekNumber;     
+        int numberOfStaffNeeded;
+   
 };
 
 #endif //  EVENTS_H

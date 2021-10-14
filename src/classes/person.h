@@ -21,22 +21,30 @@ class person{
     // 1 = training
     // 2 = competent
     
-    int competencies[3] = {};
 
     int getCompetency(int index);
     void setCompetency(int index, int aCompetency);
 
-    std::string personName;
-    std::string getPersonName();
+    
     void setPersonName(std::string personName);
 
-    int age;
     int getAge();
     void setAge(int age);
 
     virtual void getContactInformation();
+    std::string getPersonName();
 
     ~person();
+
+    private: 
+        int competencies[3] = {};
+
+    protected:
+        std::string personName;
+        int age;
+
+
+
 
 };
 

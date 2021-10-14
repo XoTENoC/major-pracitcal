@@ -26,7 +26,7 @@ void outputCsv(vector<events *> allEvents)
 
         for (int i = 0; i < numberOfPeople; i++)
         {
-            rosterCSV << allEvents[j]->eventName << "," << positionsArray7[i] << "," << allEvents[j]->rosterOfPeople[i]->getPersonName() << "\n";
+            rosterCSV << allEvents[j]->getEventName() << "," << positionsArray7[i] << "," << allEvents[j]->rosterOfPeople[i]->getPersonName() << "\n";
         }
     }
 }
@@ -54,8 +54,7 @@ void displayRoster(vector<events *> allEvents)
         int numberOfPeople = allEvents[i]->getNumberOfStaffNeeded();
 
         //print event name, centering in box
-        int numberOfSpaces = (54 - allEvents[i]->eventName.length()) / 2;
-
+        int numberOfSpaces = (54 - allEvents[i]->getEventName().length()) / 2;
         cout << "+------------------------------------------------------+" << endl;
         cout << "+";
         for (int s = 0; s < numberOfSpaces; s++)
@@ -64,10 +63,10 @@ void displayRoster(vector<events *> allEvents)
         }
 
         //output the event name
-        cout << allEvents[i]->eventName;
+        cout << allEvents[i]->getEventName();
 
         //if even number, put half of the spaces on each side
-        if (allEvents[i]->eventName.length() % 2 == 0)
+        if (allEvents[i]->getEventName().length() % 2 == 0)
         {
             for (int s = 0; s < numberOfSpaces; s++)
             {

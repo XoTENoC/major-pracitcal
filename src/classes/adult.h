@@ -17,15 +17,19 @@ class adult: public person{
         age = aAge;
     }
 
-    string workingWithChildrenNumber;
     void setWorkingWithChildrenNumber(string aWorkingWithChildrenNumber);
     string getWorkingWithChildrenNumber();
 
-    std::string contactInformation;
     void addContactInformation(std::string emailAddress, std::string phoneNumber);
     void removeContactInformation();
 
     virtual void getContactInformation();
+
+    private:
+        string workingWithChildrenNumber;
+        std::string contactInformation;
+
+
 };
 
 #endif
