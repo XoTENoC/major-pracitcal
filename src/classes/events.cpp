@@ -69,24 +69,42 @@ void events::addRosteredPeople(vector<person*> people){
     vector<int> peopleLeft((int)people.size());
     iota(peopleLeft.begin(), peopleLeft.end(), 0);
 
+    vector<int> tempPeople;
+    for(int k = 0; k < (int)peopleLeft.size(); k++){
+        tempPeople.push_back(peopleLeft[k]);
+    }
+
     while(active == true){
 
         // picking a random person
         personSelect = peopleLeft[rand() % peopleLeft.size()];
         bool canBeLeader = true;
 
-        // checking that the person can do everything
-        for(int i = 0; i < 3; i++){
-            if (people[personSelect]->getCompetency(i) != 2){
-                canBeLeader = false;
-            }
-        }
+        tempPeople.erase(remove(tempPeople.begin(), tempPeople.end(), personSelect), tempPeople.end());
+        
+        int age = people[personSelect]->getAge();
 
-        // setting the leader of ther event
-        if(canBeLeader == true){
-            rosterOfPeople[0] = people[personSelect];
-            // cout << rosterOfPeople[0]->getPersonName() << endl; // Print the team lead ofter found
-            active = false;
+        if (age >= 18){
+            // checking that the person can do everything
+            for(int i = 0; i < 3; i++){
+                if (people[personSelect]->getCompetency(i) != 2){
+                    canBeLeader = false;
+                }
+            }
+    
+            // setting the leader of ther event
+            if(canBeLeader == true){
+                rosterOfPeople[0] = people[personSelect];
+                // cout << rosterOfPeople[0]->getPersonName() << endl; // Print the team    lead ofter found
+                active = false;
+            }
+    
+            // if no leader can be found it will exit the program
+            if(tempPeople.empty()){
+                cout << "no leader can't be found" << endl;
+                rosterOfPeople[0] = new adult("No Person Found", 0);
+                return;
+            }
         }
     }
 
