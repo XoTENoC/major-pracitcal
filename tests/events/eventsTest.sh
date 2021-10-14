@@ -1,6 +1,6 @@
 # Compile.
 echo Compiling eventsTest.cpp
-g++ events/../../src/classes/person.cpp events/../../src/classes/events.cpp events/eventsTest.cpp -o eventsTest -Wall -std=c++11
+g++ events/../../src/classes/person.cpp events/../../src/classes/adult.cpp events/../../src/classes/child.cpp events/../../src/classes/events.cpp events/eventsTest.cpp -o eventsTest -Wall -std=c++11
 echo Finished Compiling
 
 # Test.
