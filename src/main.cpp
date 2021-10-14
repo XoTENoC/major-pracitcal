@@ -68,6 +68,11 @@ void addingTestPeople(vector<person*> &vectorPeople){
     vectorPeople.back()->setCompetency(0, 2);
     vectorPeople.back()->setCompetency(1, 2);
     vectorPeople.back()->setCompetency(2, 0);
+
+    vectorPeople.push_back(new adult("Han.Solo", 130));
+    vectorPeople.back()->setCompetency(0, 0);
+    vectorPeople.back()->setCompetency(1, 0);
+    vectorPeople.back()->setCompetency(2, 1);
 }
 
 int main(){
