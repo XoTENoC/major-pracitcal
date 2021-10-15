@@ -108,3 +108,21 @@ int inputNumStatic(int allNumbers[], int ammount){
     
     return 0;
 }
+
+
+// code for inputing string at an ammount given.
+string intputStringAmmount(int ammount){
+
+    // code from stack overflow https://stackoverflow.com/questions/51455616/limit-the-size-of-characters-to-input
+
+    const size_t MAXIMUM_CHARS = ammount;
+    string name;
+    getline(cin, name);
+
+    if (name.length() > MAXIMUM_CHARS)
+    {
+        name.erase(MAXIMUM_CHARS);
+    }
+
+    return name;
+}

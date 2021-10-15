@@ -8,6 +8,7 @@
 #include "functions/addingPerson.h"
 #include "functions/addingRoster.h"
 #include "functions/viewRoster.h"
+#include "functions/inputValidation.h"
 using namespace std;
 void printBlurb(){
 
@@ -92,6 +93,7 @@ int main(){
     // init variables
     int amount = 0;
     int choice = 0;
+    int choises[5] = {1, 2, 3, 4, 5};
 
     while(inProgram){
         
@@ -111,7 +113,7 @@ int main(){
             cout << "4 - View roster" << endl;
             cout << "5 - Exit" << endl;
 
-            cin >> choice;
+            choice = inputNumStatic(choises, 5);
 
             switch(choice){
                 // adding a person the array of people
