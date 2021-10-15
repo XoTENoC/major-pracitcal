@@ -6,6 +6,7 @@
 #include "../classes/adult.h"
 #include "../classes/child.h"
 #include "../classes/events.h"
+#include "inputValidation.h"
 #include <fstream>
 #include<math.h>
 #include <utility> // std::pair
@@ -23,6 +24,7 @@ void addingPerson(vector<person*> &vectorPeople){
     int amountOfPeople = 0;
     string name;
     int age, competency;
+    int competencies[3] = {0,1,2};
 
     // asking how many people the user would like to add
     cout << "how many people would you like to add: ";
@@ -35,7 +37,7 @@ void addingPerson(vector<person*> &vectorPeople){
 
         // asking for the name of the person
         cout << "what is the name of the person: ";
-        cin >> name;
+        name = intputStringAmmount(25);
 
         //asking for the age of the person
         cout << "What is the age of the person: ";
@@ -50,17 +52,17 @@ void addingPerson(vector<person*> &vectorPeople){
             cout<<"For the following criteria, please enter 0 for no ability, 1 for trainee, 2 for operator."<<endl;
             // setting the competency
             cout << "ability at Sound: ";
-            cin >> competency;
+            competency = inputNumStatic(competencies, 3);
 
             vectorPeople.back()->setCompetency(0, competency);
 
             cout << "ability at Lighing: ";
-            cin >> competency;
+            competency = inputNumStatic(competencies, 3);
 
             vectorPeople.back()->setCompetency(1, competency);
 
             cout << "ability at Computer Graphics: ";
-            cin >> competency;
+            competency = inputNumStatic(competencies, 3);
 
             vectorPeople.back()->setCompetency(2, competency);
         }
@@ -73,17 +75,17 @@ void addingPerson(vector<person*> &vectorPeople){
             cout<<"For the following criteria, please enter 0 for no ability, 1 for trainee, 2 for operator."<<endl;
             // setting the competency
             cout << "ability at Sound: ";
-            cin >> competency;
+            competency = inputNumStatic(competencies, 3);
 
             vectorPeople.back()->setCompetency(0, competency);
 
             cout << "ability at Lighing: ";
-            cin >> competency;
+            competency = inputNumStatic(competencies, 3);
 
             vectorPeople.back()->setCompetency(1, competency);
 
             cout << "ability at Computer Graphics: ";
-            cin >> competency;
+            competency = inputNumStatic(competencies, 3);
 
             vectorPeople.back()->setCompetency(2, competency);
         }

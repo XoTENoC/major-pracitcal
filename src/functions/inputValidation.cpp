@@ -117,7 +117,7 @@ string intputStringAmmount(int ammount){
 
     const size_t MAXIMUM_CHARS = ammount;
     string name;
-    getline(cin, name);
+    getline(cin >> ws, name);
 
     if (name.length() > MAXIMUM_CHARS)
     {
