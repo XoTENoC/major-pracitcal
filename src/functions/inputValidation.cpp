@@ -42,7 +42,7 @@ int inputNumRange(int lower, int upper){
             cin.clear();
 
             // ignores the "bad" inputs
-            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cin >> inputVariable;
         }
     }
@@ -88,7 +88,7 @@ int inputNumStatic(int allNumbers[], int ammount){
             cin.clear();
 
             // ignores the "bad" inputs
-            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cin >> inputVariable;
 
         }
@@ -101,7 +101,7 @@ int inputNumStatic(int allNumbers[], int ammount){
             cin.clear();
 
             // ignores the "bad" inputs
-            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cin >> inputVariable;
         }
     }
