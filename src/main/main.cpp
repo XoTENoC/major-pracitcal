@@ -1,14 +1,14 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "classes/person.h"
-#include "classes/adult.h"
-#include "classes/child.h"
-#include "classes/events.h"
-#include "functions/addingPerson.h"
-#include "functions/addingRoster.h"
-#include "functions/viewRoster.h"
-#include "functions/inputValidation.h"
+#include "../classes/person.h"
+#include "../classes/adult.h"
+#include "../classes/child.h"
+#include "../classes/events.h"
+#include "../functions/addingPerson.h"
+#include "../functions/addingRoster.h"
+#include "../functions/viewRoster.h"
+#include "../functions/inputValidation.h"
 using namespace std;
 void printBlurb(){
 
