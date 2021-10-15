@@ -100,24 +100,37 @@ void listAllpeople(vector<person*> &vectorPeople){
     cout << "+------------------------------------------------------+" << endl;
     cout << endl;
     
-    // listing all the people in the list
+    //finding the number of people
     int allThePeople = (int)vectorPeople.size();
+
     cout << "+------------------------------------------------------+" << endl;
         cout << "| Name                           |Age|Sound|Lighting|CG|" << endl;
         cout << "+------------------------------------------------------+" << endl;
+
+        //looping through all people
     for(int i = 0; i < allThePeople; i++){
-        //cout << i + 1 << ": ";
+        //if there are 2 digits, reduce the number of spaces by 1
+        int numberOfSpaces=30;
+            if(i>8){numberOfSpaces= numberOfSpaces-1;}
+
+        //determining the length of the person's name
         int nameLength = vectorPeople[i]->getPersonName().length();
+
+        //printing out the index, and the person's name
         cout << "|"<<i+1<<":"<<vectorPeople[i]->getPersonName();
 
-        for(int f= 0;f<30-nameLength;f++){
-            cout<<" ";
-        }
-        cout<<"|"<<vectorPeople[i]->getAge();
-        for(int f=0;f<3-log10(vectorPeople[i]->getAge())-1;f++){
+        //printing out filler spaces as precalculated, subtracting the person's name
+        for(int f= 0;f<numberOfSpaces-nameLength;f++){
             cout<<" ";
         }
 
+        //printing out the person's age, subtracting the number of digits of their age.
+        cout<<"|"<<vectorPeople[i]->getAge();
+        for(int f=0;f<2-log10(vectorPeople[i]->getAge());f++){
+            cout<<" ";
+        }
+
+        //printing out the competencies
         cout<<"|"<<vectorPeople[i]->getCompetency(0)<<"    |"<<vectorPeople[i]->getCompetency(1)<<"       |"<<vectorPeople[i]->getCompetency(2)<<" |"<<endl;
                 cout << "+------------------------------------------------------+" << endl;
 
