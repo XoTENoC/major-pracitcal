@@ -6,6 +6,7 @@
 #include "../classes/adult.h"
 #include "../classes/child.h"
 #include "../classes/events.h"
+#include "inputValidation.h"
 
 using namespace std;
 
@@ -14,14 +15,15 @@ void addingNewEvent(vector < events * > &allEvents){
 
 	int numberOfStaff;
 	string nameOfEvent;
+  int staffNumbers[2] = {4, 7};
 
 	// asking for the number of Staff
 	cout << "how many staff are needed for the event (either 4 or 7): ";
-	cin >> numberOfStaff;
+	numberOfStaff = inputNumStatic(staffNumbers, 2);
 
 	// asking for the name of the event
 	cout << "What is the name of event: ";
-	cin >> nameOfEvent;
+	nameOfEvent = intputStringAmmount(25);
 
 	// adds the events to the array
 	allEvents.push_back(new events(numberOfStaff, nameOfEvent, 0));
@@ -43,27 +45,28 @@ void addEvent(vector<events*> &allEvents, vector<person*> people) {
 
   
   bool isComplete = false;
+  int options[2] = {1, 2};
+
   while (isComplete != true) {
 
-    cout << "+------------------------------------------------------+" << endl;
-    cout << "|                         Events                       |" << endl;
-    cout << "+------------------------------------------------------+" << endl;
+    	cout << "+------------------------------------------------------+" << endl;
+    	cout << "|                         Events                       |" << endl;
+    	cout << "+------------------------------------------------------+" << endl;
 
-    int choice;
-    cout << "1 - Add a new event" << endl <<
-      "2 - Exit" << endl;
-    cin >> choice;
+    	int choice;
+    	cout << "1 - Add a new event" << endl;
+    	cout << "2 - Exit" << endl;
+    	choice = inputNumStatic(options, 2);
 
-    switch (choice) {
-      // adding a person the array of people
-    case 1:
-        addingNewEvent(allEvents);
-		rosteringPeople(allEvents, people);
-        break;
-    case 2:
-      isComplete = true;
-
-      break;
-    }
-  }
+    	switch (choice) {
+    	// adding a person the array of people
+    	case 1:
+    		addingNewEvent(allEvents);
+			rosteringPeople(allEvents, people);
+    	  	break;
+    	case 2:
+    	  	isComplete = true;
+    	  	break;
+    	}
+  	}
 }
