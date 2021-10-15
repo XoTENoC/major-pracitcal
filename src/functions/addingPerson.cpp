@@ -187,6 +187,7 @@ void addPerson(vector<person*> &vectorPeople, int * ammount){
     
     bool addingPeople = true;
     int choice = 0;
+    int choices[3] = {1, 2, 3};
 
     while (addingPeople)
     {
@@ -201,7 +202,7 @@ void addPerson(vector<person*> &vectorPeople, int * ammount){
         cout << "1 - add People" << endl;
         cout << "2 - Modify Entries" << endl;
         cout << "3 - exit" << endl;
-        cin >> choice;
+        choice = inputNumStatic(choices, 3);
 
         // diciding where to go
         switch (choice)

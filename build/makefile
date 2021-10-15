@@ -4,13 +4,13 @@ SOURCEDIR := $(PROJDIR)/src
 BUILDDIR := $(PROJDIR)/build
 
 # Name of the final executable
-TARGET = main
+TARGET = Roster
 
 # Decide whether the commands will be shown or not
-VERBOSE = TRUE
+VERBOSE = FALSE
 
 # Create the list of directories
-DIRS = classes functions ./
+DIRS = classes functions main
 SOURCEDIRS = $(foreach dir, $(DIRS), $(addprefix $(SOURCEDIR)/, $(dir)))
 TARGETDIRS = $(foreach dir, $(DIRS), $(addprefix $(BUILDDIR)/, $(dir)))
 
