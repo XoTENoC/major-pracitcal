@@ -13,12 +13,74 @@
 #include <stdexcept> // std::runtime_error
 #include <sstream> // std::stringstream
 
-//vector<string>
+using namespace std;
+
+vector<string> splitString(string str) 
+{ 
+    vector<string> contentsOfLine;
+   string w = ""; 
+   for (auto rem : str) 
+   { 
+       if (rem==',') 
+       { 
+            contentsOfLine.push_back(w);
+           w=""; 
+       } 
+       else
+       { 
+           w=w+rem; 
+       } 
+
+   }  
+   cout<<w<<endl; 
+   return contentsOfLine;
+} 
+void addFromCsv2(string fileName, vector<person*> &vectorPeople){
+    short loop=0; 
+    string line; 
+    //opening file
+    ifstream myfile (fileName); 
+    if (myfile.is_open()) 
+    {
+        //until the end of the file
+        while (! myfile.eof() ) 
+        {
+            //get the current line
+            getline (myfile,line); 
+            //split the string by commas
+            vector<string> split = splitString(line);
+            //define each column, and set for each person
+            string thisName = split[0];
+            int thisAge = stoi(split[1]);
+            int sound = stoi(split[2]);
+            int lighting = stoi(split[3]);
+            int cg = stoi(split[4]);
+
+            //if adult, add an adult with the correct info.
+            if(thisAge>17){
+            vectorPeople.push_back(new adult(thisName, thisAge));
+            vectorPeople.back()->setCompetency(0, sound);
+            vectorPeople.back()->setCompetency(1,lighting);
+            vectorPeople.back()->setCompetency(2,cg);
+            }
+            else{
+            vectorPeople.push_back(new child(thisName, thisAge));
+            vectorPeople.back()->setCompetency(0, sound);
+            vectorPeople.back()->setCompetency(1,lighting);
+            vectorPeople.back()->setCompetency(2,cg);
+            }
+            loop++;
+        }
+        cout<< loop <<" people added from csv"<<endl;
+        myfile.close(); 
+    }
+    else cout << "file not found"; 
+}
+
+
 // this function adds adults to the list of people, and also allows to add
 // multiple people at once to allow for fast batch additions of people.
-
 void addingPerson(vector<person*> &vectorPeople){
-
     cout << endl;
 
     int amountOfPeople = 0;
@@ -166,28 +228,13 @@ void modifyPerson(vector<person*> &vectorPeople){
 
 }
 
-/*void addFromCsv(vector<person*> &vectorPeople){
-    
-    std::vector<std::pair<std::string, std::vector<int>>> people = read_csv("People.csv");
-    int numArguments = (int)people.size();
 
-    string thisName = people[0].first;
-    int thisAge = stoi(people[1].first);
-    int thisSound = stoi(people[2].first);
-    int thisLight = stoi(people[3].first);
-    int thisCG = stoi(people[4].first); 
-    vectorPeople.push_back(new adult(thisName, thisAge));
-    vectorPeople.back()->setCompetency(0, thisSound);
-    vectorPeople.back()->setCompetency(1, thisLight);
-    vectorPeople.back()->setCompetency(0, thisCG);
-
-}*/
 
 void addPerson(vector<person*> &vectorPeople, int * ammount){
     
     bool addingPeople = true;
     int choice = 0;
-    int choices[3] = {1, 2, 3};
+    int choices[4] = {1, 2, 3,4};
 
     while (addingPeople)
     {
@@ -199,12 +246,15 @@ void addPerson(vector<person*> &vectorPeople, int * ammount){
         cout << endl;
 
         // Printing the menu and asking for choice
-        cout << "1 - add People" << endl;
+        cout << "1 - Add People" << endl;
         cout << "2 - Modify Entries" << endl;
-        cout << "3 - exit" << endl;
-        choice = inputNumStatic(choices, 3);
+        cout << "3 - Add People From CSV" << endl;
+        cout<< "4 - exit"<<endl;
+        choice = inputNumStatic(choices, 4);
 
-        // diciding where to go
+        string lines[100]; 
+
+        // deciding where to go
         switch (choice)
         {
         case 1:
@@ -217,10 +267,13 @@ void addPerson(vector<person*> &vectorPeople, int * ammount){
             break;
 
         case 3:
-            addingPeople = false;
+            addFromCsv2("People.csv", /*lines,*/ vectorPeople);
+
             break;
 
         case 4:
+            addingPeople = false;
+
             break; 
 
         default:
@@ -237,73 +290,4 @@ void addPerson(vector<person*> &vectorPeople, int * ammount){
 
 
 
-/*
-Sample Code below, to fix and add by due date
 
-
-//Note: most of the code for csv read comes from https://www.gormanalysis.com/blog/reading-and-writing-csv-files-with-cpp/, only edited so that a person is added, and got rid of some redundant code.
-//should be further customised for our purposes!
-std::vector<std::pair<std::string, std::vector<int>>> read_csv(std::string filename){
-    // Reads a CSV file into a vector of <string, vector<int>> pairs where
-    // each pair represents <column name, column values>
-
-    // Create a vector of <string, int vector> pairs to store the result
-    std::vector<std::pair<std::string, std::vector<int>>> result;
-
-    // Create an input filestream
-    std::ifstream myFile(filename);
-
-    // Make sure the file is open
-    if(!myFile.is_open()) throw std::runtime_error("Could not open file");
-
-    // Helper vars
-    std::string line, colname;
-    int val;
-
-    // Read the column names
-    if(myFile.good())
-    {
-        // Extract the first line in the file
-        std::getline(myFile, line);
-
-        // Create a stringstream from line
-        std::stringstream ss(line);
-
-        // Extract each column name
-        while(std::getline(ss, colname, ',')){
-            
-            // Initialize and add <colname, int vector> pairs to result
-            result.push_back({colname, std::vector<int> {}});
-        }
-    }
-
-    // Read data, line by line
-    while(std::getline(myFile, line))
-    {
-
-        // Create a stringstream of the current line
-        std::stringstream ss(line);
-        
-        // Keep track of the current column index
-        int colIdx = 0;
-        
-        // Extract each integer
-        while(ss >> val){
-            cout<<line;
-            // Add the current integer to the 'colIdx' column's values vector
-            result.at(colIdx).second.push_back(val);
-
-            // If the next token is a comma, ignore it and move on
-            if(ss.peek() == ',') ss.ignore();
-            
-            // Increment the column index
-            colIdx++;
-        }
-    }
-
-    // Close file
-    myFile.close();
-
-    return result;
-}
-*/
