@@ -2,6 +2,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <numeric>
+#include <algorithm>
 #include "../classes/person.h"
 #include "../classes/adult.h"
 #include "../classes/child.h"
@@ -31,10 +33,40 @@ void addingNewEvent(vector < events * > &allEvents){
 }
 
 void removeEvent(vector <events*> &allEvents){
+	
+	// clearing the screen
+	system("clear");
+
+	cout << "+------------------------------------------------------+" << endl;
+    cout << "|                     List of Events                   |" << endl;
+    cout << "+------------------------------------------------------+" << endl;
+
+	cout << endl;
+
+	for (int i = 0; i < (int)allEvents.size(); i++){
+		cout << i + 1 << ": " << allEvents[i]->getEventName() << endl;
+	}
+
+	cout << endl;
+
 	int index;
 
-	cout << "What index would you like to remove?: ";
-	cin >> index;
+	vector<int> numberOfEvents((int)allEvents.size());
+    iota(numberOfEvents.begin(), numberOfEvents.end(), 1);
+	int * dataNumberOfEvents = numberOfEvents.data();
+
+	// makeing sure that there are events
+	if ((int)allEvents.size() !=0){
+		cout << "What index would you like to remove?: ";
+		index = inputNumStatic(dataNumberOfEvents, (int)allEvents.size());
+	}
+	else
+	{
+		cout << "There are no Events, press enter to continue" << endl;
+		cin.get();
+		cin.ignore();
+		return;
+	}
 
 	cout << "Removing " << allEvents[index-1]->getEventName() << endl;
 
