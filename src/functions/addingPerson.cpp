@@ -345,7 +345,7 @@ void addPerson(vector<person*> &vectorPeople, int * ammount){
     
     bool addingPeople = true;
     int choice = 0;
-    int choices[4] = {1, 2, 3,4};
+    int choices[4] = {1, 2, 3, 4};
 
     while (addingPeople)
     {
@@ -361,8 +361,9 @@ void addPerson(vector<person*> &vectorPeople, int * ammount){
         // Printing the menu and asking for choice
         cout << "1 - Add People" << endl;
         cout << "2 - Modify Entries" << endl;
-        cout << "3 - Add People From CSV" << endl;
-        cout<< "4 - exit"<<endl;
+        cout << "3 - Remove a Person" << endl;
+        cout << "4 - Add People From CSV" << endl;
+        cout << "5 - exit"<<endl;
         choice = inputNumStatic(choices, 4);
 
         string lines[100]; 
