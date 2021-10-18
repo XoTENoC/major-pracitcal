@@ -2,6 +2,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <numeric>
+#include <algorithm>
 #include "../classes/person.h"
 #include "../classes/adult.h"
 #include "../classes/child.h"
@@ -402,20 +404,37 @@ void addPerson(vector<person*> &vectorPeople, int * ammount){
 void removePerson(vector<person*> &vectorPeople){
     int index;
 
+    vector<int> numberOfPeople((int)vectorPeople.size());
+    iota(numberOfPeople.begin(), numberOfPeople.end(), 1);
+	int * dataNumberOfPeople = numberOfPeople.data();
+
     // DISPLAYING PEOPLE;
     listAllpeople(vectorPeople);
 
-    cout << "What index person would you like to remove?: ";
-    cin >> index;
 
-    if(vectorPeople[index]->isInEvent==true){
-        cout << "Cannot remove " << vectorPeople[index-1]->getPersonName() << " as they are in an event" << endl;
-    }
-    else{
-        cout << "Removing " << vectorPeople[index-1]->getPersonName() << endl;
-        vectorPeople.erase(vectorPeople.begin()+(index-1));
+    // makeing sure that there are people
+	if ((int)vectorPeople.size() !=0){
+		cout << "What index would you like to remove?: ";
+		// making sure that the user can only add what they need to
+		index = inputNumStatic(dataNumberOfPeople, (int)vectorPeople.size());
 
-        // DISPLAYING PEOPLE
-        listAllpeople(vectorPeople);
-    }
+        if(vectorPeople[index]->isInEvent==true){
+            cout << "Cannot remove " << vectorPeople[index-1]->getPersonName() << " as they are in an event" << endl;
+        }
+        else{
+            cout << "Removing " << vectorPeople[index-1]->getPersonName() << endl;
+            vectorPeople.erase(vectorPeople.begin()+(index-1));
+
+            // DISPLAYING PEOPLE
+            listAllpeople(vectorPeople);
+        }
+	}
+	else
+	{
+		// if there is no one in the array wait for the user to continue
+		cout << "There are no Events, press enter to continue" << endl;
+		cin.get();
+		cin.ignore();
+		return;
+	}
 }
