@@ -205,6 +205,8 @@ void listAllpeople(vector<person*> &vectorPeople){
 
 void modifyPerson(vector<person*> &vectorPeople){
 
+    int choice = 0;
+
     // List all the people and there entries
     cout << endl;
     cout << "+------------------------------------------------------+" << endl;
@@ -224,7 +226,26 @@ void modifyPerson(vector<person*> &vectorPeople){
         cout << endl;
     }
 
-    // add modify person details here
+    // picking the person you want to modify
+    cout << endl;
+    cout << "Which person would you like to Modify: ";
+    choice = inputNumRange(1, (int)vectorPeople.size());
+
+    // printing the chose person
+    cout << "choosen person" << endl;
+    cout << choice << ": ";
+    cout << vectorPeople[choice - 1]->getPersonName() << " ";
+    cout << vectorPeople[choice - 1]->getAge() << " ";
+    cout << vectorPeople[choice - 1]->getCompetency(0) << " ";
+    cout << vectorPeople[choice - 1]->getCompetency(1) << " ";
+    cout << vectorPeople[choice - 1]->getCompetency(2) << " ";
+    cout << endl;
+
+    cout << endl;
+    cout << "what would you like to modify" << endl;
+    cout << "1 - Name" << endl;
+    cout << "2 - Age" << endl;
+    cout << "3 - Competency" << endl;
 
 }
 
