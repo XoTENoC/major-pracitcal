@@ -43,6 +43,7 @@ void removeEvent(vector <events*> &allEvents){
 
 	cout << endl;
 
+	// printing all the event names
 	for (int i = 0; i < (int)allEvents.size(); i++){
 		cout << i + 1 << ": " << allEvents[i]->getEventName() << endl;
 	}
@@ -51,6 +52,7 @@ void removeEvent(vector <events*> &allEvents){
 
 	int index;
 
+	// creating an array with all the event positions for input validation
 	vector<int> numberOfEvents((int)allEvents.size());
     iota(numberOfEvents.begin(), numberOfEvents.end(), 1);
 	int * dataNumberOfEvents = numberOfEvents.data();
@@ -58,10 +60,12 @@ void removeEvent(vector <events*> &allEvents){
 	// makeing sure that there are events
 	if ((int)allEvents.size() !=0){
 		cout << "What index would you like to remove?: ";
+		// making sure that the user can only add what they need to
 		index = inputNumStatic(dataNumberOfEvents, (int)allEvents.size());
 	}
 	else
 	{
+		// if there is no one in the array wait for the user to continue
 		cout << "There are no Events, press enter to continue" << endl;
 		cin.get();
 		cin.ignore();
