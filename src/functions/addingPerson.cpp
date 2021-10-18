@@ -104,7 +104,7 @@ void addingPerson(vector<person*> &vectorPeople){
 
         //asking for the age of the person
         cout << "What is the age of the person: ";
-        cin >> age;
+        age = inputNumRange(0, 150);
 
         if (age >= 18)
         {
@@ -363,9 +363,8 @@ void addPerson(vector<person*> &vectorPeople, int * ammount){
         // Printing the menu and asking for choice
         cout << "1 - Add People" << endl;
         cout << "2 - Modify Entries" << endl;
-        cout << "3 - Remove a Person" << endl;
-        cout << "4 - Add People From CSV" << endl;
-        cout << "5 - exit"<<endl;
+        cout << "3 - Add People From CSV" << endl;
+        cout << "4 - exit"<<endl;
         choice = inputNumStatic(choices, 4);
 
         string lines[100]; 
@@ -389,7 +388,6 @@ void addPerson(vector<person*> &vectorPeople, int * ammount){
 
         case 4:
             addingPeople = false;
-
             break; 
 
         default:
