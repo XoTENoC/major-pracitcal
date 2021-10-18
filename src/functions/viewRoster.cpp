@@ -34,6 +34,9 @@ void outputCsv(vector<events *> allEvents)
 void displayRoster(vector<events *> allEvents)
 {
 
+    // clearing the screen
+    system("clear");
+
     cout << "+------------------------------------------------------+" << endl;
     cout << "|                    View Roster                       |" << endl;
     cout << "+------------------------------------------------------+" << endl;

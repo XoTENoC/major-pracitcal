@@ -158,6 +158,10 @@ void addingPerson(vector<person*> &vectorPeople){
 
 // This function will print the list of people to the console
 void listAllpeople(vector<person*> &vectorPeople){
+
+    // clearing the screen
+    system("clear");
+
     cout << endl;
     cout << "+------------------------------------------------------+" << endl;
     cout << "|                    List of People                    |" << endl;
@@ -206,6 +210,9 @@ void listAllpeople(vector<person*> &vectorPeople){
 
 // this function will allows the user to update a persons details
 void modifyPerson(vector<person*> &vectorPeople){
+
+    // clearing the screen
+    system("clear");
 
     int choice = 0;
 
@@ -289,6 +296,7 @@ void modifyPerson(vector<person*> &vectorPeople){
             }
 
             break;
+
         case 2:
             // updating the age
             cout << endl;
@@ -307,6 +315,7 @@ void modifyPerson(vector<person*> &vectorPeople){
                 ongoing = false;
             }
             break;
+
         case 3:
             // updating the competency
             cout << endl;
@@ -345,6 +354,8 @@ void addPerson(vector<person*> &vectorPeople, int * ammount){
 
     while (addingPeople)
     {
+        // clearing the screen
+        system("clear");
         
         cout << endl;
         cout << "+------------------------------------------------------+" << endl;

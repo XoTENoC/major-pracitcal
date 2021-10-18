@@ -49,6 +49,9 @@ void addEvent(vector<events*> &allEvents, vector<person*> people) {
 
   while (isComplete != true) {
 
+	  // clearing the screen
+	  system("clear");
+
     	cout << "+------------------------------------------------------+" << endl;
     	cout << "|                         Events                       |" << endl;
     	cout << "+------------------------------------------------------+" << endl;

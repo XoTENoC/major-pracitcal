@@ -77,6 +77,11 @@ void addingTestPeople(vector<person*> &vectorPeople){
 }
 
 int main(){
+
+    // clearing the screen
+    system("clear");
+
+    // printing the title of the program
     printBlurb();
     // Starting the program
     bool inProgram = true;
