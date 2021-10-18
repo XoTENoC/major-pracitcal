@@ -77,7 +77,6 @@ void addFromCsv2(string fileName, vector<person*> &vectorPeople){
     else cout << "file not found"; 
 }
 
-
 // this function adds adults to the list of people, and also allows to add
 // multiple people at once to allow for fast batch additions of people.
 void addingPerson(vector<person*> &vectorPeople){
@@ -155,7 +154,6 @@ void addingPerson(vector<person*> &vectorPeople){
 
 }
 
-
 // This function will print the list of people to the console
 void listAllpeople(vector<person*> &vectorPeople){
 
@@ -206,7 +204,6 @@ void listAllpeople(vector<person*> &vectorPeople){
 
     cout << endl;
 }
-
 
 // this function will allows the user to update a persons details
 void modifyPerson(vector<person*> &vectorPeople){
@@ -344,8 +341,6 @@ void modifyPerson(vector<person*> &vectorPeople){
 
 }
 
-
-
 void addPerson(vector<person*> &vectorPeople, int * ammount){
     
     bool addingPeople = true;
@@ -403,9 +398,23 @@ void addPerson(vector<person*> &vectorPeople, int * ammount){
 
 }
 
+void removePerson(vector<person*> &vectorPeople){
+    int index;
 
+    // DISPLAYING PEOPLE;
+    listAllpeople(vectorPeople);
 
+    cout << "What index person would you like to remove?: ";
+    cin >> index;
 
+    if(vectorPeople[index]->isInEvent==true){
+        cout << "Cannot remove " << vectorPeople[index-1]->getPersonName() << " as they are in an event" << endl;
+    }
+    else{
+        cout << "Removing " << vectorPeople[index-1]->getPersonName() << endl;
+        vectorPeople.erase(vectorPeople.begin()+(index-1));
 
-
-
+        // DISPLAYING PEOPLE
+        listAllpeople(vectorPeople);
+    }
+}

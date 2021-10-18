@@ -36,6 +36,10 @@ class person{
 
     ~person();
 
+    //MOVE THIS TO PROTECTED LATER
+
+    bool isInEvent;
+
     private: 
         int competencies[3] = {};
 

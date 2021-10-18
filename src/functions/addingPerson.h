@@ -4,6 +4,7 @@
 void addPerson(vector<person*> &vectorPeople, int * ammount);
 void listAllpeople(vector<person*> &vectorPeople);
 void addFromCsv(vector<person*> &vectorPeople);
+void removePerson(vector<person*> &vectorPeople);
  
 
 #endif // ADDINGPERSON_H
