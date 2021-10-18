@@ -3,4 +3,6 @@
 
 void addEvent(vector<events*> &allEvents, vector<person*> people);
 
+void removeEvent(vector<events*> &allevents);
+
 #endif 

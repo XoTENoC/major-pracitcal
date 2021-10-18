@@ -30,6 +30,18 @@ void addingNewEvent(vector < events * > &allEvents){
 
 }
 
+void removeEvent(vector <events*> &allEvents){
+	int index;
+
+	cout << "What index would you like to remove?: ";
+	cin >> index;
+
+	cout << "Removing " << allEvents[index]->getEventName() << endl;
+
+	allEvents.erase(allEvents.begin()+(index-1));
+
+}
+
 void rosteringPeople(vector<events*> &allEvents, vector<person*> allPeople){
 
 	// finding the lasts event

@@ -98,7 +98,7 @@ int main(){
     // init variables
     int amount = 0;
     int choice = 0;
-    int choices[6] = {1, 2, 3, 4, 5, 6};
+    int choices[7] = {1, 2, 3, 4, 5, 6, 7};
 
     while(inProgram){
         
@@ -118,8 +118,9 @@ int main(){
             cout << "4 - View roster" << endl;
             cout << "5 - Exit" << endl;
             cout << "6 - Remove a person" << endl;
+            cout << "7 - Remove an event" << endl;
 
-            choice = inputNumStatic(choices, 6);
+            choice = inputNumStatic(choices, 7);
 
             switch(choice){
                 // adding a person the array of people
@@ -141,6 +142,9 @@ int main(){
                     break;
                 case 6:
                     removePerson(people);
+                    break;
+                case 7:
+                    removeEvent(allEvents);
                     break;
             }
         }
