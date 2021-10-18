@@ -203,6 +203,8 @@ void listAllpeople(vector<person*> &vectorPeople){
     cout << endl;
 }
 
+
+// this function will allows the user to update a persons details
 void modifyPerson(vector<person*> &vectorPeople){
 
     int choice = 0;
@@ -241,11 +243,95 @@ void modifyPerson(vector<person*> &vectorPeople){
     cout << vectorPeople[choice - 1]->getCompetency(2) << " ";
     cout << endl;
 
+    // choices of options that it is possible to change
     cout << endl;
     cout << "what would you like to modify" << endl;
     cout << "1 - Name" << endl;
     cout << "2 - Age" << endl;
     cout << "3 - Competency" << endl;
+
+    // choices
+    int choices[3] = {1, 2, 3};
+
+    // variables to change
+    string nameUpdate;
+    int ageUpdate, competencyPosition, competencyUpdate;
+    bool ongoing = true;
+
+    int choice2;
+    choice2 = inputNumStatic(choices, 3);
+
+    // variables for switch
+    int continueChoice[2] = {1, 2};
+    int competecyChoice[3] = {0, 1, 2};
+    int continuing;
+
+    while (ongoing == true)
+    {
+        switch (choice2)
+        {
+        case 1:
+            // updating the name
+            cout << endl;
+            cout << "What is the new name: ";
+            nameUpdate = intputStringAmmount(25);
+
+            // updating
+            vectorPeople[choice - 1]->setPersonName(nameUpdate);
+
+            // asking to continue
+            cout << "Would you like to update anything else? (1 for yes, 2 for no): ";
+            continuing = inputNumStatic(continueChoice, 2);
+
+            if (continuing == 2)
+            {
+                ongoing = false;
+            }
+
+            break;
+        case 2:
+            // updating the age
+            cout << endl;
+            cout << "What is the new age: ";
+            ageUpdate = inputNumRange(0, 150);
+
+            // updating
+            vectorPeople[choice - 1]->setAge(ageUpdate);
+
+            // asking to continue
+            cout << "Would you like to update anything else? (1 for yes, 2 for no): ";
+            continuing = inputNumStatic(continueChoice, 2);
+
+            if (continuing == 2)
+            {
+                ongoing = false;
+            }
+            break;
+        case 3:
+            // updating the competency
+            cout << endl;
+            cout << "What Competency would you like to update (0 - sound, 1 - lighting, 2 - cg): ";
+            competencyPosition = inputNumStatic(competecyChoice, 3);
+
+            cout << "What is the new skill level (0 - Not Competent, 1 - Training, 2 - Competent): ";
+            competencyUpdate = inputNumStatic(competecyChoice, 3);
+
+            // updating
+            vectorPeople[choice - 1]->setCompetency(competencyPosition, competencyUpdate);
+
+            // asking to continue
+            cout << "Would you like to update anything else? (1 for yes, 2 for no): ";
+            continuing = inputNumStatic(continueChoice, 2);
+
+            if (continuing == 2)
+            {
+                ongoing = false;
+            }
+            break;
+        default:
+            break;
+        }
+    }
 
 }
 
