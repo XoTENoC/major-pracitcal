@@ -36,7 +36,7 @@ void removeEvent(vector <events*> &allEvents){
 	cout << "What index would you like to remove?: ";
 	cin >> index;
 
-	cout << "Removing " << allEvents[index]->getEventName() << endl;
+	cout << "Removing " << allEvents[index-1]->getEventName() << endl;
 
 	allEvents.erase(allEvents.begin()+(index-1));
 
