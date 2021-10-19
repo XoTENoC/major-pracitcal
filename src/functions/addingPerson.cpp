@@ -128,54 +128,41 @@ void addingPerson(vector<person*> &vectorPeople){
         cout << "What is the age of the person: ";
         age = inputNumRange(0, 150);
 
+        // Creating object based on age.
         if (age >= 18)
         {
             cout << "adult Created" << endl;
             // adding the person to the array
             vectorPeople.push_back(new adult(name, age));
-            cout<<endl; 
-            cout<<"For the following criteria, please enter 0 for no ability, 1 for trainee, 2 for operator."<<endl;
-            // setting the competency
-            cout << "ability at Sound: ";
-            competency = inputNumStatic(competencies, 3);
-
-            vectorPeople.back()->setCompetency(0, competency);
-
-            cout << "ability at Lighing: ";
-            competency = inputNumStatic(competencies, 3);
-
-            vectorPeople.back()->setCompetency(1, competency);
-
-            cout << "ability at Computer Graphics: ";
-            competency = inputNumStatic(competencies, 3);
-
-            vectorPeople.back()->setCompetency(2, competency);
         }
         else
         {
             cout << "child Created" << endl;
             // adding the person to the array
             vectorPeople.push_back(new child(name, age));
-            cout<<endl; 
-            cout<<"For the following criteria, please enter 0 for no ability, 1 for trainee, 2 for operator."<<endl;
-            // setting the competency
-            cout << "ability at Sound: ";
-            competency = inputNumStatic(competencies, 3);
-
-            vectorPeople.back()->setCompetency(0, competency);
-
-            cout << "ability at Lighing: ";
-            competency = inputNumStatic(competencies, 3);
-
-            vectorPeople.back()->setCompetency(1, competency);
-
-            cout << "ability at Computer Graphics: ";
-            competency = inputNumStatic(competencies, 3);
-
-            vectorPeople.back()->setCompetency(2, competency);
         }
-    }
 
+        cout<<endl; 
+        cout<<"For the following criteria, please enter 0 for no ability, 1 for trainee, 2 for operator."<<endl;
+        // setting the competency
+        cout << "ability at Sound: ";
+        competency = inputNumStatic(competencies, 3);
+
+        vectorPeople.back()->setCompetency(0, competency);
+
+        cout << "ability at Lighing: ";
+        competency = inputNumStatic(competencies, 3);
+
+        vectorPeople.back()->setCompetency(1, competency);
+
+        cout << "ability at Computer Graphics: ";
+        competency = inputNumStatic(competencies, 3);
+
+        vectorPeople.back()->setCompetency(2, competency);
+
+        cout << endl << "Contact information: " << endl;
+        vectorPeople.back()->setContactInformation();
+    }
 }
 
 // This function will print the list of people to the console
