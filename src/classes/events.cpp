@@ -143,63 +143,19 @@ void events::addRosteredPeople(vector<person*> people){
                 // for ( int k = 0; k < (int)tempPeople.size(); k++){
                 //     cout << tempPeople[k] << endl;
                 // }
-                
-                switch (i)
+
+                if (!tempPeople.empty())
                 {
-
-                // sound person
-                case 1:
-                    /* code */
-                    // make sure that people with compentecy 2 get picked
-                    if (!tempPeople.empty())
-                    {
-                        if(people[personSelect]->getCompetency(0) == 2){
-                            foundPerson = addingPersonToList(i, personSelect, peopleLeft, people);
-                        }
+                    if(people[personSelect]->getCompetency(i-1) == 2){
+                        foundPerson = addingPersonToList(i, personSelect, peopleLeft, people);
                     }
-                    else 
-                    {
-                        rosterOfPeople[i] = new adult("No Person Found", 0);
-                        foundPerson = true;
-                    }
-                    break;
-
-                // lighting Person
-                case 2:
-                    // make sure that people with compentecy 2 get picked
-                    if (!tempPeople.empty())
-                    {
-                        if(people[personSelect]->getCompetency(1) == 2){
-                            foundPerson = addingPersonToList(i, personSelect, peopleLeft, people);;
-                        }
-                    }
-                    else 
-                    {
-                        rosterOfPeople[i] = new adult("No Person Found", 0);
-                        foundPerson = true;
-                    }
-                    break;
-
-                // Computer Graphics Person
-                case 3:
-                    // make sure that people with compentecy 2 get picked
-                    if (tempPeople.empty()==0)
-                    {
-                        if(people[personSelect]->getCompetency(2) == 2){
-                            foundPerson = addingPersonToList(i, personSelect, peopleLeft, people);;
-                        }
-                    }
-                    else 
-                    {
-                        // madd errors here
-                        rosterOfPeople[i] = new adult("No Person Found", 0);
-                        foundPerson = true;
-                    }
-                    break;
-
-                default:
-                    break;
                 }
+                else 
+                {
+                    rosterOfPeople[i] = new adult("No Person Found", 0);
+                    foundPerson = true;
+                }
+                
             }
 
             // clearing the array so that it can start again if there are still
@@ -213,9 +169,11 @@ void events::addRosteredPeople(vector<person*> people){
     // rostering for a team of 7 people
     else if (numberOfStaffNeeded == 7)
     {
-        for(int i = 1; i < numberOfStaffNeeded; i++){
+        for(int i = 0; i < numberOfStaffNeeded - 1; i++){
 
             bool foundPerson = false;
+            int competencies[6] = {1, 3, 5, 2, 4, 6};
+            int competenciesPos[6] = {0, 1, 2, 0, 1, 2};
 
             // list of all the people that are left
             vector<int> tempPeople;
@@ -230,114 +188,19 @@ void events::addRosteredPeople(vector<person*> people){
                 personSelect = tempPeople[rand() % tempPeople.size()];
                 tempPeople.erase(remove(tempPeople.begin(), tempPeople.end(), personSelect), tempPeople.end());
 
-                switch (i)
+                if (tempPeople.empty()==0)
                 {
-
-                // sound person
-                case 1:
-                    // make sure that people with compentecy 2 get picked
-                    if (tempPeople.empty()==0)
-                    {
-                        if(people[personSelect]->getCompetency(0) == 2){
-                            foundPerson = addingPersonToList(1, personSelect, peopleLeft, people);
-                        }
+                    if(people[personSelect]->getCompetency(competenciesPos[i]) == 2){
+                        foundPerson = addingPersonToList(competencies[i], personSelect, peopleLeft, people);
                     }
-                    else 
-                    {
-                        // madd errors here
-                        rosterOfPeople[1] = new adult("No Person Found", 0);
-                        foundPerson = true;
-                    }
-                    break;
-
-                // lighting Person
-                case 2:
-                    // make sure that people with compentecy 2 get picked
-                    if (tempPeople.empty()==0)
-                    {
-                        if(people[personSelect]->getCompetency(1) == 2){
-                            foundPerson = addingPersonToList(3, personSelect, peopleLeft, people);
-                        }
-                    }
-                    else 
-                    {
-                        // madd errors here
-                        rosterOfPeople[3] = new adult("No Person Found", 0);
-                        foundPerson = true;
-                    }
-                    break;
-
-                // Computer Graphics Person
-                case 3:
-                    // make sure that people with compentecy 2 get picked
-                    if (tempPeople.empty()==0)
-                    {
-                        if(people[personSelect]->getCompetency(2) == 2){
-                            foundPerson = addingPersonToList(5, personSelect, peopleLeft, people);
-                        }
-                    }
-                    else 
-                    {
-                        // madd errors here
-                        rosterOfPeople[5] = new adult("No Person Found", 0);
-                        foundPerson = true;
-                    }
-                    break;
-                
-                // Sound Training
-                case 4:
-                    // make sure that people with compentecy 2 get picked
-                    if (tempPeople.empty()==0)
-                    {
-                        if(people[personSelect]->getCompetency(0) == 1){
-                            foundPerson = addingPersonToList(2, personSelect, peopleLeft, people);
-                        }
-                    }
-                    else 
-                    {
-                        // madd errors here
-                        rosterOfPeople[2] = new adult("No Person Found", 0);
-                        foundPerson = true;
-                    }
-                    break;
-
-                // Lighting Training
-                case 5:
-                    // make sure that people with compentecy 2 get picked
-                    if (tempPeople.empty()==0)
-                    {
-                        if(people[personSelect]->getCompetency(1) == 1){
-                            foundPerson = addingPersonToList(4, personSelect, peopleLeft, people);
-                        }
-                    }
-                    else 
-                    {
-                        // madd errors here
-                        rosterOfPeople[4] = new adult("No Person Found", 0);
-                        foundPerson = true;
-                    }
-                    break;
-
-                // Computer Graphics Training
-                case 6:
-                    // make sure that people with compentecy 2 get picked
-                    if (tempPeople.empty()==0)
-                    {
-                        if(people[personSelect]->getCompetency(2) == 1){
-                            foundPerson = addingPersonToList(6, personSelect, peopleLeft, people);
-                        }
-                    }
-                    else 
-                    {
-                        // madd errors here
-                        rosterOfPeople[6] = new adult("No Person Found", 0);
-                        foundPerson = true;
-                    }
-                    break;
-
-                default:
-                    break;
                 }
+                else 
+                {
+                    // madd errors here
+                    rosterOfPeople[competencies[i]] = new adult("No Person Found", 0);
+                    foundPerson = true;
+                }
+
             }
             
             // clearing the array so that it can start again if there are still
