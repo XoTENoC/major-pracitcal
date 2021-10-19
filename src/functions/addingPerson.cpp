@@ -408,7 +408,7 @@ void addPerson(vector<person*> &vectorPeople, int * ammount){
             break;
 
         case 3:
-            addFromCsv2("People.csv", /*lines,*/ vectorPeople);
+            addFromCsv2("People.csv", vectorPeople);
 
             break;
 
