@@ -54,6 +54,14 @@ void events::setEventName(string name){
     eventName = name;
 }
 
+bool events::addingPersonToList(int number, int personSelect, vector<int> &peopleLeft, vector<person*> people){
+    // asigning the person to the role
+    rosterOfPeople[number] = people[personSelect];
+    // removing them from the list of people
+    peopleLeft.erase(remove(peopleLeft.begin(), peopleLeft.end(), personSelect), peopleLeft.end());
+    // going to the next person
+    return true;
+}
 
 // Function for creating a roster for the week
 void events::addRosteredPeople(vector<person*> people){
@@ -146,12 +154,7 @@ void events::addRosteredPeople(vector<person*> people){
                     if (!tempPeople.empty())
                     {
                         if(people[personSelect]->getCompetency(0) == 2){
-                            // asigning the person to the role
-                            rosterOfPeople[i] = people[personSelect];
-                            // removing them from the list of people
-                            peopleLeft.erase(remove(peopleLeft.begin(), peopleLeft.end(), personSelect), peopleLeft.end());
-                            // going to the next person
-                            foundPerson = true;
+                            foundPerson = addingPersonToList(i, personSelect, peopleLeft, people);
                         }
                     }
                     else 
@@ -167,12 +170,7 @@ void events::addRosteredPeople(vector<person*> people){
                     if (!tempPeople.empty())
                     {
                         if(people[personSelect]->getCompetency(1) == 2){
-                            // asigning the person to the role
-                            rosterOfPeople[i] = people[personSelect];
-                            // removing them from the list of people
-                            peopleLeft.erase(remove(peopleLeft.begin(), peopleLeft.end(), personSelect), peopleLeft.end());
-                            // going to the next person
-                            foundPerson = true;
+                            foundPerson = addingPersonToList(i, personSelect, peopleLeft, people);;
                         }
                     }
                     else 
@@ -188,12 +186,7 @@ void events::addRosteredPeople(vector<person*> people){
                     if (tempPeople.empty()==0)
                     {
                         if(people[personSelect]->getCompetency(2) == 2){
-                            // asigning the person to the role
-                            rosterOfPeople[i] = people[personSelect];
-                            // removing them from the list of people
-                            peopleLeft.erase(remove(peopleLeft.begin(), peopleLeft.end(), personSelect), peopleLeft.end());
-                            // going to the next person
-                            foundPerson = true;
+                            foundPerson = addingPersonToList(i, personSelect, peopleLeft, people);;
                         }
                     }
                     else 
@@ -246,12 +239,7 @@ void events::addRosteredPeople(vector<person*> people){
                     if (tempPeople.empty()==0)
                     {
                         if(people[personSelect]->getCompetency(0) == 2){
-                            // asigning the person to the role
-                            rosterOfPeople[1] = people[personSelect];
-                            // removing them from the list of people
-                            peopleLeft.erase(remove(peopleLeft.begin(), peopleLeft.end(), personSelect), peopleLeft.end());
-                            // going to the next person
-                            foundPerson = true;
+                            foundPerson = addingPersonToList(1, personSelect, peopleLeft, people);
                         }
                     }
                     else 
@@ -268,12 +256,7 @@ void events::addRosteredPeople(vector<person*> people){
                     if (tempPeople.empty()==0)
                     {
                         if(people[personSelect]->getCompetency(1) == 2){
-                            // asigning the person to the role
-                            rosterOfPeople[3] = people[personSelect];
-                            // removing them from the list of people
-                            peopleLeft.erase(remove(peopleLeft.begin(), peopleLeft.end(), personSelect), peopleLeft.end());
-                            // going to the next person
-                            foundPerson = true;
+                            foundPerson = addingPersonToList(3, personSelect, peopleLeft, people);
                         }
                     }
                     else 
@@ -290,12 +273,7 @@ void events::addRosteredPeople(vector<person*> people){
                     if (tempPeople.empty()==0)
                     {
                         if(people[personSelect]->getCompetency(2) == 2){
-                            // asigning the person to the role
-                            rosterOfPeople[5] = people[personSelect];
-                            // removing them from the list of people
-                            peopleLeft.erase(remove(peopleLeft.begin(), peopleLeft.end(), personSelect), peopleLeft.end());
-                            // going to the next person
-                            foundPerson = true;
+                            foundPerson = addingPersonToList(5, personSelect, peopleLeft, people);
                         }
                     }
                     else 
@@ -312,12 +290,7 @@ void events::addRosteredPeople(vector<person*> people){
                     if (tempPeople.empty()==0)
                     {
                         if(people[personSelect]->getCompetency(0) == 1){
-                            // asigning the person to the role
-                            rosterOfPeople[2] = people[personSelect];
-                            // removing them from the list of people
-                            peopleLeft.erase(remove(peopleLeft.begin(), peopleLeft.end(), personSelect), peopleLeft.end());
-                            // going to the next person
-                            foundPerson = true;
+                            foundPerson = addingPersonToList(2, personSelect, peopleLeft, people);
                         }
                     }
                     else 
@@ -334,12 +307,7 @@ void events::addRosteredPeople(vector<person*> people){
                     if (tempPeople.empty()==0)
                     {
                         if(people[personSelect]->getCompetency(1) == 1){
-                            // asigning the person to the role
-                            rosterOfPeople[4] = people[personSelect];
-                            // removing them from the list of people
-                            peopleLeft.erase(remove(peopleLeft.begin(), peopleLeft.end(), personSelect), peopleLeft.end());
-                            // going to the next person
-                            foundPerson = true;
+                            foundPerson = addingPersonToList(4, personSelect, peopleLeft, people);
                         }
                     }
                     else 
@@ -356,12 +324,7 @@ void events::addRosteredPeople(vector<person*> people){
                     if (tempPeople.empty()==0)
                     {
                         if(people[personSelect]->getCompetency(2) == 1){
-                            // asigning the person to the role
-                            rosterOfPeople[6] = people[personSelect];
-                            // removing them from the list of people
-                            peopleLeft.erase(remove(peopleLeft.begin(), peopleLeft.end(), personSelect), peopleLeft.end());
-                            // going to the next person
-                            foundPerson = true;
+                            foundPerson = addingPersonToList(6, personSelect, peopleLeft, people);
                         }
                     }
                     else 

@@ -38,10 +38,12 @@ class events{
 
         ~events();
 
-        private:
+    private:
         string eventName;
         int weekNumber;     
         int numberOfStaffNeeded;
+
+        bool addingPersonToList(int number, int personSelect, vector<int> &peopleLeft, vector<person*> people);
    
 };
 

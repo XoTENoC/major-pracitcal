@@ -10,7 +10,7 @@
 #include "../classes/events.h"
 #include "inputValidation.h"
 #include <fstream>
-#include<math.h>
+#include <math.h>
 #include <utility> // std::pair
 #include <stdexcept> // std::runtime_error
 #include <sstream> // std::stringstream
