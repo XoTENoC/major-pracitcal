@@ -6,20 +6,33 @@
 
 using namespace std;
 
-void child::addContactInformation(std::string contactName, std::string emailAddress, std::string phoneNumber){
-    //TODO make this function dynamically allocate an array (see different branch).
+void child::setContactInformation(){
+    string contactName, emailAddress, phoneNumber;
+
+    cout << "Child email address: ";
+    cin >> emailAddress;
+
+    cout << "Child phone number";
+    cin >> phoneNumber;
+
+    contactInformation[0] = "1 " + personName + ' ' + emailAddress + ' ' + phoneNumber;
+
+    for(int i=1; i<3; i++){
+        cout << "Parent/Guardian " << i << endl;
+
+        cout << "Email address: ";
+        cin >> emailAddress;
+
+        cout << "Phone number: ";
+        cin >> phoneNumber;
+
+        contactInformation[i] = to_string(i) + contactName + ' ' + emailAddress + ' ' + phoneNumber;
+    }
+
     // Concatenating strings together to form a single contactInformation string.
     contactInformation[contactCount] = contactInformation[contactCount] +  " " + contactName + ' ' + emailAddress + ' ' + phoneNumber;
     contactCount++;
 }
-
-void child::removeContactInformation(){
-    // TODO: remove contact information at an index and re construct the array.
-    for(int i=0; i<3; i++){
-        contactInformation[i] = std::to_string(i);
-    }
-}
-
 
 void child::getContactInformation(){
     std::cout << getPersonName() << " Contact Information: " << std::endl;

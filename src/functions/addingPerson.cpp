@@ -87,8 +87,6 @@ void addFromCsv2(string fileName, vector<person*> &vectorPeople){
     else cout << "file not found"; 
 }
 
-
-
 void createPeopleCsv(vector<person*> &vectorPeople){
       
     ofstream peopleCsv;
@@ -279,9 +277,10 @@ void modifyPerson(vector<person*> &vectorPeople){
     cout << "1 - Name" << endl;
     cout << "2 - Age" << endl;
     cout << "3 - Competency" << endl;
+    cout << "4 - Contact information" << endl;
 
     // choices
-    int choices[3] = {1, 2, 3};
+    int choices[4] = {1, 2, 3, 4};
 
     // variables to change
     string nameUpdate;
@@ -289,7 +288,7 @@ void modifyPerson(vector<person*> &vectorPeople){
     bool ongoing = true;
 
     int choice2;
-    choice2 = inputNumStatic(choices, 3);
+    choice2 = inputNumStatic(choices, 4);
 
     // variables for switch
     int continueChoice[2] = {1, 2};
@@ -360,9 +359,27 @@ void modifyPerson(vector<person*> &vectorPeople){
                 ongoing = false;
             }
             break;
+
+        case 4:
+            // updating the contact information
+            cout << endl;
+            
+            // updating.
+            vectorPeople[choice-1]->setContactInformation();
+
+            // asking to continue
+            cout << "Would you like to update anything else? (1 for yes, 2 for no): ";
+            continuing = inputNumStatic(continueChoice, 2);
+
+            if (continuing ==2)
+            {
+                ongoing = false;
+            }
+            break;
         default:
             break;
         }
+
     }
 
 }

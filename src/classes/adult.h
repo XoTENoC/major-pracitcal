@@ -20,10 +20,8 @@ class adult: public person{
     void setWorkingWithChildrenNumber(string aWorkingWithChildrenNumber);
     string getWorkingWithChildrenNumber();
 
-    void addContactInformation(std::string emailAddress, std::string phoneNumber);
-    void removeContactInformation();
-
-    virtual void getContactInformation();
+    void setContactInformation();
+    void getContactInformation();
 
     private:
         string workingWithChildrenNumber;

@@ -3,4 +3,6 @@
 
 void displayRoster(vector<events*> allEvents);
 
+void getContacts(vector<person*> &vectorPeople);
+
 #endif

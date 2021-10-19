@@ -32,7 +32,10 @@ class person{
     void setAge(int age);
 
     virtual void getContactInformation();
+    virtual void setContactInformation();
+
     std::string getPersonName();
+
 
     ~person();
 

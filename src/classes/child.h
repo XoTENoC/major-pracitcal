@@ -16,13 +16,10 @@ class child: public person{
         age = aAge;
     }
 
-
     //TODO: Change contactInformation to a string array.
 
-    void addContactInformation(std::string contactName, std::string emailAddress, std::string phoneNumber);
-    void removeContactInformation();
-
-    virtual void getContactInformation();
+    void setContactInformation();
+    void getContactInformation();
 
     private:
         std::string contactInformation[3] = {"0", "1", "2"};

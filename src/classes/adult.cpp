@@ -15,14 +15,17 @@ string adult::getWorkingWithChildrenNumber(){
     return workingWithChildrenNumber;
 }
 
-void adult::addContactInformation(std::string emailAddress, std::string phoneNumber){
+void adult::setContactInformation(){
+    string emailAddress, phoneNumber;
+
+    cout << "Email address: ";
+    cin >> emailAddress;
+
+    cout << "Phone number: ";
+    cin >> phoneNumber;
+
     // Concatenating strings together to form a single contactInformation string.
     contactInformation = personName + ' ' + emailAddress + ' ' + phoneNumber;
-}
-
-void adult::removeContactInformation(){
-    // Setting the string to empty;
-    contactInformation = "N/A";
 }
 
 void adult::getContactInformation(){
