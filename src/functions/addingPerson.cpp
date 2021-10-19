@@ -67,6 +67,7 @@ void addFromCsv2(string fileName, vector<person*> &vectorPeople){
             //if adult, add an adult with the correct info.
             if(thisAge>17){
             vectorPeople.push_back(new adult(thisName, thisAge));
+            cout<<thisName<<endl;
             vectorPeople.back()->setCompetency(0, sound);
             vectorPeople.back()->setCompetency(1,lighting);
             vectorPeople.back()->setCompetency(2,cg);
@@ -76,7 +77,7 @@ void addFromCsv2(string fileName, vector<person*> &vectorPeople){
             vectorPeople.push_back(new child(thisName, thisAge));
             vectorPeople.back()->setCompetency(0, sound);
             vectorPeople.back()->setCompetency(1,lighting);
-            vectorPeople.back()->setCompetency(2,cg);
+            vectorPeople.back()->setCompetency(2, cg);
             }
             loop++;
         }
@@ -98,7 +99,6 @@ void createPeopleCsv(vector<person*> &vectorPeople){
     {
             peopleCsv << vectorPeople[j]->getPersonName() << "," << vectorPeople[j]->getAge() << "," << vectorPeople[j]->getCompetency(0)<<","<<vectorPeople[j]->getCompetency(1)<<","<<vectorPeople[j]->getCompetency(2)<<","<<endl;
     }
-    peopleCsv<<endl;
         peopleCsv.close();
 
 }
@@ -391,7 +391,6 @@ void addPerson(vector<person*> &vectorPeople, int * ammount){
         cout << "4 - exit"<<endl;
         choice = inputNumStatic(choices, 4);
 
-        string lines[100]; 
 
         // deciding where to go
         switch (choice)
@@ -406,7 +405,7 @@ void addPerson(vector<person*> &vectorPeople, int * ammount){
             break;
 
         case 3:
-            addFromCsv2("People.csv", /*lines,*/ vectorPeople);
+            addFromCsv2("People.csv",  vectorPeople);
 
             break;
 
