@@ -17,26 +17,32 @@
 
 using namespace std;
 
+//splits a string by ",", used to split the input from csv into useful parts.
 vector<string> splitString(string str) 
-{ 
+{   
     vector<string> contentsOfLine;
    string w = ""; 
+   //compiler checks if input is a string
    for (auto rem : str) 
    { 
+       //if this character is a ","
        if (rem==',') 
-       { 
+       {
+           //push all of the contents between this "," and the previous "," to the contents of line vector.
             contentsOfLine.push_back(w);
            w=""; 
        } 
        else
        { 
+           //else add this character to the string to be added next time "," appears"
            w=w+rem; 
        } 
 
    }  
-   cout<<w<<endl; 
    return contentsOfLine;
 } 
+
+//function to read csv and then add a person from the data found
 void addFromCsv2(string fileName, vector<person*> &vectorPeople){
     short loop=0; 
     string line; 
@@ -65,6 +71,7 @@ void addFromCsv2(string fileName, vector<person*> &vectorPeople){
             vectorPeople.back()->setCompetency(1,lighting);
             vectorPeople.back()->setCompetency(2,cg);
             }
+            //if less than 18 add a child.
             else{
             vectorPeople.push_back(new child(thisName, thisAge));
             vectorPeople.back()->setCompetency(0, sound);
