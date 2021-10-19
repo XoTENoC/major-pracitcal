@@ -80,9 +80,7 @@ void addFromCsv2(string fileName, vector<person*> &vectorPeople){
             }
             loop++;
         }
-        cout<< loop <<" people added from csv, press enter to continue."<<endl;
-		cin.get();
-		cin.ignore();
+        cout<< loop <<" people added from csv"<<endl;
         myfile.close(); 
     }
     else cout << "file not found"; 
@@ -428,9 +426,6 @@ void addPerson(vector<person*> &vectorPeople, int * ammount){
 
 void removePerson(vector<person*> &vectorPeople){
     int index;
-        cout << "+------------------------------------------------------+" << endl;
-        cout << "|                   Remove A Person                    |" << endl;
-        cout << "+------------------------------------------------------+" << endl;
 
     vector<int> numberOfPeople((int)vectorPeople.size());
     iota(numberOfPeople.begin(), numberOfPeople.end(), 1);
@@ -440,8 +435,7 @@ void removePerson(vector<person*> &vectorPeople){
     listAllpeople(vectorPeople);
 
 
-
-    // making sure that there are people
+    // makeing sure that there are people
 	if ((int)vectorPeople.size() !=0){
 		cout << "What index would you like to remove?: ";
 		// making sure that the user can only add what they need to
