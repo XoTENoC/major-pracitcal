@@ -138,11 +138,6 @@ void events::addRosteredPeople(vector<person*> people){
                 // generate the number & remove
                 personSelect = tempPeople[rand() % tempPeople.size()];
                 tempPeople.erase(remove(tempPeople.begin(), tempPeople.end(), personSelect), tempPeople.end());
-                
-                // testing
-                // for ( int k = 0; k < (int)tempPeople.size(); k++){
-                //     cout << tempPeople[k] << endl;
-                // }
 
                 if (!tempPeople.empty())
                 {
@@ -188,6 +183,7 @@ void events::addRosteredPeople(vector<person*> people){
                 personSelect = tempPeople[rand() % tempPeople.size()];
                 tempPeople.erase(remove(tempPeople.begin(), tempPeople.end(), personSelect), tempPeople.end());
 
+                // adding the person to the roster
                 if (tempPeople.empty()==0)
                 {
                     if(people[personSelect]->getCompetency(competenciesPos[i]) == 2){
