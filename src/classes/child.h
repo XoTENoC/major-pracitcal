@@ -1,4 +1,12 @@
-// child class inherits from parent class "person" to add behaviours and states which are unique to children only.
+/* 
+
+child.h
+
+child class inherits from parent class "person" to add behaviours and states
+which are unique to children only.
+
+*/
+
 #include "person.h"
 #ifndef CHILD_H
 #define CHILD_H
