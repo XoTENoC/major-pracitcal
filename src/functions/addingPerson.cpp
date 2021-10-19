@@ -86,6 +86,23 @@ void addFromCsv2(string fileName, vector<person*> &vectorPeople){
     else cout << "file not found"; 
 }
 
+
+
+void createPeopleCsv(vector<person*> &vectorPeople){
+      
+    ofstream peopleCsv;
+    peopleCsv.open("People.csv", std::ofstream::out | std::ofstream::trunc);
+
+    //loop through for each staff member, printing to the file comma seperated.
+    for (int j = 0; j < (int)vectorPeople.size(); j++)
+    {
+            peopleCsv << vectorPeople[j]->getPersonName() << "," << vectorPeople[j]->getAge() << "," << vectorPeople[j]->getCompetency(0)<<","<<vectorPeople[j]->getCompetency(1)<<","<<vectorPeople[j]->getCompetency(2)<<","<<endl;
+    }
+    peopleCsv<<endl;
+        peopleCsv.close();
+
+}
+
 // this function adds adults to the list of people, and also allows to add
 // multiple people at once to allow for fast batch additions of people.
 void addingPerson(vector<person*> &vectorPeople){
@@ -394,6 +411,7 @@ void addPerson(vector<person*> &vectorPeople, int * ammount){
             break;
 
         case 4:
+            createPeopleCsv(vectorPeople);
             addingPeople = false;
             break; 
 
