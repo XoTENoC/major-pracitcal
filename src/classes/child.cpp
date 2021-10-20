@@ -32,7 +32,7 @@ void child::setContactInformation(){
         cout << "Phone number: ";
         cin >> phoneNumber;
 
-        contactInformation[i] = contactName + ' ' + emailAddress + ' ' + phoneNumber + "(" + relation + ") ";
+        contactInformation[i] = contactName + ' ' + emailAddress + ' ' + phoneNumber + " (" + relation + ")";
     }
 
     hasContactInformation = true;

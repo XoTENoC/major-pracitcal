@@ -46,22 +46,34 @@ void getContacts(vector<person*> &vectorPeople)
 
     // Gets the number of people
     int numberOfPeople = vectorPeople.size();
+    int spaces;
 
     for(int i=0; i<numberOfPeople; i++){
         if(vectorPeople[i]->hasContactInformation==true){
             if(vectorPeople[i]->getAge()>=18){
-                cout << (vectorPeople[i]->getContactInformation())[0] << endl;
+                cout << "| " << (vectorPeople[i]->getContactInformation())[0];
+                spaces = (54 - vectorPeople[i]->getContactInformation()[0].length() );
+                for(int k=1; k<spaces; k++){
+                    cout << " ";
+                }
+                cout << "|" << endl;
             }
             if(vectorPeople[i]->getAge()<18){
+                spaces = (54 - vectorPeople[i]->getContactInformation()[0].length() );
                 ptr = vectorPeople[i]->getContactInformation();
                 for(int j=0; j<3; j++){
-                    cout << ptr[j] << endl;
+                    cout << "| ";
+                    cout << ptr[j];
+                    int spaces = (54 - vectorPeople[i]->getContactInformation()[j].length() );
+                    for(int k=1; k<spaces; k++){
+                        cout << " ";
+                    }
+                    cout << "|" << endl;
                 }
             }
         cout << "+------------------------------------------------------+" << endl;
         }
     }
-    system("clear");
 }
 
 void displayRoster(vector<events *> allEvents)
