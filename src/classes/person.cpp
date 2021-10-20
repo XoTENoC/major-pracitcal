@@ -29,7 +29,7 @@ std::string person::getPersonName(){
     return personName;
 } 
 
-void person::getContactInformation(){
+string* person::getContactInformation(){
     // A void type is used so that the adult class may output a single string while the child class can output multiple lines of contacts.
 }
 

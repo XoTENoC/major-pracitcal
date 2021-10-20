@@ -30,12 +30,13 @@ class adult: public person{
 
     // Setter and getter for contactInformation.
     void setContactInformation();
-    void getContactInformation();
-    
+    string* getContactInformation();
+
+    string* contactPointer;
+
     private:
         string workingWithChildrenNumber;
         std::string contactInformation;
-
 
 };
 
