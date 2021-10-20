@@ -112,14 +112,14 @@ int main(){
             cout << "+------------------------------------------------------+" << endl;
             cout << endl;
 
-            cout << "1 - Add a new person" << endl;
-            cout << "2 - View all the people" << endl;
-            cout << "3 - Add An Event" << endl;
-            cout << "4 - View roster" << endl;
-            cout << "5 - Exit" << endl;
-            cout << "6 - Remove a person" << endl;
-            cout << "7 - Remove an event" << endl;
-            cout << "8 - Get Contacts" << endl;
+            cout << "1 - Add/modify a person" << endl;
+            cout << "2 - Remove a person" << endl;
+            cout << "3 - View all the people" << endl;
+            cout << "4 - Get Contacts" << endl;
+            cout << "5 - Add An Event" << endl;
+            cout << "6 - Remove an event" << endl;
+            cout << "7 - View roster" << endl;
+            cout << "8 - Exit" << endl;
 
             choice = inputNumStatic(choices, 8);
 
@@ -129,26 +129,26 @@ int main(){
                     addPerson(people, &amount);
                     break;
                 case 2:
-                    listAllpeople(people);
-                    break;
-                case 3:
-                    addEvent(allEvents, people);
-                    break;
-                case 4:
-                    displayRoster(allEvents);
-                    break;
-                case 5:
-                    mainMenu = false;
-                    inProgram = false;
-                    break;
-                case 6:
                     removePerson(people);
                     break;
-                case 7:
+                case 3:
+                    listAllpeople(people);
+                    break;
+                case 4:
+                    getContacts(people);
+                    break;
+                case 5:
+                    addEvent(allEvents, people);
+                    break;
+                case 6:
                     removeEvent(allEvents);
                     break;
+                case 7:
+                    displayRoster(allEvents);
+                    break;
                 case 8:
-                    getContacts(people);
+                    mainMenu = false;
+                    inProgram = false;
                     break;
             }
         }
