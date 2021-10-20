@@ -22,5 +22,5 @@ echo "events test 3"
 # rm eventsOut.txt
 
 # Cleanup
-# rm eventsTest
+rm eventsTest
 echo Finished Testing events Class
