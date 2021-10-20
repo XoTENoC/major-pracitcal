@@ -31,13 +31,49 @@ void outputCsv(vector<events *> allEvents)
     }
 }
 
-void getContacts(vector<person*> &vectorPeople){
-    cout << endl;
-    for (int i=0; i<vectorPeople.size(); i++){
-        vectorPeople[i]->getContactInformation();
-        cout<<endl;
+void getContacts(vector<person*> &vectorPeople)
+{
+    // clearing the screen
+    system("clear");
+
+    // DELETE AFTER TESTING.
+
+    string* ptr;
+
+    cout << "+------------------------------------------------------+" << endl;
+    cout << "|                 Contact Information                  |" << endl;
+    cout << "+------------------------------------------------------+" << endl;
+
+    // Gets the number of people
+    int numberOfPeople = vectorPeople.size();
+    int spaces;
+
+    for(int i=0; i<numberOfPeople; i++){
+        if(vectorPeople[i]->hasContactInformation==true){
+            if(vectorPeople[i]->getAge()>=18){
+                cout << "| " << (vectorPeople[i]->getContactInformation())[0];
+                spaces = (54 - vectorPeople[i]->getContactInformation()[0].length() );
+                for(int k=1; k<spaces; k++){
+                    cout << " ";
+                }
+                cout << "|" << endl;
+            }
+            if(vectorPeople[i]->getAge()<18){
+                spaces = (54 - vectorPeople[i]->getContactInformation()[0].length() );
+                ptr = vectorPeople[i]->getContactInformation();
+                for(int j=0; j<3; j++){
+                    cout << "| ";
+                    cout << ptr[j];
+                    int spaces = (54 - vectorPeople[i]->getContactInformation()[j].length() );
+                    for(int k=1; k<spaces; k++){
+                        cout << " ";
+                    }
+                    cout << "|" << endl;
+                }
+            }
+        cout << "+------------------------------------------------------+" << endl;
+        }
     }
-    cout << endl;
 }
 
 void displayRoster(vector<events *> allEvents)

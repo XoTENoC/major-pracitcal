@@ -1,4 +1,4 @@
-/* 
+/*
 
 adult.h
 
@@ -18,32 +18,25 @@ class adult: public person{
 
     public:
 
-        // Constructor derived of abstract person class.
-        adult(std::string aName, int aAge): person(){
-            personName = aName;
-            age = aAge;
-        }
+    // Constructor derived of abstract person class.
+    adult(std::string aName, int aAge): person(){
+        personName = aName;
+        age = aAge;
+    }
 
-        // takes in a string of any length and assigns it to the variable
-        // workingWithChildrenNumber
-        void setWorkingWithChildrenNumber(string aWorkingWithChildrenNumber);
-        // returns the variable workingWithChildrenNumber
-        string getWorkingWithChildrenNumber();
+    // Setter and getter for the workingWithChildrenNumber string.
+    void setWorkingWithChildrenNumber(string aWorkingWithChildrenNumber);
+    string getWorkingWithChildrenNumber();
 
-        // takes in a string of any length for the email and string of anylength
-        // for the phone number
-        void setContactInformation();
+    // Setter and getter for contactInformation.
+    void setContactInformation();
+    string* getContactInformation();
 
-        void addContactInformation(std::string emailAddress, std::string phoneNumber);
-        void removeContactInformation();
-
-        // returning the contant information to the user.
-        virtual void getContactInformation();
+    string* contactPointer;
 
     private:
         string workingWithChildrenNumber;
         std::string contactInformation;
-
 
 };
 

@@ -29,51 +29,57 @@ void printBlurb(){
 }
 // Adding Test Data
 void addingTestPeople(vector<person*> &vectorPeople){
-    
-    vectorPeople.push_back(new adult("Obiwan", 100));
-    vectorPeople.back()->setCompetency(0, 2);
-    vectorPeople.back()->setCompetency(1, 2);
-    vectorPeople.back()->setCompetency(2, 2);
 
-    vectorPeople.push_back(new adult("Anikin", 15));
-    vectorPeople.back()->setCompetency(0, 1);
-    vectorPeople.back()->setCompetency(1, 2);
-    vectorPeople.back()->setCompetency(2, 2);
+    // vectorPeople.push_back(new child("kid1", 13));
+    // vectorPeople.back()->setCompetency(0,0);    
+    // vectorPeople.back()->setCompetency(1,1);
+    // vectorPeople.back()->setCompetency(2,2);
+    // vectorPeople.back()->setContactInformation(); 
 
-    vectorPeople.push_back(new adult("Luke", 20));
-    vectorPeople.back()->setCompetency(0, 0);
-    vectorPeople.back()->setCompetency(1, 0);
-    vectorPeople.back()->setCompetency(2, 2);
+    // vectorPeople.push_back(new adult("Obiwan", 100));
+    // vectorPeople.back()->setCompetency(0, 2);
+    // vectorPeople.back()->setCompetency(1, 2);
+    // vectorPeople.back()->setCompetency(2, 2);
 
-    vectorPeople.push_back(new adult("Vader", 60));
-    vectorPeople.back()->setCompetency(0, 0);
-    vectorPeople.back()->setCompetency(1, 2);
-    vectorPeople.back()->setCompetency(2, 0);
+    // vectorPeople.push_back(new adult("Anikin", 15));
+    // vectorPeople.back()->setCompetency(0, 1);
+    // vectorPeople.back()->setCompetency(1, 2);
+    // vectorPeople.back()->setCompetency(2, 2);
 
-    vectorPeople.push_back(new adult("jaja", 40));
-    vectorPeople.back()->setCompetency(0, 1);
-    vectorPeople.back()->setCompetency(1, 1);
-    vectorPeople.back()->setCompetency(2, 0);
+    // vectorPeople.push_back(new adult("Luke", 20));
+    // vectorPeople.back()->setCompetency(0, 0);
+    // vectorPeople.back()->setCompetency(1, 0);
+    // vectorPeople.back()->setCompetency(2, 2);
 
-    vectorPeople.push_back(new adult("padme", 30));
-    vectorPeople.back()->setCompetency(0, 2);
-    vectorPeople.back()->setCompetency(1, 2);
-    vectorPeople.back()->setCompetency(2, 2);
+    // vectorPeople.push_back(new adult("Vader", 60));
+    // vectorPeople.back()->setCompetency(0, 0);
+    // vectorPeople.back()->setCompetency(1, 2);
+    // vectorPeople.back()->setCompetency(2, 0);
 
-    vectorPeople.push_back(new adult("Liea", 20));
-    vectorPeople.back()->setCompetency(0, 1);
-    vectorPeople.back()->setCompetency(1, 1);
-    vectorPeople.back()->setCompetency(2, 1);
+    // vectorPeople.push_back(new adult("jaja", 40));
+    // vectorPeople.back()->setCompetency(0, 1);
+    // vectorPeople.back()->setCompetency(1, 1);
+    // vectorPeople.back()->setCompetency(2, 0);
 
-    vectorPeople.push_back(new adult("yoda", 130));
-    vectorPeople.back()->setCompetency(0, 2);
-    vectorPeople.back()->setCompetency(1, 2);
-    vectorPeople.back()->setCompetency(2, 0);
+    // vectorPeople.push_back(new adult("padme", 30));
+    // vectorPeople.back()->setCompetency(0, 2);
+    // vectorPeople.back()->setCompetency(1, 2);
+    // vectorPeople.back()->setCompetency(2, 2);
 
-    vectorPeople.push_back(new adult("Han.Solo", 130));
-    vectorPeople.back()->setCompetency(0, 0);
-    vectorPeople.back()->setCompetency(1, 0);
-    vectorPeople.back()->setCompetency(2, 1);
+    // vectorPeople.push_back(new adult("Liea", 20));
+    // vectorPeople.back()->setCompetency(0, 1);
+    // vectorPeople.back()->setCompetency(1, 1);
+    // vectorPeople.back()->setCompetency(2, 1);
+
+    // vectorPeople.push_back(new adult("yoda", 130));
+    // vectorPeople.back()->setCompetency(0, 2);
+    // vectorPeople.back()->setCompetency(1, 2);
+    // vectorPeople.back()->setCompetency(2, 0);
+
+    // vectorPeople.push_back(new adult("Han.Solo", 130));
+    // vectorPeople.back()->setCompetency(0, 0);
+    // vectorPeople.back()->setCompetency(1, 0);
+    // vectorPeople.back()->setCompetency(2, 1);
 }
 
 int main(){
@@ -112,14 +118,14 @@ int main(){
             cout << "+------------------------------------------------------+" << endl;
             cout << endl;
 
-            cout << "1 - Add a new person" << endl;
-            cout << "2 - View all the people" << endl;
-            cout << "3 - Add An Event" << endl;
-            cout << "4 - View roster" << endl;
-            cout << "5 - Exit" << endl;
-            cout << "6 - Remove a person" << endl;
-            cout << "7 - Remove an event" << endl;
-            cout << "8 - Get Contacts" << endl;
+            cout << "1 - Add/modify a person" << endl;
+            cout << "2 - Remove a person" << endl;
+            cout << "3 - View all the people" << endl;
+            cout << "4 - Get Contacts" << endl;
+            cout << "5 - Add An Event" << endl;
+            cout << "6 - Remove an event" << endl;
+            cout << "7 - View roster" << endl;
+            cout << "8 - Exit" << endl;
 
             choice = inputNumStatic(choices, 8);
 
@@ -129,26 +135,26 @@ int main(){
                     addPerson(people, &amount);
                     break;
                 case 2:
-                    listAllpeople(people);
-                    break;
-                case 3:
-                    addEvent(allEvents, people);
-                    break;
-                case 4:
-                    displayRoster(allEvents);
-                    break;
-                case 5:
-                    mainMenu = false;
-                    inProgram = false;
-                    break;
-                case 6:
                     removePerson(people);
                     break;
-                case 7:
+                case 3:
+                    listAllpeople(people);
+                    break;
+                case 4:
+                    getContacts(people);
+                    break;
+                case 5:
+                    addEvent(allEvents, people);
+                    break;
+                case 6:
                     removeEvent(allEvents);
                     break;
+                case 7:
+                    displayRoster(allEvents);
+                    break;
                 case 8:
-                    getContacts(people);
+                    mainMenu = false;
+                    inProgram = false;
                     break;
             }
         }
