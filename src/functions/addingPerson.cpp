@@ -87,23 +87,26 @@ void addFromCsv2(string fileName, vector<person*> &vectorPeople){
     else cout << "file not found"; 
 }
 
+//this function creates a csv of all people in the system.
 void createPeopleCsv(vector<person*> &vectorPeople){
       
+    //open the file
     ofstream peopleCsv;
     peopleCsv.open("People.csv", std::ofstream::out | std::ofstream::trunc);
 
     //loop through for each staff member, printing to the file comma seperated.
     for (int j = 0; j < (int)vectorPeople.size(); j++)
     {   
+            //if not the first item, place a return.
             cout<<j;
             if(j>0){
             peopleCsv<<endl;
         }
  
-
+            //output the person information, formatted as csv
             peopleCsv << vectorPeople[j]->getPersonName() << "," << vectorPeople[j]->getAge() << "," << vectorPeople[j]->getCompetency(0)<<","<<vectorPeople[j]->getCompetency(1)<<","<<vectorPeople[j]->getCompetency(2)<<",";
     }
-
+        //close the file.
         peopleCsv.close();
 
 }
