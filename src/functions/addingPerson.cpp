@@ -94,9 +94,16 @@ void createPeopleCsv(vector<person*> &vectorPeople){
 
     //loop through for each staff member, printing to the file comma seperated.
     for (int j = 0; j < (int)vectorPeople.size(); j++)
-    {
-            peopleCsv << vectorPeople[j]->getPersonName() << "," << vectorPeople[j]->getAge() << "," << vectorPeople[j]->getCompetency(0)<<","<<vectorPeople[j]->getCompetency(1)<<","<<vectorPeople[j]->getCompetency(2)<<","<<endl;
+    {   
+            cout<<j;
+            if(j>0){
+            peopleCsv<<endl;
+        }
+ 
+
+            peopleCsv << vectorPeople[j]->getPersonName() << "," << vectorPeople[j]->getAge() << "," << vectorPeople[j]->getCompetency(0)<<","<<vectorPeople[j]->getCompetency(1)<<","<<vectorPeople[j]->getCompetency(2)<<",";
     }
+
         peopleCsv.close();
 
 }
@@ -210,6 +217,52 @@ void listAllpeople(vector<person*> &vectorPeople){
         //printing out the competencies
         cout<<"|"<<vectorPeople[i]->getCompetency(0)<<"    |"<<vectorPeople[i]->getCompetency(1)<<"       |"<<vectorPeople[i]->getCompetency(2)<<" |"<<endl;
                 cout << "+------------------------------------------------------+" << endl;
+
+    }
+
+    cout << endl;
+}
+
+
+// This function will print the list of people to the console
+void listAllInfo(vector<person*> &vectorPeople){
+
+    // clearing the screen
+    system("clear");
+
+    cout << endl;
+    cout << "+------------------------------------------------------+" << endl;
+    cout << "|               List of Contact Info                   |" << endl;
+    cout << "+------------------------------------------------------+" << endl;
+    cout << endl;
+    
+    //finding the number of people
+    int allThePeople = (int)vectorPeople.size();
+
+    cout << "+------------------------------------------------------+" << endl;
+
+        //looping through all people
+    for(int i = 0; i < allThePeople; i++){
+        //if there are 2 digits, reduce the number of spaces by 1
+        int numberOfSpaces=25;
+            if(i>8){numberOfSpaces= numberOfSpaces-1;}
+
+        //determining the length of the person's name
+        int nameLength = vectorPeople[i]->getPersonName().length();
+
+        //printing out the index, and the person's name
+        cout << "|"<<i+1<<":"<<vectorPeople[i]->getPersonName();
+
+        //printing out filler spaces as precalculated, subtracting the person's name
+        for(int f= 0;f<numberOfSpaces-nameLength;f++){
+            cout<<" ";
+        }
+
+        vectorPeople[i]->getContactInformation();
+
+
+        //printing out the competencies
+       
 
     }
 

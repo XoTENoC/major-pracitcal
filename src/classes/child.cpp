@@ -40,6 +40,6 @@ void child::setContactInformation(){
 void child::getContactInformation(){
     std::cout << getPersonName() << " Contact Information: " << std::endl;
     for(int i=0; i<3; i++){
-        std::cout << contactInformation[i] << std::endl;
+        std::cout << contactInformation[i];
     }
 }

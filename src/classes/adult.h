@@ -32,6 +32,8 @@ class adult: public person{
 
         // takes in a string of any length for the email and string of anylength
         // for the phone number
+        void setContactInformation();
+
         void addContactInformation(std::string emailAddress, std::string phoneNumber);
         void removeContactInformation();
 

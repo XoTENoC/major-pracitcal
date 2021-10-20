@@ -35,6 +35,7 @@ void getContacts(vector<person*> &vectorPeople){
     cout << endl;
     for (int i=0; i<vectorPeople.size(); i++){
         vectorPeople[i]->getContactInformation();
+        cout<<endl;
     }
     cout << endl;
 }
