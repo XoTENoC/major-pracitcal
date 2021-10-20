@@ -67,7 +67,6 @@ void addFromCsv2(string fileName, vector<person*> &vectorPeople){
             //if adult, add an adult with the correct info.
             if(thisAge>17){
             vectorPeople.push_back(new adult(thisName, thisAge));
-            cout<<thisName<<endl;
             vectorPeople.back()->setCompetency(0, sound);
             vectorPeople.back()->setCompetency(1,lighting);
             vectorPeople.back()->setCompetency(2,cg);
