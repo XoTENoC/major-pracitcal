@@ -42,5 +42,8 @@ int main(){
 	cout << "Working with children number = " << testAdult.getWorkingWithChildrenNumber() << endl;
 
 	// Testing Contact information.
+	testAdult.setContactInformation();
+	cout << "Working with children number = " << testAdult.getWorkingWithChildrenNumber() << endl;
+	testAdult.getContactInformation();
 }
 
