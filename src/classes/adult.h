@@ -1,4 +1,11 @@
-// Adult class inherits from parent class "person" to add behaviours and states which are unique to adults only.
+/*
+
+adult.h
+
+Adult class inherits from parent class "person" to add behaviours and
+states which are unique to adults only.
+
+*/
 
 #include "person.h"
 #ifndef ADULT_H
@@ -17,12 +24,14 @@ class adult: public person{
         age = aAge;
     }
 
+    // Setter and getter for the workingWithChildrenNumber string.
     void setWorkingWithChildrenNumber(string aWorkingWithChildrenNumber);
     string getWorkingWithChildrenNumber();
 
+    // Setter and getter for contactInformation.
     void setContactInformation();
     void getContactInformation();
-
+    
     private:
         string workingWithChildrenNumber;
         std::string contactInformation;
