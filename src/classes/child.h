@@ -22,15 +22,17 @@ class child: public person{
     child(std::string aName, int aAge): person(){
         personName = aName;
         age = aAge;
+        contactInformation = new string[3];
     }
 
     //TODO: Change contactInformation to a string array.
 
     void setContactInformation();
-    void getContactInformation();
+    string* getContactInformation();
 
     private:
-        std::string contactInformation[3] = {"0", "1", "2"};
+        // Pointer to the array of contact informations.
+        string* contactInformation;
         int contactCount = 0;
 
 };

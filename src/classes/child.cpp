@@ -7,7 +7,7 @@
 using namespace std;
 
 void child::setContactInformation(){
-    string contactName, emailAddress, phoneNumber;
+    string contactName, emailAddress, phoneNumber, relation;
 
     cout << "Child email address: ";
     cin >> emailAddress;
@@ -20,6 +20,9 @@ void child::setContactInformation(){
     for(int i=1; i<3; i++){
         cout << "Parent/Guardian " << i << endl;
 
+        cout << "Relation: ";
+        cin >> relation;
+
         cout << "Name: ";
         cin >> contactName;
 
@@ -29,7 +32,7 @@ void child::setContactInformation(){
         cout << "Phone number: ";
         cin >> phoneNumber;
 
-        contactInformation[i] = to_string(i) + ' ' + contactName + ' ' + emailAddress + ' ' + phoneNumber;
+        contactInformation[i] = to_string(i+1) + "(" + relation + ") " + contactName + ' ' + emailAddress + ' ' + phoneNumber;
     }
 
     // Concatenating strings together to form a single contactInformation string.
@@ -37,9 +40,6 @@ void child::setContactInformation(){
     contactCount++;
 }
 
-void child::getContactInformation(){
-    std::cout << getPersonName() << " Contact Information: " << std::endl;
-    for(int i=0; i<3; i++){
-        std::cout << contactInformation[i] << std::endl;
-    }
+string* child::getContactInformation(){
+    return contactInformation;
 }

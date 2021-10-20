@@ -25,9 +25,11 @@ void adult::setContactInformation(){
     cin >> phoneNumber;
 
     // Concatenating strings together to form a single contactInformation string.
-    contactInformation = personName + ' ' + emailAddress + ' ' + phoneNumber;
+    contactInformation = '1' + personName + ' ' + emailAddress + ' ' + phoneNumber;
+
+    contactPointer = &contactInformation;
 }
 
-void adult::getContactInformation(){
-    std::cout << contactInformation << std::endl;
+string* adult::getContactInformation(){
+    return contactPointer;
 }
