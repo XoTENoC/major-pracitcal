@@ -56,6 +56,7 @@ class person{
         //MOVE THIS TO PROTECTED LATER
 
         bool isInEvent;
+        bool hasContactInformation;
 
     private: 
         int competencies[3] = {};

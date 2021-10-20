@@ -31,12 +31,37 @@ void outputCsv(vector<events *> allEvents)
     }
 }
 
-void getContacts(vector<person*> &vectorPeople){
-    cout << endl;
-    for (int i=0; i<vectorPeople.size(); i++){
-        vectorPeople[i]->getContactInformation();
+void getContacts(vector<person*> &vectorPeople)
+{
+    // clearing the screen
+    system("clear");
+
+    // DELETE AFTER TESTING.
+
+    string* ptr;
+
+    cout << "+------------------------------------------------------+" << endl;
+    cout << "|                 Contact Information                  |" << endl;
+    cout << "+------------------------------------------------------+" << endl;
+
+    // Gets the number of people
+    int numberOfPeople = vectorPeople.size();
+
+    for(int i=0; i<numberOfPeople; i++){
+        if(vectorPeople[i]->hasContactInformation==true){
+            if(vectorPeople[i]->getAge()>=18){
+                cout << (vectorPeople[i]->getContactInformation())[0] << endl;
+            }
+            if(vectorPeople[i]->getAge()<18){
+                ptr = vectorPeople[i]->getContactInformation();
+                for(int j=0; j<3; j++){
+                    cout << ptr[j] << endl;
+                }
+            }
+        cout << "+------------------------------------------------------+" << endl;
+        }
     }
-    cout << endl;
+    system("clear");
 }
 
 void displayRoster(vector<events *> allEvents)

@@ -15,7 +15,7 @@ void child::setContactInformation(){
     cout << "Child phone number: ";
     cin >> phoneNumber;
 
-    contactInformation[0] = "1 " + personName + ' ' + emailAddress + ' ' + phoneNumber;
+    contactInformation[0] = personName + ' ' + emailAddress + ' ' + phoneNumber;
 
     for(int i=1; i<3; i++){
         cout << "Parent/Guardian " << i << endl;
@@ -32,12 +32,10 @@ void child::setContactInformation(){
         cout << "Phone number: ";
         cin >> phoneNumber;
 
-        contactInformation[i] = to_string(i+1) + "(" + relation + ") " + contactName + ' ' + emailAddress + ' ' + phoneNumber;
+        contactInformation[i] = contactName + ' ' + emailAddress + ' ' + phoneNumber + "(" + relation + ") ";
     }
 
-    // Concatenating strings together to form a single contactInformation string.
-    contactInformation[contactCount] = contactInformation[contactCount] +  " " + contactName + ' ' + emailAddress + ' ' + phoneNumber;
-    contactCount++;
+    hasContactInformation = true;
 }
 
 string* child::getContactInformation(){

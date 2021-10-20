@@ -30,10 +30,10 @@ class child: public person{
     void setContactInformation();
     string* getContactInformation();
 
+    // Pointer to the array of contact informations.
+    string* contactInformation = new string[3];
+
     private:
-        // Pointer to the array of contact informations.
-        string* contactInformation;
-        int contactCount = 0;
 
 };
 

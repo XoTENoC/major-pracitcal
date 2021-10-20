@@ -32,11 +32,11 @@ class adult: public person{
     void setContactInformation();
     string* getContactInformation();
 
+    string* contactPointer;
+
     private:
         string workingWithChildrenNumber;
         std::string contactInformation;
-        string* contactPointer;
-
 
 };
 
