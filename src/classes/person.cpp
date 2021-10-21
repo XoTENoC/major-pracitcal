@@ -30,7 +30,7 @@ std::string person::getPersonName(){
 } 
 
 string* person::getContactInformation(){
-
+    return 0;
 }
 
 void person::setContactInformation(){

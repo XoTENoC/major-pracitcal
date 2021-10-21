@@ -46,8 +46,8 @@ class person{
 
         // virual functions for setting the contact information and setting the
         // contant information.
-        virtual string* getContactInformation();
-        virtual void setContactInformation();
+        virtual string* getContactInformation() = 0;
+        virtual void setContactInformation() = 0;
 
 
 
