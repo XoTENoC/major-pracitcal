@@ -1,0 +1,144 @@
+[H[2J
++------------------------------------------------------+
+|                      Main Menu                       |
++------------------------------------------------------+
+
+1 - Add/modify a person
+2 - Remove a person
+3 - View all the people
+4 - Get Contacts
+5 - Add An Event
+6 - Remove an event
+7 - View roster
+8 - Exit
+[H[2J
++------------------------------------------------------+
+|                   Add a New Person                   |
++------------------------------------------------------+
+
+1 - Add People
+2 - Modify Entries
+3 - Add People From CSV
+4 - exit
+
+how many people would you like to add: 
+Person 1
+what is the name of the person: What is the age of the person: adult Created
+
+For the following criteria, please enter 0 for no ability, 1 for trainee, 2 for operator.
+ability at Sound: ability at Lighing: ability at Computer Graphics: 
+Contact information: 
+Email address: Phone number: 
+Person 2
+what is the name of the person: What is the age of the person: child Created
+
+For the following criteria, please enter 0 for no ability, 1 for trainee, 2 for operator.
+ability at Sound: ability at Lighing: ability at Computer Graphics: 
+Contact information: 
+Child email address: Child phone number: Parent/Guardian 1
+Relation: Name: Email address: Phone number: Parent/Guardian 2
+Relation: Name: Email address: Phone number: 
+Person 3
+what is the name of the person: What is the age of the person: adult Created
+
+For the following criteria, please enter 0 for no ability, 1 for trainee, 2 for operator.
+ability at Sound: ability at Lighing: ability at Computer Graphics: 
+Contact information: 
+Email address: Phone number: 
+Person 4
+what is the name of the person: What is the age of the person: adult Created
+
+For the following criteria, please enter 0 for no ability, 1 for trainee, 2 for operator.
+ability at Sound: ability at Lighing: ability at Computer Graphics: 
+Contact information: 
+Email address: Phone number: [H[2J
++------------------------------------------------------+
+|                   Add a New Person                   |
++------------------------------------------------------+
+
+1 - Add People
+2 - Modify Entries
+3 - Add People From CSV
+4 - exit
+0123
++------------------------------------------------------+
+|                      Main Menu                       |
++------------------------------------------------------+
+
+1 - Add/modify a person
+2 - Remove a person
+3 - View all the people
+4 - Get Contacts
+5 - Add An Event
+6 - Remove an event
+7 - View roster
+8 - Exit
+[H[2J+------------------------------------------------------+
+|                 Contact Information                  |
++------------------------------------------------------+
+| Austen aalindsay@me.com 0451021891                   |
++------------------------------------------------------+
+| Tommy tommy@gmail.com 0410289411                     |
+| Sarah sarah@gmail.com 0413055556 (Mother)            |
+| John John@mac.com 0403577711 (Father)                |
++------------------------------------------------------+
+| Sophie sophie@gmail.com 0418294827                   |
++------------------------------------------------------+
+| Changi changi.dev@gmail.com 0429683752               |
++------------------------------------------------------+
+
++------------------------------------------------------+
+|                      Main Menu                       |
++------------------------------------------------------+
+
+1 - Add/modify a person
+2 - Remove a person
+3 - View all the people
+4 - Get Contacts
+5 - Add An Event
+6 - Remove an event
+7 - View roster
+8 - Exit
+[H[2J+------------------------------------------------------+
+|                         Events                       |
++------------------------------------------------------+
+1 - Add a new event
+2 - Exit
+how many staff are needed for the event (either 4 or 7): What is the name of event: [H[2J+------------------------------------------------------+
+|                         Events                       |
++------------------------------------------------------+
+1 - Add a new event
+2 - Exit
+
++------------------------------------------------------+
+|                      Main Menu                       |
++------------------------------------------------------+
+
+1 - Add/modify a person
+2 - Remove a person
+3 - View all the people
+4 - Get Contacts
+5 - Add An Event
+6 - Remove an event
+7 - View roster
+8 - Exit
+[H[2J+------------------------------------------------------+
+|                     List of Events                   |
++------------------------------------------------------+
+
+1: newEvent
+
+What index would you like to remove?: Removing newEvent
+
++------------------------------------------------------+
+|                      Main Menu                       |
++------------------------------------------------------+
+
+1 - Add/modify a person
+2 - Remove a person
+3 - View all the people
+4 - Get Contacts
+5 - Add An Event
+6 - Remove an event
+7 - View roster
+8 - Exit
