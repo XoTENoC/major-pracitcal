@@ -30,56 +30,55 @@ void printBlurb(){
 // Adding Test Data
 void addingTestPeople(vector<person*> &vectorPeople){
 
-    // vectorPeople.push_back(new child("kid1", 13));
-    // vectorPeople.back()->setCompetency(0,0);    
-    // vectorPeople.back()->setCompetency(1,1);
-    // vectorPeople.back()->setCompetency(2,2);
-    // vectorPeople.back()->setContactInformation(); 
+    vectorPeople.push_back(new child("kid1", 13));
+    vectorPeople.back()->setCompetency(0,0);    
+    vectorPeople.back()->setCompetency(1,1);
+    vectorPeople.back()->setCompetency(2,2);
 
-    // vectorPeople.push_back(new adult("Obiwan", 100));
-    // vectorPeople.back()->setCompetency(0, 2);
-    // vectorPeople.back()->setCompetency(1, 2);
-    // vectorPeople.back()->setCompetency(2, 2);
+    vectorPeople.push_back(new adult("Obiwan", 100));
+    vectorPeople.back()->setCompetency(0, 2);
+    vectorPeople.back()->setCompetency(1, 2);
+    vectorPeople.back()->setCompetency(2, 2);
 
-    // vectorPeople.push_back(new adult("Anikin", 15));
-    // vectorPeople.back()->setCompetency(0, 1);
-    // vectorPeople.back()->setCompetency(1, 2);
-    // vectorPeople.back()->setCompetency(2, 2);
+    vectorPeople.push_back(new adult("Anikin", 15));
+    vectorPeople.back()->setCompetency(0, 1);
+    vectorPeople.back()->setCompetency(1, 2);
+    vectorPeople.back()->setCompetency(2, 2);
 
-    // vectorPeople.push_back(new adult("Luke", 20));
-    // vectorPeople.back()->setCompetency(0, 0);
-    // vectorPeople.back()->setCompetency(1, 0);
-    // vectorPeople.back()->setCompetency(2, 2);
+    vectorPeople.push_back(new adult("Luke", 20));
+    vectorPeople.back()->setCompetency(0, 0);
+    vectorPeople.back()->setCompetency(1, 0);
+    vectorPeople.back()->setCompetency(2, 2);
 
-    // vectorPeople.push_back(new adult("Vader", 60));
-    // vectorPeople.back()->setCompetency(0, 0);
-    // vectorPeople.back()->setCompetency(1, 2);
-    // vectorPeople.back()->setCompetency(2, 0);
+    vectorPeople.push_back(new adult("Vader", 60));
+    vectorPeople.back()->setCompetency(0, 0);
+    vectorPeople.back()->setCompetency(1, 2);
+    vectorPeople.back()->setCompetency(2, 0);
 
-    // vectorPeople.push_back(new adult("jaja", 40));
-    // vectorPeople.back()->setCompetency(0, 1);
-    // vectorPeople.back()->setCompetency(1, 1);
-    // vectorPeople.back()->setCompetency(2, 0);
+    vectorPeople.push_back(new adult("jaja", 40));
+    vectorPeople.back()->setCompetency(0, 1);
+    vectorPeople.back()->setCompetency(1, 1);
+    vectorPeople.back()->setCompetency(2, 0);
 
-    // vectorPeople.push_back(new adult("padme", 30));
-    // vectorPeople.back()->setCompetency(0, 2);
-    // vectorPeople.back()->setCompetency(1, 2);
-    // vectorPeople.back()->setCompetency(2, 2);
+    vectorPeople.push_back(new adult("padme", 30));
+    vectorPeople.back()->setCompetency(0, 2);
+    vectorPeople.back()->setCompetency(1, 2);
+    vectorPeople.back()->setCompetency(2, 2);
 
-    // vectorPeople.push_back(new adult("Liea", 20));
-    // vectorPeople.back()->setCompetency(0, 1);
-    // vectorPeople.back()->setCompetency(1, 1);
-    // vectorPeople.back()->setCompetency(2, 1);
+    vectorPeople.push_back(new adult("Liea", 20));
+    vectorPeople.back()->setCompetency(0, 1);
+    vectorPeople.back()->setCompetency(1, 1);
+    vectorPeople.back()->setCompetency(2, 1);
 
-    // vectorPeople.push_back(new adult("yoda", 130));
-    // vectorPeople.back()->setCompetency(0, 2);
-    // vectorPeople.back()->setCompetency(1, 2);
-    // vectorPeople.back()->setCompetency(2, 0);
+    vectorPeople.push_back(new adult("yoda", 130));
+    vectorPeople.back()->setCompetency(0, 2);
+    vectorPeople.back()->setCompetency(1, 2);
+    vectorPeople.back()->setCompetency(2, 0);
 
-    // vectorPeople.push_back(new adult("Han.Solo", 130));
-    // vectorPeople.back()->setCompetency(0, 0);
-    // vectorPeople.back()->setCompetency(1, 0);
-    // vectorPeople.back()->setCompetency(2, 1);
+    vectorPeople.push_back(new adult("Han.Solo", 130));
+    vectorPeople.back()->setCompetency(0, 0);
+    vectorPeople.back()->setCompetency(1, 0);
+    vectorPeople.back()->setCompetency(2, 1);
 }
 
 int main(){
