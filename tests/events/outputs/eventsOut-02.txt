@@ -60,7 +60,7 @@ Email address: Phone number: [H[2J
 2 - Modify Entries
 3 - Add People From CSV
 4 - exit
-0123
+
 +------------------------------------------------------+
 |                      Main Menu                       |
 +------------------------------------------------------+
