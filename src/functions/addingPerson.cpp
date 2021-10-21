@@ -97,7 +97,6 @@ void createPeopleCsv(vector<person*> &vectorPeople){
     for (int j = 0; j < (int)vectorPeople.size(); j++)
     {   
             //if not the first item, place a return.
-            cout<<j;
             if(j>0){
             peopleCsv<<endl;
         }
